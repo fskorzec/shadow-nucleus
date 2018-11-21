@@ -34,4 +34,18 @@ export abstract class BaseComponent {
     });
   }
 
+  protected _Receive(eventName: string, handler: (data: unknown) => void) : { off: () => void } {
+    if (this._evtBus) {
+      return this._evtBus.on(eventName, handler);
+    }
+    return { off: () => void 0 };
+  }
+
+  protected _ReceiveOnce(eventName: string, handler: (data: unknown) => void) : { off: () => void } {
+    if (this._evtBus) {
+      return this._evtBus.once(eventName, handler);
+    }
+    return { off: () => void 0 };
+  }
+
 }
