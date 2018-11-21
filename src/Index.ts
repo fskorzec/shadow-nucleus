@@ -1,5 +1,5 @@
-import { EventBus } from "./shared/event/EventBus";
-import { IModuleEntryPoint } from "./Plugin";
+import { EventBus }          from "./shared/event/EventBus" ;
+import { IModuleEntryPoint } from "./Plugin"                ;
 
 const evtBus = new EventBus(".", 3);
 
@@ -9,6 +9,13 @@ const createComponent = <T extends Object>(component: T, ...argArray: any[]): T 
   return res;
 }
 
+const getService = <T>(serviceName: string, serviceId?:string): T => {
+  return void 0 as unknown as T;
+}
+
 export function registerComponent(startModule: IModuleEntryPoint): void {
-  startModule.entryPoint(createComponent);
+  startModule.entryPoint({
+    createComponent, 
+    getService
+  });
 }

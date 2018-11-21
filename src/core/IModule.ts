@@ -1,3 +1,8 @@
 export interface IModuleEntryPoint {
-  entryPoint(createComponent: <T extends Object>(component: T, ...argArray: any[]) => T): void;
+  entryPoint(
+    api : {
+      createComponent: <T extends Object>(component: T, ...argArray: any[]) => T,
+      getService: <T>(serviceName: string, serviceId?:string) => T
+    }
+  ): void;
 }
