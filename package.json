@@ -1,0 +1,8 @@
+{
+  "name": "shadow-nucleus",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/fskorzec/shadow-nucleus.git",
+  "author": "Skorzec francois <fskorzec@outlook.com>",
+  "license": "MIT"
+}
