@@ -1,8 +1,12 @@
+import { IClass } from "../Index";
+import { BaseComponent } from "../Plugin";
+
 export interface IModuleEntryPoint {
   entryPoint(
     api : {
-      createComponent: <T extends Object>(component: T, ...argArray: any[]) => T,
-      getService: <T>(serviceName: string, serviceId?:string) => T
+      createService   : <T extends BaseComponent>(component: IClass) => T;
+      getService      : <T>(serviceName: string, serviceId?:string)               => T    ;
+      exposeService   : (serviceName: string, serviceId: string, entity: unknown) => void ;
     }
   ): void;
 }

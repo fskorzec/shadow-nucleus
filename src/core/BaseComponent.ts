@@ -1,5 +1,6 @@
 import { Errors }   from "./constant/Error"         ;
 import { IEventBus } from "./IEventBus";
+import { IClass } from "../Index";
 
 export type sendQuery = {
   sender: {
@@ -9,11 +10,13 @@ export type sendQuery = {
   payload: unknown;
 }
 
-export abstract class BaseComponent {
+export class BaseComponent {
   private _evtBus: IEventBus | undefined;
 
-  abstract cmpId   : string ;
-  abstract cmpName : string ;
+  cmpId   : string = "";
+  cmpName : string = "";
+
+  constructor() {}
 
   /**
    * Send a new command
