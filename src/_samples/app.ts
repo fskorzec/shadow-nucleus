@@ -1,5 +1,7 @@
 import { EventBus } from "../shared/event/EventBus";
 import { Api } from "../core/api/Api";
+import { LogginConsole } from "../modules/logging/front/Logging.Console";
+import { ILogger } from "../modules/logging/front/Logger";
 
 const evtBus = new EventBus(".", 3);
 const api = new Api(evtBus);
@@ -9,17 +11,9 @@ evtBus.on("allEvents", (data) => {
 });
 
 (async() => {
-  await api.Service.registerService("service-name", "service-id", {
-    serviceDefinition: Date,
-  });
+  await new LogginConsole().entryPoint(api);
 
-  var x = await api.Service.getService<any>("service-name", "service-id");
-
-
-  console.log("***************x***************", x)
-
-  var ia = api.Service.activateService(x);
-
-  console.log("***************y***************", ia)
-
+  const logger = await api.Service.getService<ILogger>("logging.front.logger", "com.shadow-nuclues.core")
+  logger.log("Coucou");
+  
 })();

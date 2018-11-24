@@ -1,13 +1,12 @@
 import { Errors }   from "./constant/Error"         ;
 import { IEventBus } from "./IEventBus";
-import { IClass } from "../Index";
 
-export type sendQuery = {
+export type sendQuery<T> = {
   sender: {
     cmpId   : string ;
     cmpName : string ;
   };
-  payload: unknown;
+  payload: T;
 }
 
 export class BaseComponent {
@@ -23,7 +22,7 @@ export class BaseComponent {
    * @param eventName Full name of the event
    * @param query The query description
    */
-  protected _send(eventName: string, query: sendQuery) : void {
+  protected _send<T>(eventName: string, query: sendQuery<T>) : void {
     if (this._evtBus) {
       this._evtBus.emitAsync(eventName, query);
     }
@@ -35,7 +34,7 @@ export class BaseComponent {
    * @param returnEventName Full name of the event to listen in return
    * @param query The query description
    */
-  protected _sendWithReturn<T>(eventName: string, returnEventName: string,  query: sendQuery): Promise<T | undefined> {
+  protected _sendWithReturn<T,U>(eventName: string, returnEventName: string,  query: sendQuery<U>): Promise<T | undefined> {
     return new Promise( (resolve, reject) => {
       if (this._evtBus) {
         this._evtBus.once(returnEventName, (data) => {
@@ -53,7 +52,7 @@ export class BaseComponent {
    * @param eventName Full name of the event
    * @param handler The handler function to use process the data
    */
-  protected _Receive(eventName: string, handler: (data: unknown) => void) : { off: () => void } {
+  protected _Receive<T>(eventName: string, handler: (data: sendQuery<T>) => void) : { off: () => void } {
     if (this._evtBus) {
       return this._evtBus.on(eventName, handler);
     }
@@ -65,11 +64,24 @@ export class BaseComponent {
    * @param eventName Full name of the event
    * @param handler  The handler function to use process the data
    */
-  protected _ReceiveOnce(eventName: string, handler: (data: unknown) => void) : { off: () => void } {
+  protected _ReceiveOnce<T>(eventName: string, handler: (data: sendQuery<T>) => void) : { off: () => void } {
     if (this._evtBus) {
       return this._evtBus.once(eventName, handler);
     }
     return { off: () => void 0 };
   }
 
+  get identity() : {
+    cmpId: string;
+    cmpName: string;
+  } {
+    return {
+      cmpId   : this.cmpId,
+      cmpName : this.cmpName
+    }
+  }
+
+  protected initialize() {
+    
+  }
 }

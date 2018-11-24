@@ -1,15 +1,15 @@
-import { generateConstantTree } from "../../util/Constant";
+import { constantTree } from "../../util/Constant";
 
-let Evts = {
+let Evts = constantTree({
   API: {
     SERVICE: {
       SERVICE_REGISTERED : "",
       SERVICE_RETURNED   : ""
     }
   }
-};
+});
 
-let Acts = ({
+let Acts = constantTree({
   API: {
     SERVICE: {
       REGISTER_SERVICE : "" ,
@@ -17,9 +17,6 @@ let Acts = ({
     }
   }
 });
-
-Evts = generateConstantTree(Evts) ;
-Acts = generateConstantTree(Acts) ;
 
 export {
   Evts,

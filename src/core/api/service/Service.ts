@@ -1,19 +1,19 @@
-import { IEventBus }  from "../../IEventBus" ;
-import { Acts, Evts } from "./Events"        ;
+import { IEventBus }             from "../../IEventBus"     ;
+import { Acts, Evts }            from "./Events"            ;
+import { BaseComponent }         from "../../BaseComponent" ;
+import { IClass, IPrivateClass } from "./Interfaces"        ;
 
 import { 
   RegisterServiceDataType , 
   RegisterStatusType      , 
-  RegisterServiceType, 
+  RegisterServiceType     , 
   ServiceIdentifierType
 } from "./Types";
-import { BaseComponent } from "../../BaseComponent";
-import { IClass, IPrivateClass } from "./Interfaces";
 
 /**
  * @class Service
  */
-export class Service {
+export class Service implements IService {
   private _evtBus     : IEventBus                  ;
   private _serviceMap : { [key: string]: unknown } ;
 
@@ -132,9 +132,16 @@ export class Service {
   }
   //#endregion
 
-  activateService<T extends BaseComponent>(classDefinition: IClass): T {
+  activateService<T>(classDefinition: any): T {
     const res = new classDefinition();
     (res as unknown as IPrivateClass)._evtBus = this._evtBus;
+    (res as unknown as IPrivateClass).initialize();
     return res as unknown as T;
   }
+}
+
+export interface IService {
+    registerService(serviceName: string, serviceId: string, payload: RegisterServiceType): Promise<void>;
+    getService<T>(serviceName: string, serviceId: string): Promise<T>;
+    activateService<T>(classDefinition: any): T;
 }

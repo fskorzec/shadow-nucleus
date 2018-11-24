@@ -1,4 +1,4 @@
-import { Service } from "./service/Service";
+import { Service, IService } from "./service/Service";
 import { IEventBus } from "../IEventBus";
 
 export class Api {
@@ -13,4 +13,8 @@ export class Api {
   get Service() : Service {
     return this._service;
   }  
+}
+
+export interface IApi {
+  Service: IService;
 }

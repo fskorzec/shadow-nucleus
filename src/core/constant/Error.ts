@@ -1,6 +1,6 @@
-import { generateConstantTree } from "../util/Constant";
+import { constantTree } from "../util/Constant";
 
-let Errors = {
+let Errors = constantTree({
   TYPE: {
     TECHNICAL : "" ,
     BUSINESS  : ""
@@ -8,9 +8,7 @@ let Errors = {
   TECHNICAL: {
     EVENTBUS_IS_NOT_DEFINED: ""
   }
-}
-
-generateConstantTree(Errors);
+});
 
 export {
   Errors

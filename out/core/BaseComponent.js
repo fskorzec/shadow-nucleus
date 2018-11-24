@@ -57,5 +57,13 @@ class BaseComponent {
         }
         return { off: () => void 0 };
     }
+    get identity() {
+        return {
+            cmpId: this.cmpId,
+            cmpName: this.cmpName
+        };
+    }
+    initialize() {
+    }
 }
 exports.BaseComponent = BaseComponent;

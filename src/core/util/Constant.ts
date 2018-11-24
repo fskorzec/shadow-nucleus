@@ -1,10 +1,14 @@
-export function generateConstantTree(tree: any, route: string = "") {
+type HashMap = {
+  [key: string] : HashMap | string;
+}
+
+export function constantTree<T extends HashMap>(tree: T, route: string = ""): T {
   for(let item in tree) {
     const currentRoute = `${route}${route !== "" ? "." : ""}${item}`;
     if (typeof(tree[item]) === "string" && tree[item].length === 0) {
-      tree[item] = currentRoute;
+      (tree[item] as string) = currentRoute;
     } else if (typeof(tree[item]) === "object") {
-      generateConstantTree(tree[item], currentRoute);
+      constantTree(tree[item] as HashMap, currentRoute);
     }
   }
 

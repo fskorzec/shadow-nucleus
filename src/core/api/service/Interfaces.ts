@@ -6,4 +6,5 @@ export interface IClass {
 
 export interface IPrivateClass extends IClass {
   _evtBus: IEventBus | undefined;
+  initialize(): void;
 }
