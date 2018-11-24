@@ -6,9 +6,10 @@ import { ILogger } from "../modules/logging/front/Logger";
 const evtBus = new EventBus(".", 3);
 const api = new Api(evtBus);
 
-evtBus.on("allEvents", (data) => {
+/*evtBus.on("allEvents", (data) => {
+  console.log("*************************************************************************************");
   console.log(data);
-});
+});*/
 
 (async() => {
   await new LogginConsole().entryPoint(api);

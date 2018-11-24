@@ -5,12 +5,20 @@ import { sendQuery } from "../../../core/BaseComponent";
 export class Logger extends BaseComponent {
   cmpName = "logging.front.logger";
   cmpId   = "com.shadow-nuclues.core";
+
+  static hasBeenInitialized: boolean = false;
   
   constructor() {
     super();
   }
 
   protected initialize() {
+    if (Logger.hasBeenInitialized) {
+      return;
+    } else {
+      Logger.hasBeenInitialized = true;
+    }
+    
     this._Receive<any[]>(Acts.LOGGING.LOGGER.LOG, (data) => {
       console.log(...data.payload);
       this._send(Evts.LOGING.LOGGER.LOGGED, data);
