@@ -1,6 +1,9 @@
-import { EventBus }          from "./shared/event/EventBus" ;
-import { IModuleEntryPoint, BaseComponent } from "./Plugin"                ;
-import { IEventBus } from "./core/IEventBus";
+import { EventBus }  from "./shared/event/EventBus" ;
+import { IEventBus } from "./core/IEventBus"        ;
+import { 
+  IModuleEntryPoint, 
+  BaseComponent 
+} from "./Plugin";
 
 const evtBus = new EventBus(".", 3);
 

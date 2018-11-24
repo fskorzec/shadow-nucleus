@@ -1,7 +1,7 @@
 import { Service } from "./service/Service";
 import { IEventBus } from "../IEventBus";
 
-class Api {
+export class Api {
   _evtBus: IEventBus;
   _service: Service;
 

@@ -7,6 +7,8 @@ import {
   RegisterServiceType, 
   ServiceIdentifierType
 } from "./Types";
+import { BaseComponent } from "../../BaseComponent";
+import { IClass, IPrivateClass } from "./Interfaces";
 
 /**
  * @class Service
@@ -103,10 +105,10 @@ export class Service {
    * @param serviceName The service name
    * @param serviceId The service Id
    */
-  public async getService<T>(serviceName: string, serviceId: string = ""): Promise<T> {
+  public async getService<T>(serviceName: string, serviceId: string): Promise<T> {
     return new Promise<T>( (r,x) => {
       const evt = this._evtBus.on(Evts.API.SERVICE.SERVICE_RETURNED, (data: RegisterServiceDataType & RegisterStatusType) => {
-        if (data.serviceName === serviceId && (serviceId !== "" && data.serviceId === serviceId)) {
+        if (data.serviceName === serviceName && data.serviceId === serviceId) {
           evt.off();
           if (data.success) {
             r(
@@ -129,4 +131,10 @@ export class Service {
     });
   }
   //#endregion
+
+  activateService<T extends BaseComponent>(classDefinition: IClass): T {
+    const res = new classDefinition();
+    (res as unknown as IPrivateClass)._evtBus = this._evtBus;
+    return res as unknown as T;
+  }
 }
