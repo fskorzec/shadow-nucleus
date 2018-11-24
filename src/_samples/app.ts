@@ -13,7 +13,13 @@ evtBus.on("allEvents", (data) => {
     serviceDefinition: Date,
   });
 
-  var x = await api.Service.getService("service-name", "service-id");
+  var x = await api.Service.getService<any>("service-name", "service-id");
+
 
   console.log("***************x***************", x)
+
+  var ia = api.Service.activateService(x);
+
+  console.log("***************y***************", ia)
+
 })();
