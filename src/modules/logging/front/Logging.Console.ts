@@ -1,7 +1,7 @@
-import { IModuleEntryPoint, IApi, BaseComponent } from "../../../Plugin";
+import { IModuleEntryPoint, IApi, BaseComponent, connect } from "../../../Plugin";
 import { Logger } from "./Logger";
 
-export class LogginConsole implements IModuleEntryPoint {
+export default class LogginConsole implements IModuleEntryPoint {
   async entryPoint(api: IApi): Promise<void> {
     const logger = api.Service.activateService<Logger>(Logger);
 
@@ -11,3 +11,4 @@ export class LogginConsole implements IModuleEntryPoint {
   }
 }
 
+connect(LogginConsole);

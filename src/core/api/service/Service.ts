@@ -1,7 +1,6 @@
-import { IEventBus }             from "../../IEventBus"     ;
-import { Acts, Evts }            from "./Events"            ;
-import { BaseComponent }         from "../../BaseComponent" ;
-import { IClass, IPrivateClass } from "./Interfaces"        ;
+import { IEventBus }     from "../../IEventBus" ;
+import { Acts, Evts }    from "./Events"        ;
+import { IPrivateClass } from "./Interfaces"    ;
 
 import { 
   RegisterServiceDataType , 
@@ -9,6 +8,7 @@ import {
   RegisterServiceType     , 
   ServiceIdentifierType
 } from "./Types";
+import { IService } from "./IService";
 
 /**
  * @class Service
@@ -132,16 +132,14 @@ export class Service implements IService {
   }
   //#endregion
 
+  /**
+   * Activate a service instance from its definition class
+   * @param classDefinition The class definition to instanciate
+   */
   activateService<T>(classDefinition: any): T {
-    const res = new classDefinition();
-    (res as unknown as IPrivateClass)._evtBus = this._evtBus;
+    const res = new classDefinition() ;
+    (res as unknown as IPrivateClass)._evtBus = this._evtBus          ;
     (res as unknown as IPrivateClass).initialize();
     return res as unknown as T;
   }
-}
-
-export interface IService {
-    registerService(serviceName: string, serviceId: string, payload: RegisterServiceType): Promise<void>;
-    getService<T>(serviceName: string, serviceId: string): Promise<T>;
-    activateService<T>(classDefinition: any): T;
 }

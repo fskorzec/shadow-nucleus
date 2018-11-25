@@ -1,6 +1,6 @@
 out
 out/**/*
-
+dist
 # Logs
 logs
 *.log
