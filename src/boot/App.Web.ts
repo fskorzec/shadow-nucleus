@@ -7,7 +7,7 @@ export async function start(){
   // Start the core api expose it
   await startNucleus();
   //Load the nucleus engine
-  await _nucleus_api.Module.loadModule("nucleus.node.js");
+  await _nucleus_api.Module.loadModule("nucleus.web.js");
   
   // Check for the module.conf.json file
   try {
