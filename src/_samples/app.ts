@@ -1,22 +1,27 @@
-import { EventBus } from "../shared/event/EventBus";
-import { Api } from "../core/api/Api";
-import LogginConsole from "../modules/logging/front/Logging.Console";
-import { ILogger } from "../modules/logging/front/Logger";
+import { startNucleus} from "../Index"  ;
+import { IApi }        from "../Plugin" ;
+import * as path       from "path"      ;
+import * as fs         from "fs"        ;
 
-const evtBus = new EventBus(".", 3);
-const api = new Api(evtBus);
+declare var _nucleus_api: IApi;
 
-/*evtBus.on("allEvents", (data) => {
-  console.log("*************************************************************************************");
-  console.log(data);
-});*/
-
-declare var process: any;
-
-(async() => {
-  await new LogginConsole().entryPoint(api);
-
-  const logger = await api.Service.getService<ILogger>("logging.front.logger", "com.shadow-nuclues.core")
-  logger.log("Hello", "Kitty");
-  logger.warn();
+(async function start(){
+  // Start the core api expose it
+  await startNucleus(require);
+  //Load the nucleus engine
+  await _nucleus_api.Module.loadModule(path.resolve("nucleus.node.js"));
+  
+  // Check for the module.conf.json file
+  if (fs.existsSync(path.resolve("modules.conf.json"))) {
+    // Loads the configuration file
+    const jsonConf = JSON.parse(fs.readFileSync(path.resolve("modules.conf.json"), "utf8"));
+    
+    // Loads each modules
+    for(let i=0; i<jsonConf.modules.length; i++) {
+      await _nucleus_api.Module.loadModule(path.resolve(jsonConf.modules[i].path));
+    }
+  } else {
+    // Abord if no configuration file is found
+    console.log(`${path.resolve("modules.conf.json")} file was not found. Nucleus loading aborted.`)
+  }
 })();
