@@ -1,27 +1,23 @@
-var stealTools = require("steal-tools");
+const execSync = require("child_process").execSync;
+const fs = require("fs");
 
-var promise = stealTools.build({
-  config: __dirname+"/package.json!npm"
-},{
-  // the following are the default values, so you don't need
-  // to write them.
-  minify: true,
-  debug: true
-});
+const modules = [
+  ["Nucleus.js","nucleus.node.js","node"],
+  ["Nucleus.js","nucleus.web.js","web"],
+  ["modules/logging/front/LoggingConsole.js","logging.web.js","web"],
+  ["modules/logging/front/LoggingConsole.js","logging.node.js","node"]
+];
 
+for(var i = 0; i < modules.length; i++) {
+  const command = `webpack --entry ./out/${modules[i][0]} --output ./dist/${modules[i][1]} --target ${modules[i][2]}`;
+  execSync(command);
+  console.log(command);
+}
 
-stealTools.export({
-  steal: {
-    main: "out/modules/logging/front/Logging.Console"
-  },
-  outputs: {
-    "+commonjs": {
-      dest: __dirname+"/dist/cjs"
-    }
-  }
-},{
-  "commonjs" : {
-    modules: ["Logging.Console"],
-    format: "cjs"
-  }
-})
+fs.copyFileSync("./assets/modules.conf.node.json", "./dist/modules.conf.node.json");
+console.log("Copy ./dist/modules.conf.node.json");
+
+fs.copyFileSync("./assets/modules.conf.web.json", "./dist/modules.conf.web.json");
+console.log("Copy ./dist/modules.conf.web.json");
+
+console.log("Done !");

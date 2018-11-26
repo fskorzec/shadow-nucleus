@@ -58,6 +58,5 @@
   },
   "exclude": [
     "src/shared/__tests__",
-    "src/modules"
   ]
 }

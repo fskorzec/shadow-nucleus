@@ -1,7 +1,7 @@
 import { BaseComponent }    from "./core/BaseComponent" ;
 import { IModuleEntryPoint} from "./core/IModule"       ;
 import { IApi }             from "./core/api/IApi"      ;
-import { isNode }           from "./core/util/Env"      ;
+import * as UtilEnv         from "./core/util/Env"      ;
 
 declare var _nucleus: any;
 
@@ -10,7 +10,8 @@ export function connect(module: any) {
 }
 
 export {
-  BaseComponent,
-  IModuleEntryPoint,
-  IApi
+  BaseComponent     ,
+  IModuleEntryPoint ,
+  IApi              ,
+  UtilEnv
 };

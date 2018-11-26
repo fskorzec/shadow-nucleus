@@ -1,11 +1,11 @@
-import { startNucleus} from "../Index"  ;
+import { startNucleus} from "../Nucleus"  ;
 import { IApi }        from "../Plugin" ;
 import * as path       from "path"      ;
 import * as fs         from "fs"        ;
 
 declare var _nucleus_api: IApi;
 
-(async function start(){
+export async function start(){
   // Start the core api expose it
   await startNucleus(require);
   //Load the nucleus engine
@@ -24,4 +24,4 @@ declare var _nucleus_api: IApi;
     // Abord if no configuration file is found
     console.log(`${path.resolve("modules.conf.json")} file was not found. Nucleus loading aborted.`)
   }
-})();
+}

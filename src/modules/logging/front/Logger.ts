@@ -1,10 +1,9 @@
 import { BaseComponent } from "../../../Plugin";
 import { Acts, Evts } from "../Events";
-import { sendQuery } from "../../../core/BaseComponent";
 
 export class Logger extends BaseComponent {
-  cmpName = "logging.front.logger";
-  cmpId   = "com.shadow-nuclues.core";
+  cmpName = "logging.front.logger"    ;
+  cmpId   = "com.shadow-nuclues.core" ;
 
   static hasBeenInitialized: boolean = false;
   
@@ -56,8 +55,9 @@ export class Logger extends BaseComponent {
     });
   }
 }
+
 export interface ILogger {
-    log(...args: any[]): void;
-    warn(...args: any[]): void;
-    info(...args: any[]): void;
+    log(...args  : any[]): void ;
+    warn(...args : any[]): void ;
+    info(...args : any[]): void ;
 }
