@@ -67,3 +67,4 @@ class BaseComponent {
     }
 }
 exports.BaseComponent = BaseComponent;
+//# sourceMappingURL=BaseComponent.js.map

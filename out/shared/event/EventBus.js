@@ -263,3 +263,4 @@ ${$this._depthLevel > 1 ? "separated by '" + $this._separator + "'" : ""}`;
     }
 }
 exports.EventBus = EventBus;
+//# sourceMappingURL=EventBus.js.map

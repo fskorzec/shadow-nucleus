@@ -15,3 +15,4 @@ function connect(module) {
     _nucleus(module);
 }
 exports.connect = connect;
+//# sourceMappingURL=Plugin.js.map
