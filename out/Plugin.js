@@ -11,6 +11,9 @@ const BaseComponent_1 = require("./core/BaseComponent");
 exports.BaseComponent = BaseComponent_1.BaseComponent;
 const UtilEnv = __importStar(require("./core/util/Env"));
 exports.UtilEnv = UtilEnv;
+const UtilConstant = __importStar(require("./core/util/Constant"));
+exports.UtilConstant = UtilConstant;
+;
 function connect(module) {
     _nucleus(module);
 }
