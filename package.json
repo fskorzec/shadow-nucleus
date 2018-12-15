@@ -2,7 +2,7 @@
   "name": "shadow-nucleus",
   "version": "1.0.0",
   "bin": {
-    "nc-setup": "./dist/Clis.js"
+    "nc-setup": "./dist/Cli.js"
   },
   "main": "./dist/Plugin.js",
   "types": "./dist/Plugin.d.ts",
