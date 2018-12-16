@@ -12,8 +12,8 @@ console.log("Compile project");
 const modules = [
   ["Nucleus.js","nucleus.node.js","node"],
   ["Nucleus.js","nucleus.web.js","web"],
-  ["modules/logging/front/LoggingConsole.js","logging.web.js","web"],
-  ["modules/logging/front/LoggingConsole.js","logging.node.js","node"]
+  ["modules/logging/front/LoggingConsole.js","nc-logging/1.0.0/front/nc-logging.js","web"],
+  ["modules/logging/front/LoggingConsole.js","nc-logging/1.0.0/back/nc-logging.js","node"]
 ];
 
 mkDirSync("./dist");

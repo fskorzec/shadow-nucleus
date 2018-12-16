@@ -1,4 +1,5 @@
 var fs = require("fs");
+var pth = require("path");
 
 function mkDirSync(source) {
   var sourceTab = source.replace(/\\\\/g, "/").split("/");
@@ -16,22 +17,40 @@ function mkDirSync(source) {
   }
 }
 
+function renameSync(source, dest) {
+  fs.renameSync(source, dest);
+}
+
 function copySync(source, target) {
   let path  = `${source}` ;
   let files = []          ;
   let dirs  = []          ;
 
-  fs.existsSync(`${path}`) && fs.readdirSync(path).forEach( item => {
-    if (fs.lstatSync(`${source}/${item}`).isFile()) {
-      files.push(item);
-    } else if (fs.lstatSync(`${source}/${item}`).isDirectory()) {
-      dirs.push(item);
-    }
-  });
+  
+  if (fs.lstatSync(path).isDirectory()) {
+    fs.existsSync(`${path}`) && fs.readdirSync(path).forEach( item => {
+      if (fs.lstatSync(`${source}/${item}`).isFile()) {
+        files.push(item);
+      } else if (fs.lstatSync(`${source}/${item}`).isDirectory()) {
+        dirs.push(item);
+      }
+    });
+  } 
+  else 
+  {
+    files.push(path);
+  }
+  console.log(files, dirs)
   
   files.forEach(file => {
     mkDirSync(target);
-    fs.copyFileSync(`${source}/${file}`, `${target}/${file}`);
+    const isDir = fs.lstatSync(path).isDirectory();
+
+    if (isDir) {
+      fs.copyFileSync(`${source}/${file}`, `${target}/${file}`);
+    } else {
+      fs.copyFileSync(`${file}`, `${target}/${pth.basename(file)}`);
+    }
   });
 
 
@@ -68,5 +87,6 @@ function rmDirSync(source) {
 module.exports = {
   mkDirSync ,
   copySync  , 
-  rmDirSync
+  rmDirSync , 
+  renameSync
 };

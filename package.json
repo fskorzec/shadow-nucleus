@@ -1,20 +1,22 @@
 {
-  "name": "shadow-nucleus",
-  "version": "1.0.0",
+  "name"    : "shadow-nucleus" ,
+  "version" : "1.0.0"          ,
   "bin": {
-    "nc-setup": "./dist/Cli.js"
+    "nc-setup"  : "./dist/Cli.js"           ,
+    "nc-module" : "./dist/CliEntryPoint.js" ,
+    "nc-service": "./dist/CliService.js"
   },
-  "main": "./dist/Plugin.js",
-  "types": "./dist/Plugin.d.ts",
-  "typings": "./dist/Plugin.d.ts",
-  "repository": "https://github.com/fskorzec/shadow-nucleus.git",
-  "author": "Skorzec francois <fskorzec@outlook.com>",
-  "license": "MIT",
-  "dependencies": {},
+  "main"         : "./dist/Plugin.js"                               ,
+  "types"        : "./dist/Plugin.d.ts"                             ,
+  "typings"      : "./dist/Plugin.d.ts"                             ,
+  "repository"   : "https://github.com/fskorzec/shadow-nucleus.git" ,
+  "author"       : "Skorzec francois <fskorzec@outlook.com>"        ,
+  "license"      : "MIT"                                            ,
+  "dependencies" : {}                                               ,
   "devDependencies": {
-    "@types/node": "^10.12.15",
-    "webpack": "^4.26.0",
-    "webpack-cli": "^3.1.2"
+    "@types/node" : "^10.12.15" ,
+    "webpack"     : "^4.26.0"   ,
+    "webpack-cli" : "^3.1.2"
   },
   "scripts": {
     "build": "node scripts/build"
