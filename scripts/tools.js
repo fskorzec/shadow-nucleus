@@ -1,6 +1,10 @@
 var fs = require("fs");
 var pth = require("path");
 
+function execSync(command) {
+  return require("child_process").execSync(command);
+}
+
 function mkDirSync(source) {
   var sourceTab = source.replace(/\\\\/g, "/").split("/");
   sourceTab.reduce( (previous, current) => {
@@ -85,8 +89,9 @@ function rmDirSync(source) {
 }
 
 module.exports = {
-  mkDirSync ,
-  copySync  , 
-  rmDirSync , 
-  renameSync
+  mkDirSync  ,
+  copySync   , 
+  rmDirSync  , 
+  renameSync ,
+  execSync
 };

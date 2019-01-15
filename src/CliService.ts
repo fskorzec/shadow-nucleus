@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 import * as tools from "../scripts/tools";
-import { ADDRGETNETWORKPARAMS } from "dns";
 
 const currentPath = __dirname;
 const cwdPath = process.cwd();
