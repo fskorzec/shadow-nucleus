@@ -4,7 +4,8 @@
   "bin": {
     "nc-setup"  : "./dist/Cli.js"           ,
     "nc-module" : "./dist/CliEntryPoint.js" ,
-    "nc-service": "./dist/CliService.js"
+    "nc-service": "./dist/CliService.js"    ,
+    "nc-build"  : "./dist/CliBuild.js"
   },
   "main"         : "./dist/Plugin.js"                               ,
   "types"        : "./dist/Plugin.d.ts"                             ,
