@@ -11,5 +11,5 @@ const targetPath = params.shift();
 const version    = params.shift();
 const targetMode = params.shift();
 
-console.log(tools.execSync(`tsc ./${modulePath}/${moduleName}.ts ./out/${targetPath}`).toString());
+console.log(tools.execSync(`tsc ./${modulePath}/${moduleName}.ts --outdir ./out/${targetPath} --target es6 --module commonjs`).toString());
 console.log(tools.execSync(`yarn webpack --entry ./out/${targetPath}/${moduleName}.js --output ./dist/${moduleName}/${version}/${targetMode === "web" ? "front" : "back"}/${moduleName}.js --target ${targetMode}`).toString());
