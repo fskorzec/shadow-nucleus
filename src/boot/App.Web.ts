@@ -6,8 +6,10 @@ declare var _nucleus_api: IApi;
 export async function start(){
   // Start the core api expose it
   await startNucleus();
-  //Load the nucleus engine
-  await _nucleus_api.Module.loadModule("nucleus.web.js");
+  try {
+    //Load the nucleus engine
+    await _nucleus_api.Module.loadModule("nucleus.web.js");
+  } catch { /** Module does not exists */}
   
   // Check for the module.conf.json file
   try {

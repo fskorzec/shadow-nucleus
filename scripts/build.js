@@ -12,6 +12,8 @@ console.log("Compile project");
 const modules = [
   ["Nucleus.js","nucleus.node.js","node"],
   ["Nucleus.js","nucleus.web.js","web"],
+  ["BootNode.js","nucleus.bootNode.js","node"],
+  ["BootWeb.js","nucleus.bootWeb.js","web"],
   ["modules/logging/front/LoggingConsole.js","nc-logging/1.0.0/front/nc-logging.js","web"],
   ["modules/logging/front/LoggingConsole.js","nc-logging/1.0.0/back/nc-logging.js","node"]
 ];
@@ -34,7 +36,5 @@ console.log("Copy ./dist/modules.conf.node.json");
 
 fs.copyFileSync("./assets/modules.conf.web.json", "./dist/_packages/modules/conf/modules.conf.web.json");
 console.log("Copy ./dist/modules.conf.web.json");
-
-//rmDirSync("./out");
 
 console.log("Done !");
