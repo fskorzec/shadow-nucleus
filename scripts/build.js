@@ -26,7 +26,7 @@ mkDirSync("./dist/_packages/modules/conf");
 copySync("./out", "./dist");
 
 for(var i = 0; i < modules.length; i++) {
-  const command = `webpack --entry ./out/${modules[i][0]} --output ./dist/_packages/modules/${modules[i][1]} --target ${modules[i][2]}`;
+  const command = `yarn webpack --entry ./out/${modules[i][0]} --output ./dist/_packages/modules/${modules[i][1]} --target ${modules[i][2]}`;
   execSync(command);
   console.log(command);
 }
