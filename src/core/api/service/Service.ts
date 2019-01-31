@@ -49,6 +49,11 @@ export class Service implements IService {
         ...payload, 
         success : true
       });
+
+      this._getService({
+        serviceId   : payload.serviceId,
+        serviceName : payload.serviceName
+      });
     }
   }
 
@@ -92,11 +97,6 @@ export class Service implements IService {
         success : false ,
         reason  : Error(`The service ${payload.serviceId}.${payload.serviceName} was not found`)
       } as RegisterServiceDataType & RegisterStatusType)
-    } else {
-      this._evtBus.emitAsync(Evts.API.SERVICE.SERVICE_RETURNED, {
-        ...this._serviceMap[`${payload.serviceId}.${payload.serviceName}`] , 
-        success : true 
-      } as RegisterServiceDataType & RegisterStatusType);
     }
   }
 
