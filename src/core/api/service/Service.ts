@@ -91,12 +91,11 @@ export class Service implements IService {
 
   //#region Get Service 
   private _getService(payload: ServiceIdentifierType) {
-    if (!this._serviceMap[`${payload.serviceId}.${payload.serviceName}`]) {
+    if (this._serviceMap[`${payload.serviceId}.${payload.serviceName}`]) {
       this._evtBus.emitAsync(Evts.API.SERVICE.SERVICE_RETURNED, {
-        ...payload, 
-        success : false ,
-        reason  : Error(`The service ${payload.serviceId}.${payload.serviceName} was not found`)
-      } as RegisterServiceDataType & RegisterStatusType)
+        ...this._serviceMap[`${payload.serviceId}.${payload.serviceName}`] , 
+        success : true 
+      } as RegisterServiceDataType & RegisterStatusType);
     }
   }
 
