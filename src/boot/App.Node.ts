@@ -16,9 +16,9 @@ export async function start(){
   }
   
   // Check for the module.conf.json file
-  if (fs.existsSync(path.resolve("modules.conf.json"))) {
+  if (fs.existsSync(path.resolve("modules.conf.node.json"))) {
     // Loads the configuration file
-    const jsonConf = JSON.parse(fs.readFileSync(path.resolve("modules.conf.json"), "utf8"));
+    const jsonConf = JSON.parse(fs.readFileSync(path.resolve("modules.conf.node.json"), "utf8"));
     
     // Loads each modules
     for(let i=0; i<jsonConf.modules.length; i++) {
@@ -26,6 +26,6 @@ export async function start(){
     }
   } else {
     // Abord if no configuration file is found
-    console.log(`${path.resolve("modules.conf.json")} file was not found. Nucleus loading aborted.`)
+    console.log(`${path.resolve("modules.conf.node.json")} file was not found. Nucleus loading aborted.`)
   }
 }
