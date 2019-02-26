@@ -17,6 +17,9 @@ export class BaseComponent {
 
   constructor() {}
 
+  protected getService: <T>(serviceName: string, serviceId: string) => Promise<T> = 
+    void 0 as unknown as <T>(serviceName: string, serviceId: string) => Promise<T>;
+
   /**
    * Send a new command
    * @param eventName Full name of the event
