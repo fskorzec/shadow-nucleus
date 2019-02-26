@@ -5,6 +5,7 @@ class BaseComponent {
     constructor() {
         this.cmpId = "";
         this.cmpName = "";
+        this.getService = void 0;
     }
     /**
      * Send a new command
