@@ -5,7 +5,7 @@ const fs = require("fs");
 
 rmDirSync("./dist");
 
-console.log(`tsc -p ${path.resolve(".")}`);
+console.log(`tsc --experimentalDecorators -p ${path.resolve(".")}`);
 console.log(execSync(`tsc`).toString());
 console.log("Compile project");
 

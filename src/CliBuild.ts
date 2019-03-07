@@ -25,7 +25,7 @@ try {
 
   const targetFullPath = `${targetPath}${targetPathSuffix ? "/" + targetPathSuffix : ""}`
   
-  console.log(tools.execSync(`tsc ${mdPath} --outdir ./out/${targetPath} --target es6 --module commonjs ${jsx}`).toString());
+  console.log(tools.execSync(`tsc --experimentalDecorators ${mdPath} --outdir ./out/${targetPath} --target es6 --module commonjs ${jsx}`).toString());
   console.log(tools.execSync(`yarn webpack --entry ./out/${targetFullPath}/${moduleName}.js --output ./dist/${moduleName}/${version}/${targetMode === "web" ? "front" : "back"}/${moduleName}.js --target ${targetMode}`).toString());
 } catch(ex) {
   console.log(ex);

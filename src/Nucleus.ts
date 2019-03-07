@@ -23,9 +23,9 @@ export async function startNucleus(parentRequire?: any) {
   }
   
   globalSystem["_nucleus_api"] = api;
-  globalSystem["_nucleus"] = (module: unknown) => {
+  globalSystem["_nucleus"] = async (module: unknown) => {
     const mod = module as any;
-    (new mod() as IModuleEntryPoint).entryPoint(api);
+    await (new mod() as IModuleEntryPoint).entryPoint(api);
     evtBus.emit("API.MODULE.MODULE_LOADED", {mod});
   }
 

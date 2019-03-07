@@ -135,11 +135,22 @@ export class Service implements IService {
    * Activate a service instance from its definition class
    * @param classDefinition The class definition to instanciate
    */
-  activateService<T>(classDefinition: any): T {
-    const res = new classDefinition() as unknown as IPrivateClass;
-    res._evtBus = this._evtBus;
-    res.getService = async (serviceName: string, serviceId: string) => await this.getService(serviceName, serviceId);
-    res.initialize();
+  async activateService<T>(classDefinition: { new(...params: any[]): any }): Promise<T> {
+    let services = {} as {[key: string]: any};
+
+    if ("__nc__Services" in classDefinition.prototype) {
+      for(let i in classDefinition.prototype.__nc__Services) {
+        const service = await this.getService(...classDefinition.prototype.__nc__Services[i] as [string, string]);
+        services[i] = service;
+      }
+    }
+    
+    const res = new classDefinition(services) as unknown as IPrivateClass;
+    if (res.initialize) {
+      res._evtBus = this._evtBus;
+      res.getService = async (serviceName: string, serviceId: string) => await this.getService(serviceName, serviceId);
+      res.initialize();
+    }
 
     return res as unknown as T;
   }

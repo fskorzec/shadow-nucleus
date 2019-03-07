@@ -3,12 +3,13 @@ import {
   IModuleEntryPoint,
   UtilConstant,
   UtilEnv,
-  connect
+  connect,
+  Ioc
 } from "shadow-nucleus";
 
 /**
  * If you want to use some constant as enum for your own events, you can declare them as following
- * The constantTree function will fill every string value with the recursiv path
+ * The constantTree function will fill every string value with the full path
  const constants = {
    SOME_KEY: "",
    SOME_OTHER_KEY: {

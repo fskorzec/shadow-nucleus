@@ -1,5 +1,8 @@
 import { BaseComponent } from "../../../Plugin";
 import { Acts, Evts } from "../Events";
+import { Ioc } from "../../../core/util/Ioc";
+
+declare var Services: any;
 
 export class Logger extends BaseComponent {
   cmpName = "logging.front.logger"    ;
