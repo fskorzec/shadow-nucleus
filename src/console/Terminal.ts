@@ -71,7 +71,7 @@ export class Terminal extends BaseTerminal implements IColor16Terminal<Terminal>
   constructor() {
     super();
 
-        /**
+    /**
      * Mixin for foreground and background colors
      */
     for(let i in Color16) {

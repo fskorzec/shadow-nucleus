@@ -118,6 +118,41 @@ export abstract class BaseTerminal extends EventEmitter {
     return this;
   }
 
+  toptBy(by: number) {
+    this._buffer += `${"\x1B["}${by}${"A"}`;
+    return this;
+  }
+
+  bottomBy(by: number) {
+    this._buffer += `${"\x1B["}${by}${"B"}`;
+    return this;
+  }
+
+  rightBy(by: number) {
+    this._buffer += `${"\x1B["}${by}${"C"}`;
+    return this;
+  }
+
+  leftBy(by: number) {
+    this._buffer += `${"\x1B["}${by}${"D"}`;
+    return this;
+  }
+
+  saveCursorPosition() {
+    this._buffer += `${"\x1B["}${"s"}`;
+    return this;
+  }
+
+  restoreCursorPosition() {
+    this._buffer += `${"\x1B["}${"u"}`;
+    return this;
+  }
+
+  clearLine() {
+    this._buffer += `${"\x1B["}${"k"}`;
+    return this;
+  }
+
   row(row: number): this {
     this._buffer += `${EscOpeningChar}${row}${EscPositionClosingChar}`;
     return this;
@@ -141,6 +176,11 @@ export abstract class BaseTerminal extends EventEmitter {
       return this;
     }
     this._buffer += object.toString();
+    return this;
+  }
+
+  newLine(): this {
+    this._buffer += "\n";
     return this;
   }
 
