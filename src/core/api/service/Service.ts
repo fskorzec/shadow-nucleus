@@ -9,6 +9,8 @@ import {
   ServiceIdentifierType
 } from "./Types";
 import { IService } from "./IService";
+import { stringify } from "querystring";
+import { BaseComponent } from "../../../Plugin";
 
 /**
  * @class Service
@@ -135,18 +137,18 @@ export class Service implements IService {
    * Activate a service instance from its definition class
    * @param classDefinition The class definition to instanciate
    */
-  async activateService<T>(classDefinition: { new(...params: any[]): any }): Promise<T> {
-    let services = {} as {[key: string]: any};
+  async resolve<T>(classDefinition: { new(...params: any[]): any }): Promise<T> {
+    let services = [] as Array<Object>;
 
     if ("__nc__Services" in classDefinition.prototype) {
-      for(let i in classDefinition.prototype.__nc__Services) {
-        const service = await this.getService(...classDefinition.prototype.__nc__Services[i] as [string, string]);
-        services[i] = service;
+      for(let def of classDefinition.prototype.__nc__Services as Array<[string, string]>) {
+        const service = await this.getService(...def);
+        services.push(service);
       }
     }
     
-    const res = new classDefinition(services) as unknown as IPrivateClass;
-    if (res.initialize) {
+    const res = new classDefinition(...services) as unknown as IPrivateClass;
+    if ((res as unknown as BaseComponent)["_NC_TYPE_"]) {
       res._evtBus = this._evtBus;
       res.getService = async (serviceName: string, serviceId: string) => await this.getService(serviceName, serviceId);
       res.initialize();

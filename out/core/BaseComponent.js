@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Error_1 = require("./constant/Error");
 class BaseComponent {
     constructor() {
+        this._NC_TYPE_ = "BaseComponent";
         this.cmpId = "";
         this.cmpName = "";
         this.getService = void 0;

@@ -10,6 +10,8 @@ export type sendQuery<T> = {
 }
 
 export class BaseComponent {
+  private _NC_TYPE_ = "BaseComponent";
+
   private _evtBus: IEventBus | undefined;
 
   cmpId   : string = "";
