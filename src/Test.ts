@@ -3,4 +3,4 @@ import { IColor16Terminal } from "./console/core/Constant";
 
 const term = new Terminal();
 
-term.cyan("lkjlkj").write();
+term.cyan("Hello ").yellow("Kitty ").green("!!").write();
