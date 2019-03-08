@@ -35,7 +35,6 @@ export class Terminal extends BaseTerminal implements IColor16Terminal<Terminal>
   lightBlue      : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
   lightMagenta   : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
   lightCyan      : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
-
   white          : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
   bgRed          : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
   bgBlack        : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
@@ -54,14 +53,6 @@ export class Terminal extends BaseTerminal implements IColor16Terminal<Terminal>
   bgLightCyan    : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
   bgWhite        : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
 
-  bold           : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
-  dim            : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
-  italic         : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
-  underline      : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
-  inverse        : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
-  hidden         : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
-  strikethrough  : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
-
   drawColoredText(text: string, foreColor?: number, backColor?: number): this {
     foreColor && this._color(foreColor);
     backColor && this._color(backColor);
@@ -79,36 +70,36 @@ export class Terminal extends BaseTerminal implements IColor16Terminal<Terminal>
 
   constructor() {
     super();
-  }
-}
 
-/**
- * Mixin for foreground and background colors
- */
-for(let i in Color16) {
-  (Terminal as any).prototype[i] = function(text: string = "") {
-    return text ===  "" ? this : (this as Terminal)
-      ["_color"](ForeColor[Color16[i]])
-      .text(text)
-      ["_color"](endingForeColor);
-  }
-  let j = i[0].toUpperCase() + i.substr(1);
-  (Terminal as any).prototype[`bg${j}`] = function(text: string = "") {
-    return  text ===  "" ? this : (this as Terminal)
-      ["_color"](BackColor[Color16[i]])
-      .text(text)
-      ["_color"](endingBackColor);
-  }
-}
+        /**
+     * Mixin for foreground and background colors
+     */
+    for(let i in Color16) {
+      (this as any)[i] = function(text: string = "") {
+        return text ===  "" ? this : (this as Terminal)
+          ["_color"](ForeColor[Color16[i]])
+          .text(text)
+          ["_color"](endingForeColor);
+      }
+      let j = i[0].toUpperCase() + i.substr(1);
+      (this as any)[`bg${j}`] = function(text: string = "") {
+        return  text ===  "" ? this : (this as Terminal)
+          ["_color"](BackColor[Color16[i]])
+          .text(text)
+          ["_color"](endingBackColor);
+      }
+    }
 
-/**
- * Mixin for styles
- */
-for(let i in Styles) {
-  (Terminal as any).prototype[i] = function(text: string = "") {
-    return  text ===  "" ? this : (this as Terminal)
-      ["_color"](Styles[i][0])
-      .text(text)
-      ["_color"](Styles[i][1]);
+    /**
+     * Mixin for styles
+     */
+    for(let i in Styles) {
+      (this as any)[i] = function(text: string = "") {
+        return  text ===  "" ? this : (this as Terminal)
+          ["_color"](Styles[i][0])
+          .text(text)
+          ["_color"](Styles[i][1]);
+      }
+    }
   }
 }
