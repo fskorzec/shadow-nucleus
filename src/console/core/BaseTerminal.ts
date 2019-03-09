@@ -202,7 +202,7 @@ export abstract class BaseTerminal extends EventEmitter {
       this.text(object);
     }
 
-    console.log(this._buffer);
+    process.stdout.write(this._buffer);
 
     this._buffer = "";
     return this;
