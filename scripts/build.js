@@ -15,7 +15,8 @@ const modules = [
   ["BootNode.js","nucleus.bootNode.js","node"],
   ["BootWeb.js","nucleus.bootWeb.js","web"],
   ["modules/logging/front/LoggingConsole.js","nc-logging/1.0.0/front/nc-logging.js","web"],
-  ["modules/logging/front/LoggingConsole.js","nc-logging/1.0.0/back/nc-logging.js","node"]
+  ["modules/logging/front/LoggingConsole.js","nc-logging/1.0.0/back/nc-logging.js","node"],
+  ["modules/cli/back/Cli.js","nc-cli/1.0.0/back/nc-cli.js","node"]
 ];
 
 mkDirSync("./dist");
