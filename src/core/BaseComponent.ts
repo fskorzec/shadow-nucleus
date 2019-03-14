@@ -33,6 +33,12 @@ export class BaseComponent {
     }
   }
 
+  protected _sendSync<T>(eventName: string, query: sendQuery<T>) : void {
+    if (this._evtBus) {
+      this._evtBus.emit(eventName, query);
+    }
+  }
+
   /**
    * Send a new command and process the result
    * @param eventName Full name of the event

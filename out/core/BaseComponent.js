@@ -18,6 +18,11 @@ class BaseComponent {
             this._evtBus.emitAsync(eventName, query);
         }
     }
+    _sendSync(eventName, query) {
+        if (this._evtBus) {
+            this._evtBus.emit(eventName, query);
+        }
+    }
     /**
      * Send a new command and process the result
      * @param eventName Full name of the event
