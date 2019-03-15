@@ -1,0 +1,1 @@
+{"version":3,"file":"LoggingConsole.d.ts","sourceRoot":"","sources":["../../../../src/modules/logging/front/LoggingConsole.ts"],"names":[],"mappings":"AAEA,OAAO,EACL,iBAAiB,EACjB,IAAI,EAEL,MAAM,iBAAiB,CAAC;AAEzB,MAAM,CAAC,OAAO,OAAO,aAAc,YAAW,iBAAiB;IACvD,UAAU,CAAC,GAAG,EAAE,IAAI,GAAG,OAAO,CAAC,IAAI,CAAC;CAO3C"}

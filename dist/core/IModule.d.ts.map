@@ -1,0 +1,1 @@
+{"version":3,"file":"IModule.d.ts","sourceRoot":"","sources":["../../src/core/IModule.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,IAAI,EAAE,MAAM,YAAY,CAAC;AAElC,MAAM,WAAW,iBAAiB;IAChC,UAAU,CAAC,GAAG,EAAG,IAAI,GAAG,OAAO,CAAC,IAAI,CAAC,CAAC;CACvC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"Args.d.ts","sourceRoot":"","sources":["../../src/console/Args.ts"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;;GAgBG;AAEH;;;GAGG;AACH,oBAAY,WAAW,GAAG;IACtB,OAAO,EAAE,MAAM,CAAC;IAChB,OAAO,EAAE,MAAM,CAAC;IAChB,UAAU,EAAE;QACR,CAAC,IAAI,EAAE,MAAM,GAAG,MAAM,CAAC;KAC1B,CAAA;CACJ,CAAC;AAEF;;GAEG;AACH,wBAAgB,mBAAmB,CAAC,GAAG,IAAI,EAAE,MAAM,EAAE,GAAG,WAAW,CAiBlE"}
