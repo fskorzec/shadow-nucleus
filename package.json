@@ -23,6 +23,7 @@
   },
   "scripts": {
     "build": "node scripts/build",
-    "ins": "cls && yarn build"
+    "ins": "cls && yarn build",
+    "cli":"tsc && yarn webpack --entry ./out/modules/cli/back/Cli.js --output ./dist/_packages/modules/nc-cli/1.0.0/back/nc-cli.js --target node"
   }
 }

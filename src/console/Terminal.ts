@@ -1,5 +1,5 @@
 import { BaseTerminal}           from "./core/BaseTerminal"  ;
-import { IColorTerminalDelegate, Styles} from "./core/Constant" ;
+import { IColorTerminalDelegate, Styles, EStyle, Color16TypeString} from "./core/Constant" ;
 import { 
   BgColor16Type    , 
   Color16Type      , 
@@ -53,10 +53,12 @@ export class Terminal extends BaseTerminal implements IColor16Terminal<Terminal>
   bgLightCyan    : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
   bgWhite        : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
 
-  drawColoredText(text: string, foreColor?: number, backColor?: number): this {
+  drawColoredText(text: string, foreColor?: number, backColor?: number, style?: EStyle): this {
     foreColor && this._color(foreColor);
     backColor && this._color(backColor);
+    style     && this._color(Styles[style][0]);
     this.text(text);
+    style     && this._color(Styles[style][1]);
     backColor && this._color(endingBackColor);
     foreColor && this._color(endingForeColor);
     return this;
@@ -74,17 +76,17 @@ export class Terminal extends BaseTerminal implements IColor16Terminal<Terminal>
     /**
      * Mixin for foreground and background colors
      */
-    for(let i in Color16) {
+    for(let i in (Color16 as Color16Type)) {
       (this as any)[i] = function(text: string = "") {
         return text ===  "" ? this : (this as Terminal)
-          ["_color"](ForeColor[Color16[i]])
+          ["_color"](ForeColor[Color16[i as Color16TypeString] as number])
           .text(text)
           ["_color"](endingForeColor);
       }
       let j = i[0].toUpperCase() + i.substr(1);
       (this as any)[`bg${j}`] = function(text: string = "") {
         return  text ===  "" ? this : (this as Terminal)
-          ["_color"](BackColor[Color16[i]])
+          ["_color"](BackColor[Color16[i as Color16TypeString]])
           .text(text)
           ["_color"](endingBackColor);
       }

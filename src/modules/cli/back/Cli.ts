@@ -10,6 +10,7 @@ import {
   BaseComponent
 } from "../../../Plugin";
 import { Terminal } from "../../../console/Terminal";
+import { Color16, EStyle, ForeColor, EscColorClosingChar } from "../../../console/core/Constant";
 
 const term = new Terminal();
 
@@ -70,7 +71,14 @@ function processParams(params: CommandArgs) {
           } else {
             const cmd = params.command;
             if (params.parameters && "help" in params.parameters) {
-              // render command
+              if (pck.commands && pck.commands[cmd]) {
+                renderCommand(pck, pck.commands[cmd]);
+              } else {
+                term
+                .red(`Commande <${cmd}> not found in package <${pck.name}>`)
+                .newLine()
+                .write();
+              }
             } else {
               if ( _packages[params.package].runner) {
                 _packages[params.package].runner(params);
@@ -140,32 +148,41 @@ function processParams(params: CommandArgs) {
   }
 }
 
-function renderCommand(command: Command) {
-  term.text("Command : ").red(command.name)
+function renderCommand(pkg: Package, command: Command) {
+  term.lightCyan(" Command : ").lightGreen(command.name)
   .newLine()
-  .text(command.description)
-  .newLine()
-
-  term
-  .drawLine("-")
-  .newLine()
-  .text("Usages ")
-  .newLine()
-
-  for(let i of (command as any).usages) {
-    term.text(i).newLine().write();
-  }
-
-
-  term
+  .text(" ")
+  .darkGray(command.description)
   .newLine()
   .drawLine("-")
-  .newLine()
-  .text("Parameters")
   .newLine()
   .write();
 
+  term
+  .newLine()
+  .text(" ")
+  .drawColoredText("Usage :", ForeColor[Color16.lightGray], void 0, EStyle.underline)
+  .newLine()
+  .newLine()
+  .text(" ")
+  .text(AppDoc.appName).text(" ").lightBlue(pkg.name).text(" ").lightBlue(command.name)
+  .write()
+
+  if (command.parameters) {
+    term.lightGray(` [<`).lightBlue(`parameter`).lightGray(`> [...<`).lightBlue(`parameter`).lightGray(`>]]`)
+    .newLine()
+    .write();
+  }
   
+  if (command.parameters) {
+    term
+    .newLine()
+    .drawLine("-")
+    .newLine()
+    .lightCyan(" Parameters")
+    .newLine()
+    .write();
+  }
 
   let maxL = 0;
 
@@ -179,20 +196,31 @@ function renderCommand(command: Command) {
     term
     .drawLine("-")
     .newLine()
+    .newLine()
+    .text(" ")
     .yellow(i)
     .rightBy(maxL - i.length +1) 
     .text(" - ")
-    .text(command.parameters[i].description)
+    .darkGray(command.parameters[i].description)
     .newLine()
     .write();
 
-    term
-    .newLine()
-    .text("Exemples ")
-    .newLine()
-  
-    for(let j of (command as any).parameters[i].exemples) {
-      term.text(j).newLine().write();
+    if (command.parameters[i].exemples) {
+      term
+      .newLine()
+      .text(" ")
+      .drawColoredText("Examples :", void 0, void 0, EStyle.underline)
+      .newLine()
+      .newLine()
+      .write()
+      
+      for(let j of (command as any).parameters[i].exemples) {
+        term.lightGray(` ${AppDoc.appName} `).lightBlue(`${pkg.name}`).lightGray(` `).lightBlue(`${command.name}`).lightGray(` `)
+        .yellow(`${command.parameters[i].name}`).lightGray("=")
+        .drawColoredText(j, ForeColor[Color16.lightCyan], void 0, EStyle.bold)
+        .newLine()
+        .write();
+      }
     }
   }
 
@@ -201,7 +229,7 @@ function renderCommand(command: Command) {
 
 function renderPackageList() {
   term.write();
-  term.text("List of all packages currently installed")
+  term.darkGray(" List of all packages currently installed")
   .newLine()
   .drawLine("-")
   .newLine()
@@ -216,10 +244,11 @@ function renderPackageList() {
 
   for(let i in _packages) {
     term
+    .text(" ")
     .yellow(i)
     .rightBy(maxL - i.length +1) 
     .text(" - ")
-    .text(_packages[i].doc.shortDescription)
+    .darkGray(_packages[i].doc.shortDescription)
     .newLine()
     .write();
   }
@@ -228,16 +257,21 @@ function renderPackageList() {
 
 function renderHeader() {
   term
-  .text("Application ")
-  .red(AppDoc.name)
-  .text(" version ")
-  .yellow(AppDoc.version)
   .newLine()
+  .lightCyan(`  _   _               _                    `)       .newLine()
+  .lightCyan(` | \\ | |             | |                   `)      .newLine()
+  .lightCyan(` |  \\| | _   _   ___ | |  ___  _   _  ___  `)      .newLine()
+  .lightCyan(` | . ' || | | | / __|| | / _ \\| | | |/ __| `)      .newLine()
+  .lightCyan(` | |\\  || |_| || (__ | ||  __/| |_| |\\__ \\ `)    .newLine()
+  .lightCyan(` \\_| \\_/ \\__,_| \\___||_| \\___| \\__,_||___/ `) .newLine()
+  .lightMagenta(` Version ${AppDoc.version}`).newLine()
   .newLine()
-  .green(AppDoc.shortDescription)
+  .green(" " + AppDoc.shortDescription)
   .newLine()
   .drawLine("-")
-  .newLine();
+  .newLine()
+  .write();
+
   return term;
 }
 
@@ -283,9 +317,10 @@ function drawLineDL(file: string) {
 }
 
 function renderPackage(pck: Package) {
-  term.text("Package : ").yellow(pck.name)
+  term.lightCyan(" Package : ").lightGreen(pck.name)
   .newLine()
-  .text(pck.description)
+  .text(" ")
+  .darkGray(pck.description)
   .newLine()
   .drawLine("-")
   .newLine()
@@ -299,12 +334,23 @@ function renderPackage(pck: Package) {
     }
   }
 
+  if (maxL > 0) {
+    term
+    .newLine()
+    .text(" ")
+    .drawColoredText("List of commands :", ForeColor[Color16.lightGray], void 0, EStyle.underline)
+    .newLine()
+    .newLine()
+    .write();
+  }
+
   for(let i in pck.commands) {
     term
+    .text(" ")
     .yellow(i)
     .rightBy(maxL - i.length +1) 
     .text(" - ")
-    .text(pck.commands[i].shortDescription)
+    .darkGray(pck.commands[i].shortDescription)
     .newLine()
     .write();
   }
@@ -313,11 +359,22 @@ function renderPackage(pck: Package) {
   .newLine()
   .write();
 
+  term
+  .text(" ")
+  .drawColoredText("Usages :", ForeColor[Color16.lightGray], void 0, EStyle.underline)
+  .newLine()
+  .newLine()
+  .text(` ${AppDoc.appName} `).lightBlue(`${pck.name}`).lightGray(` <`).lightBlue(`command`).lightGray(`> [<`).lightBlue(`parameter`).lightGray(`> [...<`).lightBlue(`parameter`).lightGray(`>]]`)
+  .newLine()
+  .text(` ${AppDoc.appName} `).lightBlue(`${pck.name}`).lightGray(` <`).lightBlue(`command`).lightGray(`> `).lightBlue(`help`).lightGray(` to get more help`)
+  .newLine()
+  .write()
+
   if (pck.exemples) {
     term
     .drawLine("-")
     .newLine()
-    .text("Examples :")
+    .text(" Examples :")
     .drawLine("-")
     .newLine()
     .write();
@@ -325,20 +382,20 @@ function renderPackage(pck: Package) {
     for(let i of pck.exemples) {
       term.yellow(i).newLine().write();
     }
-
   }
 }
 
 function renderGlobalinformatiom() {
-    term.darkGray(`Global usage : `)
-    .lightGray(`${AppDoc.appName} <package> <command> [<argument> | <argument=value> [...]]`)
-    .newLine()
-    .newLine()
-    .text(`For more information you can type :
-  ${AppDoc.appName} <package> help to get package help
-  ${AppDoc.appName} <package> <command> help to get command help
-  ${AppDoc.appName} package list to get all package names
-  `)
+  term.darkGray(` Global usage : `)
+  .lightGray(` ${AppDoc.appName} <`).lightBlue(`package`).lightGray(`> <`).lightBlue(`command`).lightGray(`> [<`).lightBlue(`argument`).lightGray(`> | <`).lightBlue(`argument`).lightGray(`=`).lightBlue(`value`).lightGray(`> [...]]`)
+  .newLine()
+  .newLine()
+  .darkGray(` For more information you can type :`)
+  .newLine()
+  .newLine()
+  .lightGray(` ${AppDoc.appName} <`).lightBlue(`package`).lightGray(`> `).lightBlue(`help`).lightGray(` to get package help`).newLine()
+  .lightGray(` ${AppDoc.appName} <`).lightBlue(`package`).lightGray(`> <`).lightBlue(`command`).lightGray(`> `).lightBlue(`help`).lightGray(` to get command help`).newLine()
+  .lightGray(` ${AppDoc.appName} `).lightBlue(`package`).lightGray(` `).lightBlue(`list`).lightGray(` to get all package names`)
   .newLine()
   .write();
 }

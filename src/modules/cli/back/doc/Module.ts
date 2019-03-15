@@ -3,19 +3,72 @@ import { Package, App } from "../../../../console/TPackages";
 export const module = {
   name             : "module"                      ,
   shortDescription : "All modules related actions" ,
+  description      : "Create / Install / Remove and manage modules." ,
   commands: {
     build: {
       name             : "build"          ,
       shortDescription : "Build a module" ,
+      description:"Build a module and all the services",
       parameters:{
-        moduleName: {
-          name     : "moduleName" ,
-          required : true
+        mod: {
+          name     : "mod" ,
+          type     : "string",
+          required : true,
+          description:"The module's name",
+          exemples: [
+            "myTargetModule"
+          ]
+        },
+        target: {
+          name     : "target" ,
+          type     : "string",
+          required : true,
+          description:"the target, should be <back> or <front>",
+          exemples: [
+            "back",
+            "front"
+          ]
+        },
+        tsc: {
+          name     : "tsc" ,
+          type     : "string",
+          required : true,
+          description:"The path to the tsconfig file to use instead of default parameters",
+          exemples: [
+            "../",
+          ]
+        },
+        wp: {
+          name     : "wp" ,
+          type     : "string",
+          required : true,
+          description:"The path to the webpack config file to use instead of default parameters",
+          exemples: [
+            "../"
+          ]
+        }
+      }
+    },
+    add: {
+      name:"add",
+      shortDescription:"Create a new module",
+      description: "Create a new module with all necessary code templates",
+      parameters: {
+        dest: {
+          name        : "dest"                                                                        ,
+          description : "Destination folder to create files in. By default, '.' is the target folder" ,
+          required    : false                                                                         ,
+          type        : "string",
+          exemples : [
+            ".",
+            "./destinationFolder"
+          ]
         }
       }
     },
     get: {
       name:"get",
+      shortDescription : "retreive one or more module from a repository or cache" ,
       description:"Retreive one or more modules from a repository.",
       usages:[
         `nc module get list=com.nucleus-websocket,com.nucleus-upload`,
@@ -28,8 +81,8 @@ export const module = {
           type        : "String"                                                            ,
           required    : false                                                               ,
           exemples:[
-            `nc module get list=com.nucleus-websocket,com.nucleus-upload`,
-            `nc module get list=com.nucleus-websocket`
+            `com.nucleus-websocket,com.nucleus-upload`,
+            `com.nucleus-websocket`
           ]
         },
         catalog: {
@@ -38,7 +91,7 @@ export const module = {
           type        : "String"                                                    ,
           required    : false                                                       ,
           exemples:[
-            `nc module get catalog=create-react-app`,
+            `create-react-app`,
           ]
         }
       }

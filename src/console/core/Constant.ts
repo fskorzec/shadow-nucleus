@@ -32,6 +32,16 @@ export const Styles = {
   strikethrough : [9 , 29]
 } as {[index: string]: [number, number]}
 
+export enum EStyle {
+  bold      = "bold"      ,
+  dim       = "dim"       ,
+  italic    = "italic"    ,
+  underline = "underline" ,
+  inverse   = "inverse"   ,
+  hidden    = "hidden"    ,
+  strikethrough = "strikethrough"
+}
+
 export const ForeColor = [
    31 ,
    30 ,
@@ -110,44 +120,48 @@ export interface IColor16Terminal<T> {
 }
 
 export type Color16Type = {
-  red          : string ,
-  black        : string ,
-  green        : string ,
-  yellow       : string ,
-  blue         : string ,
-  magenta      : string ,
-  cyan         : string ,
-  lightGray    : string ,
-  darkGray     : string ,
-  lightRed     : string ,
-  lightGreen   : string ,
-  lightYellow  : string ,
-  lightBlue    : string ,
-  lightMagenta : string ,
-  lightCyan    : string ,
-  white        : string 
+  [K in Color16TypeString]: number;
 }
 
 export type BgColor16Type = {
-  bgRed          : string ,
-  bgBlack        : string ,
-  bgGreen        : string ,
-  bgYellow       : string ,
-  bgBlue         : string ,
-  bgMagenta      : string ,
-  bgCyan         : string ,
-  bgLightGray    : string ,
-  bgDarkGray     : string ,
-  bgLightRed     : string ,
-  bgLightGreen   : string ,
-  bgLightYellow  : string ,
-  bgLightBlue    : string ,
-  bgLightMagenta : string ,
-  bgLightCyan    : string ,
-  bgWhite        : string 
+ [k in BgColor16TypeString]: number;
 }
 
-export const Color16 = {
+export type Color16TypeString = "red" 
+| "black"
+| "green"
+| "yellow"
+| "blue"
+| "magenta"
+| "cyan"
+| "lightGray"
+| "darkGray"
+| "lightRed"
+| "lightGreen"
+| "lightYellow"
+| "lightBlue"
+| "lightMagenta"
+| "lightCyan"
+| "white";
+
+export type BgColor16TypeString = "bgRed" 
+| "bgBlack"
+| "bgGreen"
+| "bgYellow"
+| "bgBlue"
+| "bgMagenta"
+| "bgCyan"
+| "bgLightGray"
+| "bgDarkGray"
+| "bgLightRed"
+| "bgLightGreen"
+| "bgLightYellow"
+| "bgLightBlue"
+| "bgLightMagenta"
+| "bgLightCyan"
+| "bgWhite";
+
+export const Color16: Color16Type = {
   red          : 0,
   black        : 1,
   green        : 2,
@@ -164,5 +178,5 @@ export const Color16 = {
   lightMagenta : 13,
   lightCyan    : 14,
   white        : 15
-} as {[index: string] : number};
+}
 
