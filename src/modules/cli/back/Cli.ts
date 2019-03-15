@@ -36,7 +36,7 @@ export default class Cli implements IModuleEntryPoint {
       sender: cmp.identity,
       payload: {
         doc: module,
-        runner: () => void 0
+        runner: void 0 as unknown as () => void
       }
     });
 
@@ -75,15 +75,24 @@ function processParams(params: CommandArgs) {
                 renderCommand(pck, pck.commands[cmd]);
               } else {
                 term
-                .red(`Commande <${cmd}> not found in package <${pck.name}>`)
+                .red(`Command <${cmd}> not found in package <${pck.name}>`)
                 .newLine()
                 .write();
               }
             } else {
-              if ( _packages[params.package].runner) {
-                _packages[params.package].runner(params);
+              if (pck.commands && pck.commands[cmd]) {
+                if (_packages[params.package].runner && typeof _packages[params.package].runner === "function") {
+                  _packages[params.package].runner(params);
+                } else {
+                  term.red(`No runner found to execute the following configuration ${JSON.stringify(params, null, 2)}`).newLine().write();
+                }
               } else {
-                term.red(`No runner found to execute the following ${JSON.stringify(params, null, 2)}`)
+                term
+                .red(`Command <${cmd}> not found in package <${pck.name}>`)
+                .newLine()
+                .newLine()
+                .write();
+                renderGlobalinformatiom();
               }
             }
           }
