@@ -31,6 +31,16 @@ exports.Styles = {
     hidden: [8, 28],
     strikethrough: [9, 29]
 };
+var EStyle;
+(function (EStyle) {
+    EStyle["bold"] = "bold";
+    EStyle["dim"] = "dim";
+    EStyle["italic"] = "italic";
+    EStyle["underline"] = "underline";
+    EStyle["inverse"] = "inverse";
+    EStyle["hidden"] = "hidden";
+    EStyle["strikethrough"] = "strikethrough";
+})(EStyle = exports.EStyle || (exports.EStyle = {}));
 exports.ForeColor = [
     31,
     30,

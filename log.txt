@@ -1,0 +1,938 @@
+registering module
+registering package
+registering tsc
+
+[96m  _   _               _                    [39m
+[96m | \ | |             | |                   [39m
+[96m |  \| | _   _   ___ | |  ___  _   _  ___  [39m
+[96m | . ' || | | | / __|| | / _ \| | | |/ __| [39m
+[96m | |\  || |_| || (__ | ||  __/| |_| |\__ \ [39m
+[96m \_| \_/ \__,_| \___||_| \___| \__,_||___/ [39m
+[95m Version 1.0.0[39m
+
+[32m Plugin based architecture for frontend and backend[39m
+
+Trying to compile ./src/nc.ts
+Cannot find global type 'Array'.
+Cannot find global type 'Boolean'.
+Cannot find global type 'Function'.
+Cannot find global type 'IArguments'.
+Cannot find global type 'Number'.
+Cannot find global type 'Object'.
+Cannot find global type 'Promise'.
+Cannot find global type 'RegExp'.
+File '/es2015.ts' not found.
+Z:/shadow-nucleus/node_modules/@types/anymatch/index.d.ts (14,33): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (151,37): Cannot find name 'Object'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (151,62): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (214,41): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (215,54): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (222,31): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (223,42): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (272,15): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (282,26): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (287,25): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (288,26): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (289,24): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (331,38): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (332,42): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (366,16): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (375,22): Cannot find name 'ArrayBuffer'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (399,23): Cannot find name 'ArrayBuffer'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (405,16): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (437,53): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (437,64): Cannot find name 'ArrayBuffer'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (449,18): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (453,19): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (453,37): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (531,24): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (605,44): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (606,47): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (612,23): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (632,45): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (633,52): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (634,18): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (635,34): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (636,31): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (637,50): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (645,17): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (710,47): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (712,62): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (718,73): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (733,56): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (734,47): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (735,26): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (747,47): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (765,68): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (778,27): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (818,28): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (867,50): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (869,65): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (944,23): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (945,29): Cannot find name 'ArrayBuffer'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (946,25): Cannot find name 'Boolean'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (948,26): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (949,22): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (950,23): 'Error' only refers to a type, but is being used as a value here.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (951,27): Cannot find name 'EvalError'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (952,30): Cannot find name 'Float32Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (953,30): Cannot find name 'Float64Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (954,26): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (956,26): Cannot find name 'Infinity'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (957,28): Cannot find name 'Int16Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (958,28): Cannot find name 'Int32Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (959,27): Cannot find name 'Int8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (960,22): Cannot find name 'Intl'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (961,22): Cannot find name 'JSON'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (963,22): Cannot find name 'Math'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (964,21): Cannot find name 'NaN'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (965,24): Cannot find name 'Number'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (966,24): Cannot find name 'Object'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (967,18): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (968,28): Cannot find name 'RangeError'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (969,32): Cannot find name 'ReferenceError'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (970,24): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (972,24): 'String' only refers to a type, but is being used as a value here.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (973,17): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (974,29): Cannot find name 'SyntaxError'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (975,27): Cannot find name 'TypeError'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (976,26): Cannot find name 'URIError'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (977,29): Cannot find name 'Uint16Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (978,29): Cannot find name 'Uint32Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (979,28): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (980,28): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (987,27): Cannot find name 'decodeURI'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (988,36): Cannot find name 'decodeURIComponent'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (989,27): Cannot find name 'encodeURI'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (990,36): Cannot find name 'encodeURIComponent'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (992,22): Cannot find name 'eval'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (994,26): Cannot find name 'isFinite'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (995,23): Cannot find name 'isNaN'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (996,28): Cannot find name 'parseFloat'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (997,26): Cannot find name 'parseInt'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1018,23): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1047,23): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1047,36): Cannot find name 'Uint8ClampedArray'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1047,56): Cannot find name 'Uint16Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1047,70): Cannot find name 'Uint32Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1047,84): Cannot find name 'Int8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1047,96): Cannot find name 'Int16Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1047,109): Cannot find name 'Int32Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1047,122): Cannot find name 'Float32Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1047,137): Cannot find name 'Float64Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1066,30): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1071,30): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1101,48): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1102,51): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1104,27): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1231,52): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1454,31): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1532,36): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1595,40): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1637,48): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1637,54): Cannot find name 'ArrayBuffer'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1691,48): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1691,54): Cannot find name 'ArrayBuffer'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1757,51): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1757,62): Cannot find name 'ArrayBuffer'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1790,40): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (1790,51): Cannot find name 'ArrayBuffer'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2495,31): Cannot find name 'SyntaxError'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2687,29): Cannot find name 'Object'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2700,96): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2780,57): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2796,44): Cannot find name 'ReadonlyArray'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2850,50): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2851,104): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2852,103): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2853,72): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2854,113): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2880,44): Cannot find name 'ReadonlyArray'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2881,43): Cannot find name 'ReadonlyArray'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2885,43): Cannot find name 'ReadonlyArray'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2891,15): Cannot find name 'ReadonlyArray'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2900,15): Cannot find name 'ReadonlyArray'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2914,15): Cannot find name 'ReadonlyArray'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2921,43): Cannot find name 'ReadonlyArray'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2931,15): Cannot find name 'ReadonlyArray'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2938,47): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2939,82): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2940,91): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2941,126): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2942,91): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2943,126): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2944,90): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2945,125): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2946,73): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2947,108): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2948,125): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2953,12): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2967,46): Cannot find name 'ReadonlyArray'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (2972,55): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3004,48): Cannot find name 'ReadonlyArray'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3005,48): Cannot find name 'ReadonlyArray'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3006,48): Cannot find name 'ReadonlyArray'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3010,35): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3035,55): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3057,51): Cannot find name 'ReadonlyArray'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3058,51): Cannot find name 'ReadonlyArray'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3059,51): Cannot find name 'ReadonlyArray'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3150,135): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3200,78): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3201,88): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3202,85): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3208,64): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3333,99): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3334,66): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3335,65): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3336,68): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3337,66): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3338,66): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3339,66): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3340,67): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3349,51): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3350,83): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3351,77): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3360,51): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3361,83): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3362,77): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3367,51): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3372,51): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3377,51): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3382,51): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3387,51): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3392,51): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3397,51): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3402,51): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3407,51): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3501,36): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3502,33): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3503,52): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3505,56): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3507,66): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3508,66): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3509,52): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3510,52): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3515,48): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3535,34): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3536,31): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3537,50): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3627,88): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3628,70): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3629,69): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3630,51): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3631,68): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3632,50): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3633,60): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3634,67): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3635,49): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3636,26): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3701,68): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3702,72): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3703,57): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3704,77): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3705,81): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3706,66): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3743,37): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3744,37): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3748,47): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3820,32): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3843,16): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3844,16): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3845,16): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3846,20): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3899,9): Property 'addListener' in type 'ReadStream' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'chunk' and 'args' are incompatible.
+        Type '{}' is missing the following properties from type '[any]': 0, length
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3900,9): Property 'addListener' in type 'ReadStream' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3901,9): Property 'addListener' in type 'ReadStream' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3903,9): Property 'on' in type 'ReadStream' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'chunk' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[any]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3904,9): Property 'on' in type 'ReadStream' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3905,9): Property 'on' in type 'ReadStream' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3907,9): Property 'once' in type 'ReadStream' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'chunk' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[any]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3908,9): Property 'once' in type 'ReadStream' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3909,9): Property 'once' in type 'ReadStream' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3911,9): Property 'prependListener' in type 'ReadStream' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'chunk' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[any]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3912,9): Property 'prependListener' in type 'ReadStream' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3913,9): Property 'prependListener' in type 'ReadStream' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3915,9): Property 'prependOnceListener' in type 'ReadStream' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'chunk' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[any]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3916,9): Property 'prependOnceListener' in type 'ReadStream' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3917,9): Property 'prependOnceListener' in type 'ReadStream' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3930,9): Property 'addListener' in type 'WriteStream' is not assignable to the same property in base type 'Writable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "drain", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: "finish", listener: () => void): this; (event: "pipe", listener: (src: Readable) => void): this; (event: "unpipe", listener: (src: Readable) => void): this; (e...'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'err' and 'args' are incompatible.
+        Type '{}' is missing the following properties from type '[Error]': 0, length
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3931,9): Property 'addListener' in type 'WriteStream' is not assignable to the same property in base type 'Writable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "drain", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: "finish", listener: () => void): this; (event: "pipe", listener: (src: Readable) => void): this; (event: "unpipe", listener: (src: Readable) => void): this; (e...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3932,9): Property 'addListener' in type 'WriteStream' is not assignable to the same property in base type 'Writable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "drain", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: "finish", listener: () => void): this; (event: "pipe", listener: (src: Readable) => void): this; (event: "unpipe", listener: (src: Readable) => void): this; (e...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3934,9): Property 'on' in type 'WriteStream' is not assignable to the same property in base type 'Writable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "drain", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: "finish", listener: () => void): this; (event: "pipe", listener: (src: Readable) => void): this; (event: "unpipe", listener: (src: Readable) => void): this; (e...'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'err' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[Error]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3935,9): Property 'on' in type 'WriteStream' is not assignable to the same property in base type 'Writable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "drain", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: "finish", listener: () => void): this; (event: "pipe", listener: (src: Readable) => void): this; (event: "unpipe", listener: (src: Readable) => void): this; (e...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3936,9): Property 'on' in type 'WriteStream' is not assignable to the same property in base type 'Writable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "drain", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: "finish", listener: () => void): this; (event: "pipe", listener: (src: Readable) => void): this; (event: "unpipe", listener: (src: Readable) => void): this; (e...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3938,9): Property 'once' in type 'WriteStream' is not assignable to the same property in base type 'Writable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "drain", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: "finish", listener: () => void): this; (event: "pipe", listener: (src: Readable) => void): this; (event: "unpipe", listener: (src: Readable) => void): this; (e...'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'err' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[Error]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3939,9): Property 'once' in type 'WriteStream' is not assignable to the same property in base type 'Writable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "drain", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: "finish", listener: () => void): this; (event: "pipe", listener: (src: Readable) => void): this; (event: "unpipe", listener: (src: Readable) => void): this; (e...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3940,9): Property 'once' in type 'WriteStream' is not assignable to the same property in base type 'Writable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "drain", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: "finish", listener: () => void): this; (event: "pipe", listener: (src: Readable) => void): this; (event: "unpipe", listener: (src: Readable) => void): this; (e...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3942,9): Property 'prependListener' in type 'WriteStream' is not assignable to the same property in base type 'Writable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "drain", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: "finish", listener: () => void): this; (event: "pipe", listener: (src: Readable) => void): this; (event: "unpipe", listener: (src: Readable) => void): this; (e...'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'err' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[Error]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3943,9): Property 'prependListener' in type 'WriteStream' is not assignable to the same property in base type 'Writable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "drain", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: "finish", listener: () => void): this; (event: "pipe", listener: (src: Readable) => void): this; (event: "unpipe", listener: (src: Readable) => void): this; (e...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3944,9): Property 'prependListener' in type 'WriteStream' is not assignable to the same property in base type 'Writable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "drain", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: "finish", listener: () => void): this; (event: "pipe", listener: (src: Readable) => void): this; (event: "unpipe", listener: (src: Readable) => void): this; (e...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3946,9): Property 'prependOnceListener' in type 'WriteStream' is not assignable to the same property in base type 'Writable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "drain", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: "finish", listener: () => void): this; (event: "pipe", listener: (src: Readable) => void): this; (event: "unpipe", listener: (src: Readable) => void): this; (e...'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'err' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[Error]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3947,9): Property 'prependOnceListener' in type 'WriteStream' is not assignable to the same property in base type 'Writable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "drain", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: "finish", listener: () => void): this; (event: "pipe", listener: (src: Readable) => void): this; (event: "unpipe", listener: (src: Readable) => void): this; (e...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3948,9): Property 'prependOnceListener' in type 'WriteStream' is not assignable to the same property in base type 'Writable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "open", listener: (fd: number) => void): this; (event: "close", listener: () => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "drain", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: "finish", listener: () => void): this; (event: "pipe", listener: (src: Readable) => void): this; (event: "unpipe", listener: (src: Readable) => void): this; (e...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (3969,71): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4002,70): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4032,66): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4054,75): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4075,71): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4096,75): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4119,72): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4143,68): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4167,72): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4189,49): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4210,45): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4231,49): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4254,67): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4289,89): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4337,121): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4344,93): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4351,105): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4409,121): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4416,93): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4423,105): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4470,49): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4491,49): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4535,106): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4580,121): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4587,93): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4594,105): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4667,143): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4674,116): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4681,128): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4688,83): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4731,45): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4760,104): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4776,62): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4776,93): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4786,73): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4786,104): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4786,111): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4795,66): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4795,97): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4803,59): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4803,90): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4813,69): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4813,100): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4813,107): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4822,63): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4822,94): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4836,45): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4933,12): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4942,110): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (4989,147): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5051,112): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5061,114): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5071,130): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5142,97): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5196,97): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5294,49): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5481,64): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5533,45): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5578,79): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5610,140): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5615,46): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5621,43): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5626,25): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5631,21): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5641,43): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5641,147): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5649,85): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5657,103): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5665,103): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5670,21): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5676,37): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5683,45): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5683,76): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5683,83): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5693,44): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5693,148): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5704,83): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5717,139): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5722,22): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5730,57): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5743,75): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5751,88): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5762,48): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5768,12): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5780,49): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5784,64): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5795,110): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5804,64): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5811,58): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5818,63): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5824,41): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5830,49): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5836,45): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5844,98): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5851,115): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5858,87): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5865,99): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5872,116): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5879,88): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5886,100): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5895,83): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5901,45): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5907,41): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5913,40): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5920,67): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5926,42): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5933,69): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5940,64): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5947,65): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5953,68): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5959,72): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5965,67): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5973,66): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5973,97): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5973,104): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5981,71): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5981,102): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5981,109): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5988,116): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (5995,88): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6002,100): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6009,115): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6016,87): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6023,99): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6038,173): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6052,174): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6061,119): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6070,137): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6079,137): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6353,50): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6353,74): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6361,51): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6361,75): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6470,9): Property 'addListener' in type 'TLSSocket' is not assignable to the same property in base type 'Socket'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "OCSPResponse", listener: (response: Buffer) => void): this; (event: "secureConnect", listener: () => void): this; }' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: (had_error: boolean) => void): this; (event: "connect", listener: () => void): this; (event: "data", listener: (data: Buffer) => void): this; (event: "drain", listener: () => void): this; (event: "end", listener: () => void): this; ...'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'had_error' and 'args' are incompatible.
+        Type '{}' is missing the following properties from type '[boolean]': 0, length
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6471,9): Property 'addListener' in type 'TLSSocket' is not assignable to the same property in base type 'Socket'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "OCSPResponse", listener: (response: Buffer) => void): this; (event: "secureConnect", listener: () => void): this; }' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: (had_error: boolean) => void): this; (event: "connect", listener: () => void): this; (event: "data", listener: (data: Buffer) => void): this; (event: "drain", listener: () => void): this; (event: "end", listener: () => void): this; ...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6472,9): Property 'addListener' in type 'TLSSocket' is not assignable to the same property in base type 'Socket'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "OCSPResponse", listener: (response: Buffer) => void): this; (event: "secureConnect", listener: () => void): this; }' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: (had_error: boolean) => void): this; (event: "connect", listener: () => void): this; (event: "data", listener: (data: Buffer) => void): this; (event: "drain", listener: () => void): this; (event: "end", listener: () => void): this; ...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6478,9): Property 'on' in type 'TLSSocket' is not assignable to the same property in base type 'Socket'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "OCSPResponse", listener: (response: Buffer) => void): this; (event: "secureConnect", listener: () => void): this; }' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: (had_error: boolean) => void): this; (event: "connect", listener: () => void): this; (event: "data", listener: (data: Buffer) => void): this; (event: "drain", listener: () => void): this; (event: "end", listener: () => void): this; ...'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'had_error' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[boolean]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6479,9): Property 'on' in type 'TLSSocket' is not assignable to the same property in base type 'Socket'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "OCSPResponse", listener: (response: Buffer) => void): this; (event: "secureConnect", listener: () => void): this; }' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: (had_error: boolean) => void): this; (event: "connect", listener: () => void): this; (event: "data", listener: (data: Buffer) => void): this; (event: "drain", listener: () => void): this; (event: "end", listener: () => void): this; ...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6480,9): Property 'on' in type 'TLSSocket' is not assignable to the same property in base type 'Socket'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "OCSPResponse", listener: (response: Buffer) => void): this; (event: "secureConnect", listener: () => void): this; }' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: (had_error: boolean) => void): this; (event: "connect", listener: () => void): this; (event: "data", listener: (data: Buffer) => void): this; (event: "drain", listener: () => void): this; (event: "end", listener: () => void): this; ...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6482,9): Property 'once' in type 'TLSSocket' is not assignable to the same property in base type 'Socket'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "OCSPResponse", listener: (response: Buffer) => void): this; (event: "secureConnect", listener: () => void): this; }' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: (had_error: boolean) => void): this; (event: "connect", listener: () => void): this; (event: "data", listener: (data: Buffer) => void): this; (event: "drain", listener: () => void): this; (event: "end", listener: () => void): this; ...'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'had_error' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[boolean]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6483,9): Property 'once' in type 'TLSSocket' is not assignable to the same property in base type 'Socket'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "OCSPResponse", listener: (response: Buffer) => void): this; (event: "secureConnect", listener: () => void): this; }' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: (had_error: boolean) => void): this; (event: "connect", listener: () => void): this; (event: "data", listener: (data: Buffer) => void): this; (event: "drain", listener: () => void): this; (event: "end", listener: () => void): this; ...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6484,9): Property 'once' in type 'TLSSocket' is not assignable to the same property in base type 'Socket'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "OCSPResponse", listener: (response: Buffer) => void): this; (event: "secureConnect", listener: () => void): this; }' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: (had_error: boolean) => void): this; (event: "connect", listener: () => void): this; (event: "data", listener: (data: Buffer) => void): this; (event: "drain", listener: () => void): this; (event: "end", listener: () => void): this; ...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6486,9): Property 'prependListener' in type 'TLSSocket' is not assignable to the same property in base type 'Socket'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "OCSPResponse", listener: (response: Buffer) => void): this; (event: "secureConnect", listener: () => void): this; }' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: (had_error: boolean) => void): this; (event: "connect", listener: () => void): this; (event: "data", listener: (data: Buffer) => void): this; (event: "drain", listener: () => void): this; (event: "end", listener: () => void): this; ...'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'had_error' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[boolean]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6487,9): Property 'prependListener' in type 'TLSSocket' is not assignable to the same property in base type 'Socket'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "OCSPResponse", listener: (response: Buffer) => void): this; (event: "secureConnect", listener: () => void): this; }' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: (had_error: boolean) => void): this; (event: "connect", listener: () => void): this; (event: "data", listener: (data: Buffer) => void): this; (event: "drain", listener: () => void): this; (event: "end", listener: () => void): this; ...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6488,9): Property 'prependListener' in type 'TLSSocket' is not assignable to the same property in base type 'Socket'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "OCSPResponse", listener: (response: Buffer) => void): this; (event: "secureConnect", listener: () => void): this; }' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: (had_error: boolean) => void): this; (event: "connect", listener: () => void): this; (event: "data", listener: (data: Buffer) => void): this; (event: "drain", listener: () => void): this; (event: "end", listener: () => void): this; ...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6490,9): Property 'prependOnceListener' in type 'TLSSocket' is not assignable to the same property in base type 'Socket'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "OCSPResponse", listener: (response: Buffer) => void): this; (event: "secureConnect", listener: () => void): this; }' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: (had_error: boolean) => void): this; (event: "connect", listener: () => void): this; (event: "data", listener: (data: Buffer) => void): this; (event: "drain", listener: () => void): this; (event: "end", listener: () => void): this; ...'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'had_error' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[boolean]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6491,9): Property 'prependOnceListener' in type 'TLSSocket' is not assignable to the same property in base type 'Socket'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "OCSPResponse", listener: (response: Buffer) => void): this; (event: "secureConnect", listener: () => void): this; }' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: (had_error: boolean) => void): this; (event: "connect", listener: () => void): this; (event: "data", listener: (data: Buffer) => void): this; (event: "drain", listener: () => void): this; (event: "end", listener: () => void): this; ...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6492,9): Property 'prependOnceListener' in type 'TLSSocket' is not assignable to the same property in base type 'Socket'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "OCSPResponse", listener: (response: Buffer) => void): this; (event: "secureConnect", listener: () => void): this; }' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: (had_error: boolean) => void): this; (event: "connect", listener: () => void): this; (event: "data", listener: (data: Buffer) => void): this; (event: "drain", listener: () => void): this; (event: "end", listener: () => void): this; ...'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6499,46): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6499,70): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6500,47): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6500,71): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6512,46): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6512,70): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6513,47): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6513,71): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6537,9): Property 'addListener' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'socket' and 'args' are incompatible.
+        Type '{}' is missing the following properties from type '[Socket]': 0, length
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6538,9): Property 'addListener' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6539,9): Property 'addListener' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6540,9): Property 'addListener' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6540,101): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6541,9): Property 'addListener' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6542,9): Property 'addListener' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6547,83): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6551,9): Property 'on' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'socket' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[Socket]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6552,9): Property 'on' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6553,9): Property 'on' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6554,9): Property 'on' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6554,92): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6555,9): Property 'on' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6556,9): Property 'on' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6558,9): Property 'once' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'socket' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[Socket]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6559,9): Property 'once' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6560,9): Property 'once' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6561,9): Property 'once' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6561,94): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6562,9): Property 'once' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6563,9): Property 'once' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6565,9): Property 'prependListener' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'socket' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[Socket]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6566,9): Property 'prependListener' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6567,9): Property 'prependListener' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6568,9): Property 'prependListener' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6568,105): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6569,9): Property 'prependListener' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6570,9): Property 'prependListener' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6572,9): Property 'prependOnceListener' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'socket' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[Socket]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6573,9): Property 'prependOnceListener' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6574,9): Property 'prependOnceListener' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6575,9): Property 'prependOnceListener' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6575,109): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6576,9): Property 'prependOnceListener' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6577,9): Property 'prependOnceListener' in type 'Server' is not assignable to the same property in base type 'Server'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6586,33): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6586,57): Cannot find name 'Object'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6587,33): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6587,48): Cannot find name 'Object'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6589,34): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6590,32): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6595,33): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6629,70): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6630,70): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6631,57): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6653,87): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6662,60): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6668,60): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6682,102): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6684,102): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6686,94): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6688,99): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6688,151): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6689,99): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6689,151): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6690,91): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6690,143): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6693,60): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6695,51): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6696,51): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6714,104): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6716,104): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6718,96): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6722,52): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6723,51): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6728,52): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6729,51): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6732,93): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6732,145): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6735,51): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6737,51): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6747,57): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6748,53): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6751,57): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6752,53): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6757,60): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6764,60): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6766,33): Cannot find name 'Object'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6766,81): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6767,33): Cannot find name 'Object'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6771,106): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6772,70): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6774,139): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6779,70): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6781,70): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6791,63): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6793,65): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6799,57): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6800,53): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6806,73): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6806,127): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6813,68): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6814,64): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6815,64): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6816,64): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6825,57): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6826,53): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6830,57): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6831,53): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6836,73): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6836,127): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6847,100): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6848,103): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6849,103): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6850,100): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6856,56): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6864,70): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6866,70): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6872,65): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6876,62): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6876,104): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6978,88): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6979,88): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6980,88): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6981,88): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6983,88): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6984,88): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6985,88): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6986,88): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6988,86): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6989,86): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6990,86): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (6991,86): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7097,45): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7108,30): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7188,19): Interface 'DuplexOptions' incorrectly extends interface 'WritableOptions'.
+  Types of property 'write' are incompatible.
+    Type '(this: Duplex, chunk: any, encoding: string, callback: (error?: Error) => void) => void' is not assignable to type '(this: Writable, chunk: any, encoding: string, callback: (error?: Error) => void) => void'.
+      The 'this' types of each signature are incompatible.
+        Type 'Writable' is missing the following properties from type 'Duplex': readable, readableHighWaterMark, readableLength, _read, and 10 more.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7194,43): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7200,15): Class 'Duplex' incorrectly implements class 'Writable'. Did you mean to extend 'Writable' and inherit its members as a subclass?
+  Types of property 'addListener' are incompatible.
+    Type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "drain", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: "finish", listener: () => void): this; (event: "pipe", listener: (src: Readable) => void): this; (event: "unpipe", listener: (src: Readable) => void): this; (e...'.
+      Types of parameters 'event' and 'event' are incompatible.
+        Type '"pipe"' is not assignable to type '"close"'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7206,30): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7224,46): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7241,117): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7261,36): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7265,25): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7268,101): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7269,134): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7270,167): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7277,16): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7278,45): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7278,125): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7282,29): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7283,16): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7319,47): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7321,45): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7348,34): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7351,47): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7351,65): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7355,36): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7356,45): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7357,48): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7358,57): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7359,62): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7360,71): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7361,76): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7363,47): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7365,57): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7367,57): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7369,67): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7371,67): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7374,77): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7377,77): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7380,40): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7381,110): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7382,85): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7383,132): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7384,107): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7385,156): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7386,131): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7387,180): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7388,155): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7391,52): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7392,179): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7395,62): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7398,62): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7399,28): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7399,39): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7406,60): Cannot find name 'IArguments'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7407,56): Cannot find name 'ArrayBuffer'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7409,58): Cannot find name 'Boolean'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7410,60): Cannot find name 'Number'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7410,69): Cannot find name 'Boolean'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7410,88): Cannot find name 'Symbol'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7411,53): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7412,49): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7414,57): Cannot find name 'Float32Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7415,57): Cannot find name 'Float64Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7418,54): Cannot find name 'Int8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7419,55): Cannot find name 'Int16Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7420,55): Cannot find name 'Int32Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7424,57): Cannot find name 'Number'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7427,51): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7434,55): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7435,62): Cannot find name 'Uint8ClampedArray'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7436,56): Cannot find name 'Uint16Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7437,56): Cannot find name 'Uint32Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7452,39): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7452,50): Cannot find name 'ArrayBuffer'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7460,33): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7467,15): Type 'AssertionError' has no properties in common with type 'Error'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7478,51): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7484,111): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7499,32): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7500,32): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7500,49): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7500,58): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7500,69): Cannot find name 'Object'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7501,38): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7502,38): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7502,55): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7502,64): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7506,33): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7506,44): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7506,85): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7507,33): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7507,44): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7507,65): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7507,74): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7507,85): Cannot find name 'Object'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7507,128): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7508,39): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7508,50): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7508,91): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7509,39): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7509,50): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7509,71): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7509,80): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7509,117): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7537,17): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7870,45): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7871,58): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7878,35): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7879,46): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (7910,80): Cannot find name 'Object'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (8213,22): Interface 'ClientHttp2Stream' incorrectly extends interface 'Http2Stream'.
+  Types of property 'addListener' are incompatible.
+    Type '{ (event: string, listener: (...args: {}) => void): this; (event: "headers", listener: (headers: IncomingHttpHeaders & IncomingHttpStatusHeader, flags: number) => void): this; (event: "push", listener: (headers: IncomingHttpHeaders, flags: number) => void): this; (event: "response", listener: (headers: IncomingHttpH...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "aborted", listener: () => void): this; (event: "close", listener: () => void): this; (event: "data", listener: (chunk: string | Buffer) => void): this; (event: "drain", listener: () => void): this; (event: "end", listener: () => void): this; (event: ...'.
+      Types of parameters 'listener' and 'listener' are incompatible.
+        Types of parameters 'chunk' and 'args' are incompatible.
+          Type '{}' is missing the following properties from type '[string | Buffer]': 0, length
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (8295,76): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (8300,32): Cannot find name 'DataView'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (8373,22): Interface 'ClientHttp2Session' incorrectly extends interface 'Http2Session'.
+  Types of property 'addListener' are incompatible.
+    Type '{ (event: string, listener: (...args: {}) => void): this; (event: "altsvc", listener: (alt: string, origin: string, stream: number) => void): this; (event: "connect", listener: (session: ClientHttp2Session, socket: Socket | TLSSocket) => void): this; (event: "stream", listener: (stream: ClientHttp2Stream, headers: I...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: "frameError", listener: (frameType: number, errorCode: number, streamID: number) => void): this; (event: "goaway", listener: (errorCode: number, last...'.
+      Types of parameters 'listener' and 'listener' are incompatible.
+        Types of parameters 'err' and 'args' are incompatible.
+          Type '{}' is not assignable to type '[Error]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (8411,22): Interface 'ServerHttp2Session' incorrectly extends interface 'Http2Session'.
+  Types of property 'addListener' are incompatible.
+    Type '{ (event: string, listener: (...args: {}) => void): this; (event: "connect", listener: (session: ServerHttp2Session, socket: Socket | TLSSocket) => void): this; (event: "stream", listener: (stream: ServerHttp2Stream, headers: IncomingHttpHeaders, flags: number) => void): this; }' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: "frameError", listener: (frameType: number, errorCode: number, streamID: number) => void): this; (event: "goaway", listener: (errorCode: number, last...'.
+      Types of parameters 'listener' and 'listener' are incompatible.
+        Types of parameters 'err' and 'args' are incompatible.
+          Type '{}' is not assignable to type '[Error]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (8467,22): Interface 'Http2Server' incorrectly extends interface 'Server'.
+  Types of property 'addListener' are incompatible.
+    Type '{ (event: string, listener: (...args: {}) => void): this; (event: "checkContinue", listener: (request: Http2ServerRequest, response: Http2ServerResponse) => void): this; (event: "request", listener: (request: Http2ServerRequest, response: Http2ServerResponse) => void): this; (event: "sessionError", listener: (err: E...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "close", listener: () => void): this; (event: "connection", listener: (socket: Socket) => void): this; (event: "error", listener: (err: Error) => void): this; (event: "listening", listener: () => void): this; }'.
+      Types of parameters 'listener' and 'listener' are incompatible.
+        Types of parameters 'socket' and 'args' are incompatible.
+          Type '{}' is not assignable to type '[Socket]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (8511,22): Interface 'Http2SecureServer' incorrectly extends interface 'Server'.
+  Types of property 'addListener' are incompatible.
+    Type '{ (event: string, listener: (...args: {}) => void): this; (event: "checkContinue", listener: (request: Http2ServerRequest, response: Http2ServerResponse) => void): this; (event: "request", listener: (request: Http2ServerRequest, response: Http2ServerResponse) => void): this; (event: "sessionError", listener: (err: E...' is not assignable to type '{ (event: string, listener: (...args: {}) => void): this; (event: "tlsClientError", listener: (err: Error, tlsSocket: TLSSocket) => void): this; (event: "newSession", listener: (sessionId: any, sessionData: any, callback: (err: Error, resp: Buffer) => void) => void): this; (event: "OCSPRequest", listener: (certifica...'.
+      Types of parameters 'listener' and 'listener' are incompatible.
+        Types of parameters 'err' and 'args' are incompatible.
+          Type '{}' is missing the following properties from type '[Error, TLSSocket]': 0, 1, length
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (8574,9): Property 'addListener' in type 'Http2ServerRequest' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "aborted", listener: (hadError: boolean, code: number) => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'chunk' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[any]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (8575,9): Property 'addListener' in type 'Http2ServerRequest' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "aborted", listener: (hadError: boolean, code: number) => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (8580,9): Property 'on' in type 'Http2ServerRequest' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "aborted", listener: (hadError: boolean, code: number) => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'chunk' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[any]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (8581,9): Property 'on' in type 'Http2ServerRequest' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "aborted", listener: (hadError: boolean, code: number) => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (8583,9): Property 'once' in type 'Http2ServerRequest' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "aborted", listener: (hadError: boolean, code: number) => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'chunk' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[any]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (8584,9): Property 'once' in type 'Http2ServerRequest' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "aborted", listener: (hadError: boolean, code: number) => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (8586,9): Property 'prependListener' in type 'Http2ServerRequest' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "aborted", listener: (hadError: boolean, code: number) => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'chunk' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[any]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (8587,9): Property 'prependListener' in type 'Http2ServerRequest' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "aborted", listener: (hadError: boolean, code: number) => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (8589,9): Property 'prependOnceListener' in type 'Http2ServerRequest' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "aborted", listener: (hadError: boolean, code: number) => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+    Types of parameters 'listener' and 'listener' are incompatible.
+      Types of parameters 'chunk' and 'args' are incompatible.
+        Type '{}' is not assignable to type '[any]'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (8590,9): Property 'prependOnceListener' in type 'Http2ServerRequest' is not assignable to the same property in base type 'Readable'.
+  Type '{ (event: string, listener: (...args: {}) => void): this; (event: "aborted", listener: (hadError: boolean, code: number) => void): this; }' is not assignable to type '{ (event: "close", listener: () => void): this; (event: "data", listener: (chunk: any) => void): this; (event: "end", listener: () => void): this; (event: "readable", listener: () => void): this; (event: "error", listener: (err: Error) => void): this; (event: string | symbol, listener: (...args: {}) => void): this; }'.
+Z:/shadow-nucleus/node_modules/@types/node/index.d.ts (8879,55): Cannot find name 'Uint8Array'.
+Z:/shadow-nucleus/node_modules/@types/tapable/index.d.ts (243,9): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/tapable/index.d.ts (254,75): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/tapable/index.d.ts (257,44): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/tapable/index.d.ts (260,101): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/tapable/index.d.ts (290,102): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/uglify-js/index.d.ts (9,30): Cannot find module 'source-map'.
+Z:/shadow-nucleus/node_modules/@types/uglify-js/index.d.ts (154,13): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/uglify-js/index.d.ts (163,43): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (29,30): Cannot find module 'source-map'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (123,57): Cannot find name 'Promise'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (222,19): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (222,28): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (225,32): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (228,29): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (231,32): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (353,38): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (356,54): Cannot find name 'Record'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (384,11): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (416,41): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (574,61): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (612,72): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (665,25): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (748,35): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (752,42): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (754,40): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (754,65): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (951,26): Cannot find name 'Map'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (954,31): Cannot find name 'Map'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (955,26): Cannot find name 'Map'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (957,23): Cannot find name 'Map'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (967,34): Cannot find name 'Map'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (968,34): Cannot find name 'Map'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (972,29): Cannot find name 'Map'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (973,32): Cannot find name 'Map'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (981,69): Cannot find name 'Function'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (1007,39): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (1084,25): Cannot find name 'Map'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (1085,28): Cannot find name 'Map'. Do you need to change your target library? Try changing the `lib` compiler option to es2015 or later.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (1134,21): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (1135,19): Cannot find name 'Date'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (1221,39): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (1221,48): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (1221,63): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (1230,55): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (1230,64): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (1230,110): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (1249,32): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (1454,28): Cannot find name 'Array'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (1454,43): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (1542,38): Cannot find name 'RegExp'.
+Z:/shadow-nucleus/node_modules/@types/webpack/index.d.ts (1557,34): Cannot find name 'Function'.
+src/nc.ts (2,26): Cannot find module './console/Terminal'.
+src/nc.ts (3,34): Cannot find module './console/core/Constant'.
+src/nc.ts (4,50): Cannot find module './console/Args'.
+src/nc.ts (5,39): Cannot find module './console/TPackages'.
+src/nc.ts (7,29): Cannot find module './Nucleus'.
+src/nc.ts (8,29): Cannot find module './Plugin'.
+src/nc.ts (11,21): Cannot find module './core/api/Api'.
+src/nc.ts (12,26): Cannot find module './modules/cli/back/doc/Module'.
+src/nc.ts (17,23): An async function or method must return a 'Promise'. Make sure you have a declaration for 'Promise' or include 'ES2015' in your `--lib` option.
+src/nc.ts (58,27): Property 'shift' does not exist on type '{}'.
+src/nc.ts (59,30): Property 'shift' does not exist on type '{}'.
+src/nc.ts (64,39): Type '{}' must have a '[Symbol.iterator]()' method that returns an iterator.
+src/nc.ts (66,2): An async function or method must return a 'Promise'. Make sure you have a declaration for 'Promise' or include 'ES2015' in your `--lib` option.
+Process exiting with code '0'.

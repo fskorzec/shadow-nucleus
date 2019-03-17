@@ -1,0 +1,1 @@
+{"version":3,"file":"Webpack.d.ts","sourceRoot":"","sources":["../../../../src/modules/webpack/back/Webpack.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAE,MAAM,iBAAiB,CAAC;AAKhD,qBAAa,OAAQ,SAAQ,aAAa;IACxC,OAAO,SAAiB;IACxB,KAAK,SAAoB;IAEzB,MAAM,CAAC,kBAAkB,EAAE,OAAO,CAAS;;IAM3C,SAAS,CAAC,UAAU;IASpB,OAAO;CAYR;AAED,MAAM,WAAW,QAAQ;CAExB"}

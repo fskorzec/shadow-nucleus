@@ -1,0 +1,1 @@
+{"version":3,"file":"Entrypoint.d.ts","sourceRoot":"","sources":["../../../../src/modules/typescript/back/Entrypoint.ts"],"names":[],"mappings":"AAGA,OAAO,EACL,iBAAiB,EACjB,IAAI,EAEL,MAAM,iBAAiB,CAAC;AAIzB,MAAM,CAAC,OAAO,OAAO,eAAgB,YAAW,iBAAiB;IACzD,UAAU,CAAC,GAAG,EAAE,IAAI,GAAG,OAAO,CAAC,IAAI,CAAC;CA2B3C"}

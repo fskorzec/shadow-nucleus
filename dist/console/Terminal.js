@@ -62,10 +62,12 @@ class Terminal extends BaseTerminal_1.BaseTerminal {
             };
         }
     }
-    drawColoredText(text, foreColor, backColor) {
+    drawColoredText(text, foreColor, backColor, style) {
         foreColor && this._color(foreColor);
         backColor && this._color(backColor);
+        style && this._color(Constant_1.Styles[style][0]);
         this.text(text);
+        style && this._color(Constant_1.Styles[style][1]);
         backColor && this._color(Constant_2.endingBackColor);
         foreColor && this._color(Constant_2.endingForeColor);
         return this;

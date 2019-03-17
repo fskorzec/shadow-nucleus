@@ -1,5 +1,5 @@
 import { BaseTerminal } from "./core/BaseTerminal";
-import { IColorTerminalDelegate } from "./core/Constant";
+import { IColorTerminalDelegate, EStyle } from "./core/Constant";
 import { IColor16Terminal } from "./core/Constant";
 export declare class Terminal extends BaseTerminal implements IColor16Terminal<Terminal> {
     red: IColorTerminalDelegate<Terminal>;
@@ -34,7 +34,7 @@ export declare class Terminal extends BaseTerminal implements IColor16Terminal<T
     bgLightMagenta: IColorTerminalDelegate<Terminal>;
     bgLightCyan: IColorTerminalDelegate<Terminal>;
     bgWhite: IColorTerminalDelegate<Terminal>;
-    drawColoredText(text: string, foreColor?: number, backColor?: number): this;
+    drawColoredText(text: string, foreColor?: number, backColor?: number, style?: EStyle): this;
     getAndClearBuffer(): string;
     constructor();
 }
