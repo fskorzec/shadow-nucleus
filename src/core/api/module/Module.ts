@@ -1,6 +1,6 @@
 import { IEventBus } from "../../IEventBus" ;
 import { isNode }    from "../../util/Env"  ;
-import { Acts }      from "./Events"        ;
+import { Acts, Evts }      from "./Events"        ;
 import { IModule }   from "./IModule"       ;
 import { IApi }      from "../../../Plugin" ;
 
@@ -16,15 +16,21 @@ export class Module implements IModule {
   }
 
   async loadModule(path: string): Promise<void> {
-    if (isNode()) {
-      (this._api as any)["_require"](path);
-      this._evtBus.emit(Acts.API.MODULE.LOAD_MODULE, {path});
-    } else {
-      const scriptTag = document.createElement("script");
-      scriptTag.type = "text/javascript";
-      scriptTag.src = path;
-      window.document.body.appendChild(scriptTag);
-      this._evtBus.emit(Acts.API.MODULE.LOAD_MODULE, {path});
-    }
+    return new Promise<void>((r,x) => {
+      this._evtBus.once(Evts.API.MODULE.MODULE_LOADED, () => {
+        r();
+      });
+
+      if (isNode()) {
+        this._evtBus.emit(Acts.API.MODULE.LOAD_MODULE, {path});
+        (this._api as any)["_require"](path);
+      } else {
+        this._evtBus.emit(Acts.API.MODULE.LOAD_MODULE, {path});
+        const scriptTag = document.createElement("script");
+        scriptTag.type = "text/javascript";
+        scriptTag.src = path;
+        window.document.body.appendChild(scriptTag);
+      }
+    })
   }
 }

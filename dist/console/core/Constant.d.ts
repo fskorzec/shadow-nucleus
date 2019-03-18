@@ -23,6 +23,15 @@ export declare const endingBackColor = 49;
 export declare const Styles: {
     [index: string]: [number, number];
 };
+export declare enum EStyle {
+    bold = "bold",
+    dim = "dim",
+    italic = "italic",
+    underline = "underline",
+    inverse = "inverse",
+    hidden = "hidden",
+    strikethrough = "strikethrough"
+}
 export declare const ForeColor: number[];
 export declare const BackColor: number[];
 export interface IColorTerminalDelegate<T> {
@@ -63,42 +72,12 @@ export interface IColor16Terminal<T> {
     bgWhite: IColorTerminalDelegate<T>;
 }
 export declare type Color16Type = {
-    red: string;
-    black: string;
-    green: string;
-    yellow: string;
-    blue: string;
-    magenta: string;
-    cyan: string;
-    lightGray: string;
-    darkGray: string;
-    lightRed: string;
-    lightGreen: string;
-    lightYellow: string;
-    lightBlue: string;
-    lightMagenta: string;
-    lightCyan: string;
-    white: string;
+    [K in Color16TypeString]: number;
 };
 export declare type BgColor16Type = {
-    bgRed: string;
-    bgBlack: string;
-    bgGreen: string;
-    bgYellow: string;
-    bgBlue: string;
-    bgMagenta: string;
-    bgCyan: string;
-    bgLightGray: string;
-    bgDarkGray: string;
-    bgLightRed: string;
-    bgLightGreen: string;
-    bgLightYellow: string;
-    bgLightBlue: string;
-    bgLightMagenta: string;
-    bgLightCyan: string;
-    bgWhite: string;
+    [k in BgColor16TypeString]: number;
 };
-export declare const Color16: {
-    [index: string]: number;
-};
+export declare type Color16TypeString = "red" | "black" | "green" | "yellow" | "blue" | "magenta" | "cyan" | "lightGray" | "darkGray" | "lightRed" | "lightGreen" | "lightYellow" | "lightBlue" | "lightMagenta" | "lightCyan" | "white";
+export declare type BgColor16TypeString = "bgRed" | "bgBlack" | "bgGreen" | "bgYellow" | "bgBlue" | "bgMagenta" | "bgCyan" | "bgLightGray" | "bgDarkGray" | "bgLightRed" | "bgLightGreen" | "bgLightYellow" | "bgLightBlue" | "bgLightMagenta" | "bgLightCyan" | "bgWhite";
+export declare const Color16: Color16Type;
 //# sourceMappingURL=Constant.d.ts.map

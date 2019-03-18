@@ -18,17 +18,22 @@ class Module {
     }
     loadModule(path) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (Env_1.isNode()) {
-                this._api["_require"](path);
-                this._evtBus.emit(Events_1.Acts.API.MODULE.LOAD_MODULE, { path });
-            }
-            else {
-                const scriptTag = document.createElement("script");
-                scriptTag.type = "text/javascript";
-                scriptTag.src = path;
-                window.document.body.appendChild(scriptTag);
-                this._evtBus.emit(Events_1.Acts.API.MODULE.LOAD_MODULE, { path });
-            }
+            return new Promise((r, x) => {
+                this._evtBus.once(Events_1.Evts.API.MODULE.MODULE_LOADED, () => {
+                    r();
+                });
+                if (Env_1.isNode()) {
+                    this._evtBus.emit(Events_1.Acts.API.MODULE.LOAD_MODULE, { path });
+                    this._api["_require"](path);
+                }
+                else {
+                    this._evtBus.emit(Events_1.Acts.API.MODULE.LOAD_MODULE, { path });
+                    const scriptTag = document.createElement("script");
+                    scriptTag.type = "text/javascript";
+                    scriptTag.src = path;
+                    window.document.body.appendChild(scriptTag);
+                }
+            });
         });
     }
 }

@@ -1,0 +1,1 @@
+{"version":3,"file":"Entrypoint.d.ts","sourceRoot":"","sources":["../../../../src/modules/webpack/back/Entrypoint.ts"],"names":[],"mappings":"AAEA,OAAO,EACL,iBAAiB,EACjB,IAAI,EAEL,MAAM,iBAAiB,CAAC;AAEzB,MAAM,CAAC,OAAO,OAAO,cAAe,YAAW,iBAAiB;IACxD,UAAU,CAAC,GAAG,EAAE,IAAI,GAAG,OAAO,CAAC,IAAI,CAAC;CAS3C"}

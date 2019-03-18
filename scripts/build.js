@@ -16,7 +16,9 @@ const modules = [
   ["BootWeb.js","nucleus.bootWeb.js","web"],
   ["modules/logging/front/LoggingConsole.js","nc-logging/1.0.0/front/nc-logging.js","web"],
   ["modules/logging/front/LoggingConsole.js","nc-logging/1.0.0/back/nc-logging.js","node"],
-  ["modules/cli/back/Cli.js","nc-cli/1.0.0/back/nc-cli.js","node"]
+  ["modules/cli/back/Cli.js","nc-cli/1.0.0/back/nc-cli.js","node"],
+  ["modules/typescript/back/Entrypoint.js","typescript/3.3.3/back/typescript.js","node"],
+  ["modules/webpack/back/Entrypoint.js","webpack/4.29.6/back/webpack.js","node"]
 ];
 
 mkDirSync("./dist");

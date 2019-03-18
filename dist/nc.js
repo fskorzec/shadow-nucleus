@@ -31,6 +31,13 @@ function start() {
         else {
             console.log("Cannot find cli package in global installation");
         }
+        if (fs.existsSync(`${nucleusExecFolderPath}/dist/_packages/modules/typescript/3.3.3/back/typescript.js`)) {
+            //Load the typescript cli plugin
+            yield _nucleus_api.Module.loadModule(`${nucleusExecFolderPath}/dist/_packages/modules/typescript/3.3.3/back/typescript.js`);
+        }
+        else {
+            console.log("Cannot find typescritp plugin, will fallback to global installation if exists");
+        }
         _nucleus_api._evtBus.emit("CLI.RUNNER.EXECUTE", {
             payload: params
         });
