@@ -41,6 +41,17 @@ export default class CompilerPackage implements IModuleEntryPoint {
           } catch(ex) {
             console.log(ex)
           }
+          console.log(`Trying to compile ${params.parameters.src}`);
+          _Compiler.compile([params.parameters["src"]], {
+            target:ScriptTarget.ES2015,
+            lib:["es2015"],
+            module:ModuleKind.CommonJS,
+            jsx:JsxEmit.React,
+            strict: false,
+            esModuleInterop:true,
+            noResolve:true
+          }, [""]);
+          console.log(`End of compilation process`);
         }
       }
     });

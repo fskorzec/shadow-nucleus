@@ -106,6 +106,8 @@ export class Compiler extends BaseComponent {
     let program    = ts.createProgram(fileNames, options, host);
     let emitResult = program.emit();
 
+
+  
     let allDiagnostics = ts
       .getPreEmitDiagnostics(program)
       .concat(emitResult.diagnostics);
@@ -133,6 +135,7 @@ export class Compiler extends BaseComponent {
     console.log(`Process exiting with code '${exitCode}'.`);
     process.exit(exitCode);
   }
+
 }
 
 export interface ICompiler {
