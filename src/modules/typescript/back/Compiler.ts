@@ -2,6 +2,7 @@ import { BaseComponent } from "../../../Plugin";
 import { Evts } from "./Events";
 import * as ts from "typescript";
 import * as path from "path";
+import { writeFileSync, existsSync, mkdirSync } from "fs";
 
 declare var Services: any;
 
@@ -102,10 +103,46 @@ export class Compiler extends BaseComponent {
   }
 
   compile(fileNames: string[], options: ts.CompilerOptions, moduleSearchLocations: Array<string>): void {
-    const host     = this.createCompilerHost(options, moduleSearchLocations);
-    let program    = ts.createProgram(fileNames, options, host);
-    let emitResult = program.emit();
+    (ts as any).getDefaultLibFilePath = (options: any) => {
+      console.log(`Calling getDefaultLibFilePath returning </lib/>`);
+      return "/lib";
+    };
 
+    /*(ts as any)._createCompilerHost = (ts as any).createCompilerHost;
+
+    (ts as any).createCompilerHost = undefined (...args: Array<any>) => {
+      console.log("Hooked createCompilerHost function");
+      return (ts as any)._createCompilerHost(...args);
+    }*/
+
+    let host = ts.createCompilerHost({});
+
+
+
+    host.getDefaultLibLocation = (...args: any[]) => {
+      return "/lib/";
+    }
+
+    host.getDefaultLibFileName = (...args: any[]) => {
+      return "/lib/lib.es6.d.ts";
+    }
+
+    let program    = ts.createProgram(fileNames, options, host);
+    (program as any).getCurrentDirectory = null;
+    let emitResult = program.emit(undefined , (s,b) => {
+      
+      console.log(s)
+      function ensureDirectoryExistence(filePath: string) {
+        var dirname = path.dirname(filePath);
+        if (existsSync(dirname)) {
+          return true;
+        }
+        ensureDirectoryExistence(dirname);
+        mkdirSync(dirname);
+      }
+      ensureDirectoryExistence(s);
+      writeFileSync(s,b,{encoding:"utf8", flag:"w"});
+    })
 
   
     let allDiagnostics = ts

@@ -6,7 +6,8 @@ export declare class Compiler extends BaseComponent {
     static hasBeenInitialized: boolean;
     constructor();
     protected initialize(): void;
-    compile(fileNames: string[], options: ts.CompilerOptions): void;
+    createCompilerHost(options: ts.CompilerOptions, moduleSearchLocations: string[]): ts.CompilerHost;
+    compile(fileNames: string[], options: ts.CompilerOptions, moduleSearchLocations: Array<string>): void;
 }
 export interface ICompiler {
 }

@@ -24,9 +24,8 @@ export default class CompilerPackage implements IModuleEntryPoint {
       payload: {
         doc: Doc,
         runner: (params: CommandArgs) => {
-          try {
+          /*try {
 
-            console.log(`Trying to compile ${params.parameters.src}`);
             _Compiler.compile([params.parameters["src"]], {
               rootDirs:[
                 "./src"
@@ -40,17 +39,16 @@ export default class CompilerPackage implements IModuleEntryPoint {
             console.log(`End of compilation process`);
           } catch(ex) {
             console.log(ex)
-          }
+          }*/
           console.log(`Trying to compile ${params.parameters.src}`);
           _Compiler.compile([params.parameters["src"]], {
             target:ScriptTarget.ES2015,
-            lib:["es2015"],
             module:ModuleKind.CommonJS,
             jsx:JsxEmit.React,
             strict: false,
             esModuleInterop:true,
-            noResolve:true
-          }, [""]);
+            outDir:params.parameters["dst"]
+          }, []);
           console.log(`End of compilation process`);
         }
       }
