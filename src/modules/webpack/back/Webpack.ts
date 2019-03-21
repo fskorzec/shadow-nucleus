@@ -31,7 +31,7 @@ export class Webpack extends BaseComponent {
       }
     },(err, stats) => {
 
-    })
+    })  
   }
 
 }
