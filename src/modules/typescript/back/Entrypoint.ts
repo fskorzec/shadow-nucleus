@@ -26,11 +26,11 @@ export default class CompilerPackage implements IModuleEntryPoint {
         runner: (params: CommandArgs) => {
           console.log(`Trying to compile ${params.parameters.src}`);
           _Compiler.compile([params.parameters["src"]], {
-            target:ScriptTarget.ES2015,
-            module:ModuleKind.CommonJS,
-            jsx:JsxEmit.React,
-            strict: false,
-            esModuleInterop:true,
+            target          : ScriptTarget.ES2015 ,
+            module          : ModuleKind.CommonJS ,
+            jsx             : JsxEmit.React       ,
+            strict          : false               ,
+            esModuleInterop : true                ,
             outDir:params.parameters["dst"]
           }, []);
           console.log(`End of compilation process`);

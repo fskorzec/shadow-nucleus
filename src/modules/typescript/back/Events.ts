@@ -1,5 +1,5 @@
 import { constantTree } from "../../../core/util/Constant";
-import { sendQuery as TSendQuery } from "../../../core/BaseComponent";
+import { TSendQuery } from "../../../core/BaseComponent";
 import { CompilerOptions } from "typescript";
 
 const Evts = constantTree({

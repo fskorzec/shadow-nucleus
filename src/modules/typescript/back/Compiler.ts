@@ -3,7 +3,7 @@ import { Evts, TCompileQuery, TCompilerWriteFile, TCompilerWriteFileArg, TDiagno
 import * as ts from "typescript";
 import * as path from "path";
 import { writeFileSync, existsSync, mkdirSync } from "fs";
-import { sendQuery } from "../../../core/BaseComponent";
+import { TSendQuery } from "../../../core/BaseComponent";
 import { compileFunction } from "vm";
 import { JSONstringify } from "../../../core/util/Text";
 
@@ -37,13 +37,6 @@ export class Compiler extends BaseComponent {
     (ts as any).getDefaultLibFilePath = (options: any) => {
       return "/lib";
     };
-
-    /*(ts as any)._createCompilerHost = (ts as any).createCompilerHost;
-
-    (ts as any).createCompilerHost = undefined (...args: Array<any>) => {
-      console.log("Hooked createCompilerHost function");
-      return (ts as any)._createCompilerHost(...args);
-    }*/
 
     let host = ts.createCompilerHost({});
 
@@ -96,7 +89,7 @@ export class Compiler extends BaseComponent {
         );
         let message = ts.flattenDiagnosticMessageText(
           diagnostic.messageText,
-          "\n"
+          "\n"  
         );
         this._sendSync<TDiagnosticArg>(Evts.TSC.DIAGNOSTIC.ERROR, {
           sender: this.identity,
@@ -133,7 +126,7 @@ export class Compiler extends BaseComponent {
         exitCode : exitCode
       }
     });
-    
+
   }
 
 }
