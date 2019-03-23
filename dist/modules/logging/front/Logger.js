@@ -17,31 +17,31 @@ class Logger extends Plugin_1.BaseComponent {
         }
         this._Receive(Events_1.Acts.LOGGING.LOGGER.LOG, (data) => {
             console.log(...data.payload);
-            this._send(Events_1.Evts.LOGING.LOGGER.LOGGED, data);
+            this._Send(Events_1.Evts.LOGING.LOGGER.LOGGED, data);
         });
         this._Receive(Events_1.Acts.LOGGING.LOGGER.WARN, (data) => {
             console.warn(...data.payload);
-            this._send(Events_1.Evts.LOGING.LOGGER.WARNED, data);
+            this._Send(Events_1.Evts.LOGING.LOGGER.WARNED, data);
         });
         this._Receive(Events_1.Acts.LOGGING.LOGGER.INFO, (data) => {
             console.info(...data.payload);
-            this._send(Events_1.Evts.LOGING.LOGGER.INFORMED, data);
+            this._Send(Events_1.Evts.LOGING.LOGGER.INFORMED, data);
         });
     }
     log(...args) {
-        this._send(Events_1.Acts.LOGGING.LOGGER.LOG, {
+        this._Send(Events_1.Acts.LOGGING.LOGGER.LOG, {
             sender: this.identity,
             payload: args
         });
     }
     warn(...args) {
-        this._send(Events_1.Acts.LOGGING.LOGGER.WARN, {
+        this._Send(Events_1.Acts.LOGGING.LOGGER.WARN, {
             sender: this.identity,
             payload: args
         });
     }
     info(...args) {
-        this._send(Events_1.Acts.LOGGING.LOGGER.INFO, {
+        this._Send(Events_1.Acts.LOGGING.LOGGER.INFO, {
             sender: this.identity,
             payload: args
         });

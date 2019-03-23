@@ -16,10 +16,6 @@ function startNucleus(parentRequire) {
         const evtBus = new EventBus_1.EventBus(".", 3);
         const api = new Api_1.Api(evtBus);
         api.require = parentRequire;
-        /*evtBus.on("allEvents", (data) => {
-          console.log("*************************************************************************************");
-          console.log(data);
-        });*/
         let globalSystem = null;
         if (!Env_1.isNode()) {
             globalSystem = window;

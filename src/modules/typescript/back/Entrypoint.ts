@@ -19,7 +19,7 @@ export default class CompilerPackage implements IModuleEntryPoint {
       serviceInstance: _Compiler
     });
 
-    _Compiler["_sendSync"]<any>("CLI.PACKAGE.REGISTER", {
+    _Compiler["_SendSync"]<any>("CLI.PACKAGE.REGISTER", {
       sender: _Compiler.identity,
       payload: {
         doc: Doc,

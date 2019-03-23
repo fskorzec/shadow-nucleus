@@ -19,7 +19,7 @@ class CompilerPackage {
             yield api.Service.registerService(_Compiler.cmpName, _Compiler.cmpId, {
                 serviceInstance: _Compiler
             });
-            _Compiler["_sendSync"]("CLI.PACKAGE.REGISTER", {
+            _Compiler["_SendSync"]("CLI.PACKAGE.REGISTER", {
                 sender: _Compiler.identity,
                 payload: {
                     doc: Cli_1.Doc,
@@ -27,13 +27,12 @@ class CompilerPackage {
                         console.log(`Trying to compile ${params.parameters.src}`);
                         _Compiler.compile([params.parameters["src"]], {
                             target: typescript_1.ScriptTarget.ES2015,
-                            lib: ["/src/lib/lib.es2015.d.ts"],
                             module: typescript_1.ModuleKind.CommonJS,
                             jsx: typescript_1.JsxEmit.React,
                             strict: false,
                             esModuleInterop: true,
-                            noResolve: true
-                        });
+                            outDir: params.parameters["dst"]
+                        }, []);
                         console.log(`End of compilation process`);
                     }
                 }

@@ -9,7 +9,6 @@ import {
   ServiceIdentifierType
 } from "./Types";
 import { IService } from "./IService";
-import { stringify } from "querystring";
 import { BaseComponent } from "../../../Plugin";
 
 /**
@@ -149,7 +148,7 @@ export class Service implements IService {
     
     const res = new classDefinition(...services) as unknown as IPrivateClass;
     if ((res as unknown as BaseComponent)["_NC_TYPE_"]) {
-      res._evtBus = this._evtBus;
+      res._EvtBus = this._evtBus;
       res.getService = async (serviceName: string, serviceId: string) => await this.getService(serviceName, serviceId);
       res.initialize();
     }

@@ -5,7 +5,7 @@ export interface IClass {
 }
 
 export interface IPrivateClass extends IClass {
-  _evtBus: IEventBus | undefined;
+  _EvtBus: IEventBus | undefined;
   initialize(): void;
   getService: <T>(serviceName: string, serviceId: string) => Promise<T>;
 }

@@ -7,7 +7,8 @@ let Errors = Constant_1.constantTree({
         BUSINESS: ""
     },
     TECHNICAL: {
-        EVENTBUS_IS_NOT_DEFINED: ""
+        EVENTBUS_IS_NOT_DEFINED: "",
+        GUID_IS_MISSING: ""
     }
 });
 exports.Errors = Errors;

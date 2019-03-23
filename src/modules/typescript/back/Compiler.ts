@@ -67,7 +67,7 @@ export class Compiler extends BaseComponent {
       ensureDirectoryExistence(filePath);
       writeFileSync(filePath,fileContent,{encoding:"utf8", flag:"w"});
 
-      this._sendSync<TCompilerWriteFileArg>(Evts.TSC.COMPILER.WRITE_FILE, {
+      this._SendSync<TCompilerWriteFileArg>(Evts.TSC.COMPILER.WRITE_FILE, {
         sender: this.identity,
         payload: {
           guid    : (data && data.payload.guid) || "CLI" ,
@@ -91,7 +91,7 @@ export class Compiler extends BaseComponent {
           diagnostic.messageText,
           "\n"  
         );
-        this._sendSync<TDiagnosticArg>(Evts.TSC.DIAGNOSTIC.ERROR, {
+        this._SendSync<TDiagnosticArg>(Evts.TSC.DIAGNOSTIC.ERROR, {
           sender: this.identity,
           payload: {
             guid            : (data && data.payload.guid) || "CLI"                                     ,
@@ -103,7 +103,7 @@ export class Compiler extends BaseComponent {
           }
         })
       } else {
-        this._sendSync<TDiagnosticArg>(Evts.TSC.DIAGNOSTIC.ERROR, {
+        this._SendSync<TDiagnosticArg>(Evts.TSC.DIAGNOSTIC.ERROR, {
           sender: this.identity,
           payload: {
             guid            : (data && data.payload.guid) || "CLI" ,
@@ -119,7 +119,7 @@ export class Compiler extends BaseComponent {
   
     let exitCode = emitResult.emitSkipped ? 1 : 0;
     
-    this._sendSync<TCompilerResultQueryArg>(Evts.TSC.COMPILER.COMPILED, {
+    this._SendSync<TCompilerResultQueryArg>(Evts.TSC.COMPILER.COMPILED, {
       sender: this.identity,
       payload: {
         guid     : (data && data.payload.guid) || "CLI" ,

@@ -13,6 +13,7 @@ const Module_1 = require("././doc/Module");
 const Plugin_1 = require("../../../Plugin");
 const Terminal_1 = require("../../../console/Terminal");
 const Constant_1 = require("../../../console/core/Constant");
+const Build_1 = require("./runner/Build");
 const term = new Terminal_1.Terminal();
 let _packages = {};
 class Cli {
@@ -21,20 +22,35 @@ class Cli {
             const cmp = yield api.Service.resolve(Plugin_1.BaseComponent);
             cmp["_Receive"](Events_1.Evts.CLI.PACKAGE.REGISTER, (data) => {
                 _packages[data.payload.doc.name || ""] = data.payload;
-                cmp["_send"](Events_1.Evts.CLI.PACKAGE.REGISTERED, data);
+                cmp["_Send"](Events_1.Evts.CLI.PACKAGE.REGISTERED, data);
                 console.log(`registering ${data.payload.doc.name}`);
             });
             cmp["_Receive"](Events_1.Evts.CLI.RUNNER.EXECUTE, (data) => {
+                console.log("Evts.CLI.RUNNER.EXECUTE");
                 processParams(data.payload);
             });
-            cmp["_sendSync"](Events_1.Evts.CLI.PACKAGE.REGISTER, {
+            cmp["_SendSync"](Events_1.Evts.CLI.PACKAGE.REGISTER, {
                 sender: cmp.identity,
                 payload: {
                     doc: Module_1.module,
-                    runner: void 0
+                    runner: (params) => {
+                        switch (params.command) {
+                            case "build":
+                                let mod = "";
+                                let target = "front";
+                                if ("mod" in params.parameters) {
+                                    mod = params.parameters.mod;
+                                }
+                                if ("target" in params.parameters) {
+                                    target = params.parameters.target;
+                                }
+                                Build_1.Build.buildmodule(mod, target);
+                                break;
+                        }
+                    }
                 }
             });
-            cmp["_sendSync"](Events_1.Evts.CLI.PACKAGE.REGISTER, {
+            cmp["_SendSync"](Events_1.Evts.CLI.PACKAGE.REGISTER, {
                 sender: cmp.identity,
                 payload: {
                     doc: Module_1._package,

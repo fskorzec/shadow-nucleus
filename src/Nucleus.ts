@@ -9,13 +9,6 @@ export async function startNucleus(parentRequire?: any) {
   const api               = new Api(evtBus)      ;
   
   api.require = parentRequire;
-  evtBus.on("allEvents", (data) => {
-    console.log("*************************************************************************************");
-    console.log(data);
-    console.log("*************************************************************************************");
-    console.log("");
-  });
-  
   let globalSystem: any = null;
   
   if (!isNode()) {

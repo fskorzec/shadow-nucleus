@@ -19,7 +19,7 @@ type IBgColorTerminal<T> = {
   [key in keyof BgColor16Type] : T;
 }
 
-export class Terminal extends BaseTerminal implements IColor16Terminal<Terminal>{
+export class Terminal extends BaseTerminal implements IColor16Terminal<Terminal> {
   red            : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
   black          : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;
   green          : IColorTerminalDelegate<Terminal> = void 0 as unknown as IColorTerminalDelegate<Terminal> ;

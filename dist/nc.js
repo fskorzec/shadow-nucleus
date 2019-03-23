@@ -18,12 +18,22 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const Args_1 = require("./console/Args");
 const Nucleus_1 = require("./Nucleus");
+const Plugin_1 = require("./Plugin");
 const path = __importStar(require("path"));
 const fs = __importStar(require("fs"));
 function start() {
     return __awaiter(this, void 0, void 0, function* () {
         // Start the core api expose it
         yield Nucleus_1.startNucleus(require);
+        if (params.parameters && "verbose" in params.parameters) {
+            const cmp = yield _nucleus_api.Service.resolve(Plugin_1.BaseComponent);
+            cmp["_EvtBus"] && cmp["_EvtBus"].on("allEvents", (data) => {
+                console.log("*************************************************************************************");
+                console.log(data);
+                console.log("*************************************************************************************");
+                console.log("");
+            });
+        }
         if (fs.existsSync(`${nucleusExecFolderPath}/dist/_packages/modules/nc-cli/1.0.0/back/nc-cli.js`)) {
             //Load the nucleus cli plugin
             yield _nucleus_api.Module.loadModule(`${nucleusExecFolderPath}/dist/_packages/modules/nc-cli/1.0.0/back/nc-cli.js`);
@@ -36,7 +46,7 @@ function start() {
             yield _nucleus_api.Module.loadModule(`${nucleusExecFolderPath}/dist/_packages/modules/typescript/3.3.3/back/typescript.js`);
         }
         else {
-            console.log("Cannot find typescritp plugin, will fallback to global installation if exists");
+            console.log("Cannot find typescript plugin, will fallback to global installation if exists");
         }
         _nucleus_api._evtBus.emit("CLI.RUNNER.EXECUTE", {
             payload: params

@@ -1,16 +1,19 @@
-import { Evts } from "./Events";
-import { CommandArgs } from "../../../console/Args";
-import { Package, Command } from "../../../console/TPackages";
-import { module, AppDoc, _package } from "././doc/Module";
+import { Evts }                     from "./Events"                   ;
+import { CommandArgs }              from "../../../console/Args"      ;
+import { Package, Command }         from "../../../console/TPackages" ;
+import { module, AppDoc, _package } from "././doc/Module"             ;
 
 import { 
-  IModuleEntryPoint, 
-  IApi, 
-  connect,
+  IModuleEntryPoint , 
+  IApi              , 
+  connect           ,
   BaseComponent
 } from "../../../Plugin";
 import { Terminal } from "../../../console/Terminal";
 import { Color16, EStyle, ForeColor, EscColorClosingChar } from "../../../console/core/Constant";
+import { Build } from "./runner/Build";
+import { IPrivateBaseComponent } from "../../../core/BaseComponent";
+import { CLI_IDENTITY } from "../../../core/constant/Cli";
 
 const term = new Terminal();
 
@@ -21,29 +24,46 @@ let _packages: {
 export default class Cli implements IModuleEntryPoint {
 
   async entryPoint(api: IApi): Promise<void> {
-    const cmp = await api.Service.resolve<BaseComponent>(BaseComponent);
+    const cmp = await api.Service.resolve<IPrivateBaseComponent>(BaseComponent);
 
-    cmp["_Receive"]<CLI_PACKAGE>(Evts.CLI.PACKAGE.REGISTER, (data) => {
+    cmp._Receive<CLI_PACKAGE>(Evts.CLI.PACKAGE.REGISTER, (data) => {
       _packages[data.payload.doc.name || ""] = data.payload;
-      cmp["_send"](Evts.CLI.PACKAGE.REGISTERED, data);
+      cmp._Send(Evts.CLI.PACKAGE.REGISTERED, data);
       
       console.log(`registering ${data.payload.doc.name}`)
     });
 
-    cmp["_Receive"]<CommandArgs>(Evts.CLI.RUNNER.EXECUTE, (data) => {
+    cmp._Receive<CommandArgs>(Evts.CLI.RUNNER.EXECUTE, (data) => {
       processParams(data.payload);
     });
 
-    cmp["_sendSync"]<CLI_PACKAGE>(Evts.CLI.PACKAGE.REGISTER, {
-      sender: cmp.identity,
+    cmp._SendSync<CLI_PACKAGE>(Evts.CLI.PACKAGE.REGISTER, {
+      sender: CLI_IDENTITY,
       payload: {
         doc: module,
-        runner: void 0 as unknown as () => void
+        runner: (params: CommandArgs) => {
+          switch(params.command) {
+            case "build":
+            let mod = "";
+            let target: "front" | "back" = "front";
+
+            if ("mod" in params.parameters) {
+              mod = params.parameters.mod;  
+            }
+
+            if ("target" in params.parameters) {
+              target = params.parameters.target as "front" | "back";
+            }
+
+            Build.buildModule(mod, target);
+            break;
+          }
+        }
       }
     });
 
-    cmp["_sendSync"]<CLI_PACKAGE>(Evts.CLI.PACKAGE.REGISTER, {
-      sender: cmp.identity,
+    cmp._SendSync<CLI_PACKAGE>(Evts.CLI.PACKAGE.REGISTER, {
+      sender: CLI_IDENTITY,
       payload: {
         doc: _package,
         runner: (params: CommandArgs) => {

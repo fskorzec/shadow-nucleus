@@ -5,6 +5,7 @@ declare let Errors: {
     };
     TECHNICAL: {
         EVENTBUS_IS_NOT_DEFINED: string;
+        GUID_IS_MISSING: string;
     };
 };
 export { Errors };

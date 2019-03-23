@@ -13,29 +13,35 @@ class BaseComponent {
      * @param eventName Full name of the event
      * @param query The query description
      */
-    _send(eventName, query) {
-        if (this._evtBus) {
-            this._evtBus.emitAsync(eventName, query);
+    _Send(eventName, query) {
+        if (this._EvtBus) {
+            this._EvtBus.emitAsync(eventName, query);
         }
     }
-    _sendSync(eventName, query) {
-        if (this._evtBus) {
-            this._evtBus.emit(eventName, query);
+    _SendSync(eventName, query) {
+        if (this._EvtBus) {
+            this._EvtBus.emit(eventName, query);
         }
     }
     /**
      * Send a new command and process the result
+     *
      * @param eventName Full name of the event
      * @param returnEventName Full name of the event to listen in return
      * @param query The query description
      */
-    _sendWithReturn(eventName, returnEventName, query) {
+    _SendWithReturn(eventName, returnEventName, query) {
+        if (query.payload.guid === null || query.payload.guid === void 0) {
+            throw Error(Error_1.Errors.TECHNICAL.GUID_IS_MISSING);
+        }
         return new Promise((resolve, reject) => {
-            if (this._evtBus) {
-                this._evtBus.once(returnEventName, (data) => {
-                    resolve(data);
+            if (this._EvtBus) {
+                this._EvtBus.on(returnEventName, (data) => {
+                    if (data.guid === query.payload.guid) {
+                        resolve(data);
+                    }
                 });
-                this._evtBus.emitAsync(eventName, query);
+                this._EvtBus.emitAsync(eventName, query);
             }
             else {
                 reject(Error(Error_1.Errors.TECHNICAL.EVENTBUS_IS_NOT_DEFINED));
@@ -48,8 +54,8 @@ class BaseComponent {
      * @param handler The handler function to use process the data
      */
     _Receive(eventName, handler) {
-        if (this._evtBus) {
-            return this._evtBus.on(eventName, handler);
+        if (this._EvtBus) {
+            return this._EvtBus.on(eventName, handler);
         }
         return { off: () => void 0 };
     }
@@ -59,8 +65,8 @@ class BaseComponent {
      * @param handler  The handler function to use process the data
      */
     _ReceiveOnce(eventName, handler) {
-        if (this._evtBus) {
-            return this._evtBus.once(eventName, handler);
+        if (this._EvtBus) {
+            return this._EvtBus.once(eventName, handler);
         }
         return { off: () => void 0 };
     }

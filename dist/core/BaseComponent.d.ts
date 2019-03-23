@@ -1,4 +1,7 @@
-export declare type sendQuery<T> = {
+export declare type TReturnableEvent = {
+    guid?: string;
+};
+export declare type TSendQuery<T extends TReturnableEvent> = {
     sender: {
         cmpId: string;
         cmpName: string;
@@ -7,7 +10,7 @@ export declare type sendQuery<T> = {
 };
 export declare class BaseComponent {
     private _NC_TYPE_;
-    private _evtBus;
+    private _EvtBus;
     cmpId: string;
     cmpName: string;
     constructor();
@@ -17,21 +20,22 @@ export declare class BaseComponent {
      * @param eventName Full name of the event
      * @param query The query description
      */
-    protected _send<T>(eventName: string, query: sendQuery<T>): void;
-    protected _sendSync<T>(eventName: string, query: sendQuery<T>): void;
+    protected _Send<T>(eventName: string, query: TSendQuery<T>): void;
+    protected _SendSync<T>(eventName: string, query: TSendQuery<T>): void;
     /**
      * Send a new command and process the result
+     *
      * @param eventName Full name of the event
      * @param returnEventName Full name of the event to listen in return
      * @param query The query description
      */
-    protected _sendWithReturn<T, U>(eventName: string, returnEventName: string, query: sendQuery<U>): Promise<T | undefined>;
+    protected _SendWithReturn<T extends TReturnableEvent, U extends TReturnableEvent>(eventName: string, returnEventName: string, query: TSendQuery<U>): Promise<T | undefined>;
     /**
      * Start listening to a specific event
      * @param eventName Full name of the event
      * @param handler The handler function to use process the data
      */
-    protected _Receive<T>(eventName: string, handler: (data: sendQuery<T>) => void): {
+    protected _Receive<T>(eventName: string, handler: (data: TSendQuery<T>) => void): {
         off: () => void;
     };
     /**
@@ -39,7 +43,7 @@ export declare class BaseComponent {
      * @param eventName Full name of the event
      * @param handler  The handler function to use process the data
      */
-    protected _ReceiveOnce<T>(eventName: string, handler: (data: sendQuery<T>) => void): {
+    protected _ReceiveOnce<T>(eventName: string, handler: (data: TSendQuery<T>) => void): {
         off: () => void;
     };
     readonly identity: {

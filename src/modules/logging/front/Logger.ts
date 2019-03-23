@@ -23,36 +23,36 @@ export class Logger extends BaseComponent {
     
     this._Receive<any[]>(Acts.LOGGING.LOGGER.LOG, (data) => {
       console.log(...data.payload);
-      this._send(Evts.LOGING.LOGGER.LOGGED, data);
+      this._Send(Evts.LOGING.LOGGER.LOGGED, data);
     });
 
     this._Receive<any[]>(Acts.LOGGING.LOGGER.WARN, (data) => {
       console.warn(...data.payload);
-      this._send(Evts.LOGING.LOGGER.WARNED, data);
+      this._Send(Evts.LOGING.LOGGER.WARNED, data);
     });
 
     this._Receive<any[]>(Acts.LOGGING.LOGGER.INFO, (data) => {
       console.info(...data.payload);
-      this._send(Evts.LOGING.LOGGER.INFORMED, data);
+      this._Send(Evts.LOGING.LOGGER.INFORMED, data);
     });
   }
 
   log(...args: any[]): void {
-    this._send(Acts.LOGGING.LOGGER.LOG, {
+    this._Send(Acts.LOGGING.LOGGER.LOG, {
       sender: this.identity,
       payload: args
     });
   }
 
   warn(...args: any[]): void {
-    this._send(Acts.LOGGING.LOGGER.WARN, {
+    this._Send(Acts.LOGGING.LOGGER.WARN, {
       sender: this.identity,
       payload: args
     });
   }
 
   info(...args: any[]): void {
-    this._send(Acts.LOGGING.LOGGER.INFO, {
+    this._Send(Acts.LOGGING.LOGGER.INFO, {
       sender: this.identity,
       payload: args
     });

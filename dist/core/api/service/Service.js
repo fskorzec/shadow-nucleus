@@ -121,7 +121,7 @@ class Service {
             }
             const res = new classDefinition(...services);
             if (res["_NC_TYPE_"]) {
-                res._evtBus = this._evtBus;
+                res._EvtBus = this._evtBus;
                 res.getService = (serviceName, serviceId) => __awaiter(this, void 0, void 0, function* () { return yield this.getService(serviceName, serviceId); });
                 res.initialize();
             }

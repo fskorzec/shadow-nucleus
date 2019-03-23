@@ -5,8 +5,5 @@ export declare class Webpack extends BaseComponent {
     static hasBeenInitialized: boolean;
     constructor();
     protected initialize(): void;
-    webpack(): void;
-}
-export interface IWebpack {
 }
 //# sourceMappingURL=Webpack.d.ts.map

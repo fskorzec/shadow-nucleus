@@ -32,7 +32,7 @@ exports.module = {
                 tsc: {
                     name: "tsc",
                     type: "string",
-                    required: true,
+                    required: false,
                     description: "The path to the tsconfig file to use instead of default parameters",
                     exemples: [
                         "../",
@@ -41,7 +41,7 @@ exports.module = {
                 wp: {
                     name: "wp",
                     type: "string",
-                    required: true,
+                    required: false,
                     description: "The path to the webpack config file to use instead of default parameters",
                     exemples: [
                         "../"
