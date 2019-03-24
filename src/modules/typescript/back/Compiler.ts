@@ -6,19 +6,16 @@ import { writeFileSync, existsSync, mkdirSync } from "fs";
 import { TSendQuery } from "../../../core/BaseComponent";
 import { compileFunction } from "vm";
 import { JSONstringify } from "../../../core/util/Text";
-import { Ioc, DI } from "../../../core/util/Ioc";
+import { IocInject } from "../../../core/util/Ioc";
 
 declare var Services: any;
 
-@DI("ICompiler")
+@IocInject("ICompiler")
 export class Compiler extends BaseComponent {
   serviceName = "tsc"    ;
   serviceId   = "com.nucleus" ;
 
   static hasBeenInitialized: boolean = false;
-
-  @Ioc("ICompiler")
-  private TestProperty: ICompiler | null = null;
   
   constructor() {
     super();

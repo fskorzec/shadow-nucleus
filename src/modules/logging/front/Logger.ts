@@ -1,12 +1,13 @@
 import { BaseComponent } from "../../../Plugin";
 import { Acts, Evts } from "../Events";
-import { Ioc } from "../../../core/util/Ioc";
+import { IocInject } from "../../../core/util/Ioc";
 
 declare var Services: any;
 
+@IocInject("ILogger")
 export class Logger extends BaseComponent {
-  serviceName = "logging.front.logger"    ;
-  serviceId   = "com.shadow-nuclues.core" ;
+  serviceName = "logger"      ;
+  serviceId   = "com.nucleus" ;
 
   static hasBeenInitialized: boolean = false;
   

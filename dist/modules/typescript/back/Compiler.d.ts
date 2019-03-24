@@ -5,7 +5,6 @@ export declare class Compiler extends BaseComponent {
     serviceName: string;
     serviceId: string;
     static hasBeenInitialized: boolean;
-    private TestProperty;
     constructor();
     protected initialize(): void;
     compile(fileNames: string[], options: ts.CompilerOptions, moduleSearchLocations: Array<string>, data?: TCompileQuery): void;

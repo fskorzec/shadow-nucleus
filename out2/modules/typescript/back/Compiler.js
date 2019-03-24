@@ -14,7 +14,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var Compiler_1;
-"use strict";
 const Plugin_1 = require("../../../Plugin");
 const Events_1 = require("./Events");
 const ts = __importStar(require("typescript"));
@@ -119,4 +118,3 @@ Compiler = Compiler_1 = __decorate([
     Ioc_1.IocInject("ICompiler")
 ], Compiler);
 exports.Compiler = Compiler;
-//# sourceMappingURL=Compiler.js.map

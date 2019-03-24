@@ -22,7 +22,8 @@ exports.UtilEnv = UtilEnv;
 const UtilConstant = __importStar(require("./core/util/Constant"));
 exports.UtilConstant = UtilConstant;
 const Ioc_1 = require("./core/util/Ioc");
-exports.Ioc = Ioc_1.Ioc;
+exports.IocInject = Ioc_1.IocInject;
+exports.IocResolve = Ioc_1.IocResolve;
 function connect(module) {
     return __awaiter(this, void 0, void 0, function* () {
         yield _nucleus(module);

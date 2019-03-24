@@ -30,4 +30,3 @@ function connect(module) {
     });
 }
 exports.connect = connect;
-//# sourceMappingURL=Plugin.js.map

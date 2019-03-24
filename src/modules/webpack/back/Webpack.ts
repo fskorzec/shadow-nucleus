@@ -1,9 +1,11 @@
 import { BaseComponent } from "../../../Plugin";
 import _Webpack from "webpack";
 import { Evts, TSendPackQueryArgs } from "./Events";
+import { IocInject } from "../../../core/util/Ioc";
 
 declare var Services: any;
 
+@IocInject("IWebpack")
 export class Webpack extends BaseComponent {
   serviceName = "webpack"     ;
   serviceId   = "com.nucleus" ;

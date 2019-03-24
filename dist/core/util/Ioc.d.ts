@@ -1,3 +1,3 @@
-export declare function Ioc(type: string): any;
-export declare function DI(type: string): any;
+export declare function IocInject(type: string): any;
+export declare function IocResolve(type: string): any;
 //# sourceMappingURL=Ioc.d.ts.map

@@ -1,7 +1,7 @@
-export function Ioc(type: string): any {
+export function IocInject(type: string): any {
   return () => void 0;
 }
 
-export function DI(type: string): any {
+export function IocResolve(type: string): any {
   return () => void 0;
 }

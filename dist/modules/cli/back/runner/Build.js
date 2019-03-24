@@ -59,8 +59,8 @@ class Build {
                 //console.log("Errors", compiledErrors)
             }
             if (compiledFiles._filled) {
-                var regexIoc = new RegExp('__decorate\\(\\[.*?Ioc\\((.*?)\\).*?\\],\\s*(.*?),\\s*"(.*?)"', 'is');
-                var regexDI = new RegExp('= (\\w*?) = __decorate\\(\\[.*?DI\\((.*?)\\).*?\\],\\s*(.*?)\\);', 'is');
+                var regexIocResolve = new RegExp('__decorate\\(\\[.*?IocResolve\\((.*?)\\).*?\\],\\s*(.*?),\\s*"(.*?)"', 'is');
+                var regexIocInject = new RegExp('(\\w*?) = __decorate\\(\\[.*?IocInject\\((.*?)\\).*?\\],\\s*(.*?)\\);', 'is');
                 function ensureDirectoryExistence(filePath) {
                     var dirname = path.dirname(filePath);
                     if (fs_1.existsSync(dirname)) {
@@ -71,15 +71,15 @@ class Build {
                 }
                 for (let i in compiledFiles) {
                     if (i !== "_filled") {
-                        var match = regexIoc.exec(compiledFiles[i]);
+                        var match = regexIocResolve.exec(compiledFiles[i]);
                         if (match) {
-                            console.log(`Ioc detected in file ${i}, Property ${match[3]} in class ${match[2].split(".")[0]} is of type ${match[1]}`);
+                            console.log(`Resolve request detected in file ${i}, Property ${match[3]} in class ${match[2].split(".")[0]} is of type ${match[1]}`);
                         }
-                        var match = regexDI.exec(compiledFiles[i]);
+                        var match = regexIocInject.exec(compiledFiles[i]);
                         if (match) {
                             var regexName = new RegExp(match[1] + ' = class ' + match[3] + ' extends .*?this\\.serviceName = "(.*?)"', 'is').exec(compiledFiles[i]);
                             var regexId = new RegExp(match[1] + ' = class ' + match[3] + ' extends .*?this\\.serviceId = "(.*?)"', 'is').exec(compiledFiles[i]);
-                            console.log(`DI detected in file ${i}, Class ${match[3]} whose generated name is ${match[1]} is registered in module { name : ${regexName && regexName[1]}, id: ${regexId && regexId[1]} as type ${match[2]}}`);
+                            console.log(`Inject request detected in file ${i}, Class ${match[3]} whose generated name is ${match[1]} is registered in module { name : ${regexName && regexName[1]}, id: ${regexId && regexId[1]} as type ${match[2]}}`);
                         }
                     }
                     ensureDirectoryExistence(i);

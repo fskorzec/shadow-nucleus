@@ -8,4 +8,3 @@ function IocResolve(type) {
     return () => void 0;
 }
 exports.IocResolve = IocResolve;
-//# sourceMappingURL=Ioc.js.map
