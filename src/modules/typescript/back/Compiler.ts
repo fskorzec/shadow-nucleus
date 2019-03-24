@@ -6,14 +6,19 @@ import { writeFileSync, existsSync, mkdirSync } from "fs";
 import { TSendQuery } from "../../../core/BaseComponent";
 import { compileFunction } from "vm";
 import { JSONstringify } from "../../../core/util/Text";
+import { Ioc, DI } from "../../../core/util/Ioc";
 
 declare var Services: any;
 
+@DI("ICompiler")
 export class Compiler extends BaseComponent {
-  cmpName = "tsc"    ;
-  cmpId   = "com.nucleus" ;
+  serviceName = "tsc"    ;
+  serviceId   = "com.nucleus" ;
 
   static hasBeenInitialized: boolean = false;
+
+  @Ioc("ICompiler")
+  private TestProperty: ICompiler | null = null;
   
   constructor() {
     super();
@@ -56,7 +61,7 @@ export class Compiler extends BaseComponent {
     (program as any).getCurrentDirectory = null;
     let emitResult = program.emit(undefined , (filePath,fileContent) => {
       
-      function ensureDirectoryExistence(filePath: string) {
+      /*function ensureDirectoryExistence(filePath: string) {
         var dirname = path.dirname(filePath);
         if (existsSync(dirname)) {
           return true;
@@ -65,7 +70,7 @@ export class Compiler extends BaseComponent {
         mkdirSync(dirname);
       }
       ensureDirectoryExistence(filePath);
-      writeFileSync(filePath,fileContent,{encoding:"utf8", flag:"w"});
+      writeFileSync(filePath,fileContent,{encoding:"utf8", flag:"w"});*/
 
       this._SendSync<TCompilerWriteFileArg>(Evts.TSC.COMPILER.WRITE_FILE, {
         sender: this.identity,
@@ -132,5 +137,5 @@ export class Compiler extends BaseComponent {
 }
 
 export interface ICompiler {
-  
+  new (): ICompiler;
 }

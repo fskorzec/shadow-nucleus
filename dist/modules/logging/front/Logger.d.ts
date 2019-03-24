@@ -1,7 +1,7 @@
 import { BaseComponent } from "../../../Plugin";
 export declare class Logger extends BaseComponent {
-    cmpName: string;
-    cmpId: string;
+    serviceName: string;
+    serviceId: string;
     static hasBeenInitialized: boolean;
     constructor();
     protected initialize(): void;

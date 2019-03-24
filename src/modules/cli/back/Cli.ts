@@ -33,15 +33,15 @@ export default class Cli implements IModuleEntryPoint {
       console.log(`registering ${data.payload.doc.name}`)
     });
 
-    cmp._Receive<CommandArgs>(Evts.CLI.RUNNER.EXECUTE, (data) => {
-      processParams(data.payload);
+    cmp._Receive<CommandArgs>(Evts.CLI.RUNNER.EXECUTE, async (data) => {
+      await processParams(data.payload);
     });
 
     cmp._SendSync<CLI_PACKAGE>(Evts.CLI.PACKAGE.REGISTER, {
       sender: CLI_IDENTITY,
       payload: {
         doc: module,
-        runner: (params: CommandArgs) => {
+        runner: (function (this: BaseComponent ,params: CommandArgs) {
           switch(params.command) {
             case "build":
             let mod = "";
@@ -55,10 +55,10 @@ export default class Cli implements IModuleEntryPoint {
               target = params.parameters.target as "front" | "back";
             }
 
-            Build.buildModule(mod, target);
+            Build.buildModule.call(this, mod, target);
             break;
           }
-        }
+        }).bind(cmp as unknown as BaseComponent)
       }
     });
 
@@ -66,7 +66,7 @@ export default class Cli implements IModuleEntryPoint {
       sender: CLI_IDENTITY,
       payload: {
         doc: _package,
-        runner: (params: CommandArgs) => {
+        runner: async (params: CommandArgs) => {
           if (params.command === "list") {
             renderPackageList();
           }
@@ -79,7 +79,7 @@ export default class Cli implements IModuleEntryPoint {
 
 connect(Cli);
 
-function processParams(params: CommandArgs) {
+async function processParams(params: CommandArgs) {
   renderHeader();  
   if (params.package === "help") {
     renderGlobalinformatiom();
@@ -314,7 +314,7 @@ function drawLineDL(file: string) {
     let pct = 1;
     const id = setInterval( () => {
     pct += 3;
-    const pct10 = (pct - (pct%10)) / 10;
+    const pct10 = (pct - (pct % 10)) / 10;
     let progress = "";
     let rest = "";
     

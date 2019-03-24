@@ -46,11 +46,11 @@ class Service {
      * @param serviceId The main service Id
      * @param payload The payload
      */
-    registerService(serviceName, serviceId, payload) {
+    registerService(identity, payload) {
         return __awaiter(this, void 0, void 0, function* () {
             return new Promise((r, x) => {
                 const evt = this._evtBus.on(Events_1.Evts.API.SERVICE.SERVICE_REGISTERED, (data) => {
-                    if (data.serviceName === serviceName && data.serviceId === serviceId) {
+                    if (data.serviceName === identity.serviceName && data.serviceId === identity.serviceId) {
                         evt.off();
                         if (data.success) {
                             r();
@@ -61,8 +61,8 @@ class Service {
                     }
                 });
                 this._evtBus.emitAsync(Events_1.Acts.API.SERVICE.REGISTER_SERVICE, {
-                    serviceName,
-                    serviceId,
+                    serviceName: identity.serviceName,
+                    serviceId: identity.serviceId,
                     payload
                 });
             });
@@ -80,11 +80,11 @@ class Service {
      * @param serviceName The service name
      * @param serviceId The service Id
      */
-    getService(serviceName, serviceId) {
+    getService(identity) {
         return __awaiter(this, void 0, void 0, function* () {
             return new Promise((r, x) => {
                 const evt = this._evtBus.on(Events_1.Evts.API.SERVICE.SERVICE_RETURNED, (data) => {
-                    if (data.serviceName === serviceName && data.serviceId === serviceId) {
+                    if (data.serviceName === identity.serviceName && data.serviceId === identity.serviceId) {
                         evt.off();
                         if (data.success) {
                             r(data.payload.serviceDefinition
@@ -99,8 +99,8 @@ class Service {
                     }
                 });
                 this._evtBus.emitAsync(Events_1.Acts.API.SERVICE.GET_SERVICE, {
-                    serviceName,
-                    serviceId
+                    serviceName: identity.serviceName,
+                    serviceId: identity.serviceId
                 });
             });
         });
@@ -113,16 +113,16 @@ class Service {
     resolve(classDefinition) {
         return __awaiter(this, void 0, void 0, function* () {
             let services = [];
-            if ("__nc__Services" in classDefinition.prototype) {
-                for (let def of classDefinition.prototype.__nc__Services) {
-                    const service = yield this.getService(...def);
-                    services.push(service);
-                }
-            }
+            /*if ("__nc__Services" in classDefinition.prototype) {
+              for(let def of classDefinition.prototype.__nc__Services as Array<[string, string]>) {
+                const service = await this.getService(...def);
+                services.push(service);
+              }
+            }*/
             const res = new classDefinition(...services);
             if (res["_NC_TYPE_"]) {
                 res._EvtBus = this._evtBus;
-                res.getService = (serviceName, serviceId) => __awaiter(this, void 0, void 0, function* () { return yield this.getService(serviceName, serviceId); });
+                res.getService = (serviceName, serviceId) => __awaiter(this, void 0, void 0, function* () { return yield this.getService({ serviceName, serviceId }); });
                 res.initialize();
             }
             return res;

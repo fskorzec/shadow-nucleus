@@ -9,8 +9,8 @@ const Events_1 = require("./Events");
 class Webpack extends Plugin_1.BaseComponent {
     constructor() {
         super();
-        this.cmpName = "webpack";
-        this.cmpId = "com.nucleus";
+        this.serviceName = "webpack";
+        this.serviceId = "com.nucleus";
     }
     initialize() {
         if (Webpack.hasBeenInitialized) {

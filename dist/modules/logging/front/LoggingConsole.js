@@ -14,7 +14,7 @@ class LogginConsole {
     entryPoint(api) {
         return __awaiter(this, void 0, void 0, function* () {
             const logger = yield api.Service.resolve(Logger_1.Logger);
-            yield api.Service.registerService(logger.cmpName, logger.cmpId, {
+            yield api.Service.registerService(logger.identity, {
                 serviceInstance: logger
             });
         });

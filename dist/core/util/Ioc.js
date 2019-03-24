@@ -1,13 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function Ioc(value) {
-    return function (ctor) {
-        ctor.prototype.__nc__Services = value;
-    };
+function Ioc(type) {
+    return () => void 0;
 }
 exports.Ioc = Ioc;
-function DI(target, propertyKey) {
-    console.log(target, propertyKey);
+function DI(type) {
+    return () => void 0;
 }
 exports.DI = DI;
 //# sourceMappingURL=Ioc.js.map

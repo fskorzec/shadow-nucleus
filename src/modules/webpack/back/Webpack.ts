@@ -5,8 +5,8 @@ import { Evts, TSendPackQueryArgs } from "./Events";
 declare var Services: any;
 
 export class Webpack extends BaseComponent {
-  cmpName = "webpack"     ;
-  cmpId   = "com.nucleus" ;
+  serviceName = "webpack"     ;
+  serviceId   = "com.nucleus" ;
 
   static hasBeenInitialized: boolean = false;
   

@@ -1,6 +1,6 @@
 import { TSendQuery } from "../BaseComponent";
 
-function buildQueryResult<T,U>(identity: {cmpName: string, cmpId: string}, data: TSendQuery<T>, nextData: U) : TSendQuery<U>;
+function buildQueryResult<T,U>(identity: {serviceName: string, serviceId: string}, data: TSendQuery<T>, nextData: U) : TSendQuery<U>;
 function buildQueryResult<T,U>(data: TSendQuery<T>, nextData: U) : TSendQuery<U>;
 function buildQueryResult<T,U>(...args: any[]) 
 {

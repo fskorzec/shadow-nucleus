@@ -4,8 +4,8 @@ const Error_1 = require("./constant/Error");
 class BaseComponent {
     constructor() {
         this._NC_TYPE_ = "BaseComponent";
-        this.cmpId = "";
-        this.cmpName = "";
+        this.serviceId = "";
+        this.serviceName = "";
         this.getService = void 0;
     }
     /**
@@ -31,13 +31,16 @@ class BaseComponent {
      * @param query The query description
      */
     _SendWithReturn(eventName, returnEventName, query) {
-        if (query.payload.guid === null || query.payload.guid === void 0) {
-            throw Error(Error_1.Errors.TECHNICAL.GUID_IS_MISSING);
-        }
         return new Promise((resolve, reject) => {
+            if (query.payload.guid === null || query.payload.guid === void 0) {
+                reject(Error(Error_1.Errors.TECHNICAL.GUID_IS_MISSING));
+            }
             if (this._EvtBus) {
-                this._EvtBus.on(returnEventName, (data) => {
-                    if (data.guid === query.payload.guid) {
+                const offEvent = this._EvtBus.on(returnEventName, (data) => {
+                    console.log("MAYBE WE FOUND IT", data);
+                    if (data.payload.guid === query.payload.guid) {
+                        console.log("FOUND IT", data);
+                        offEvent.off();
                         resolve(data);
                     }
                 });
@@ -72,8 +75,8 @@ class BaseComponent {
     }
     get identity() {
         return {
-            cmpId: this.cmpId,
-            cmpName: this.cmpName
+            serviceId: this.serviceId,
+            serviceName: this.serviceName
         };
     }
     initialize() {

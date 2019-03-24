@@ -5,8 +5,8 @@ import { Ioc } from "../../../core/util/Ioc";
 declare var Services: any;
 
 export class Logger extends BaseComponent {
-  cmpName = "logging.front.logger"    ;
-  cmpId   = "com.shadow-nuclues.core" ;
+  serviceName = "logging.front.logger"    ;
+  serviceId   = "com.shadow-nuclues.core" ;
 
   static hasBeenInitialized: boolean = false;
   

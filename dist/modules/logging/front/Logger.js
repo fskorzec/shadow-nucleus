@@ -5,8 +5,8 @@ const Events_1 = require("../Events");
 class Logger extends Plugin_1.BaseComponent {
     constructor() {
         super();
-        this.cmpName = "logging.front.logger";
-        this.cmpId = "com.shadow-nuclues.core";
+        this.serviceName = "logging.front.logger";
+        this.serviceId = "com.shadow-nuclues.core";
     }
     initialize() {
         if (Logger.hasBeenInitialized) {

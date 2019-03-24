@@ -10,7 +10,7 @@ export default class LogginConsole implements IModuleEntryPoint {
   async entryPoint(api: IApi): Promise<void> {
     const logger = await api.Service.resolve<Logger>(Logger);
 
-    await api.Service.registerService(logger.cmpName, logger.cmpId, {
+    await api.Service.registerService(logger.identity, {
       serviceInstance: logger
     });
   }

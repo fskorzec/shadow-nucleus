@@ -16,14 +16,14 @@ class CompilerPackage {
     entryPoint(api) {
         return __awaiter(this, void 0, void 0, function* () {
             const _Compiler = yield api.Service.resolve(Compiler_1.Compiler);
-            yield api.Service.registerService(_Compiler.cmpName, _Compiler.cmpId, {
+            yield api.Service.registerService(_Compiler.identity, {
                 serviceInstance: _Compiler
             });
             _Compiler["_SendSync"]("CLI.PACKAGE.REGISTER", {
                 sender: _Compiler.identity,
                 payload: {
                     doc: Cli_1.Doc,
-                    runner: (params) => {
+                    runner: (params) => __awaiter(this, void 0, void 0, function* () {
                         console.log(`Trying to compile ${params.parameters.src}`);
                         _Compiler.compile([params.parameters["src"]], {
                             target: typescript_1.ScriptTarget.ES2015,
@@ -34,7 +34,7 @@ class CompilerPackage {
                             outDir: params.parameters["dst"]
                         }, []);
                         console.log(`End of compilation process`);
-                    }
+                    })
                 }
             });
         });

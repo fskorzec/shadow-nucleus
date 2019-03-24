@@ -10,7 +10,7 @@ export default class WebpackPackage implements IModuleEntryPoint {
   async entryPoint(api: IApi): Promise<void> {
     const _Webpack = await api.Service.resolve<Webpack>(Webpack);
 
-    await api.Service.registerService(_Webpack.cmpName, _Webpack.cmpId, {
+    await api.Service.registerService(_Webpack.identity, {
       serviceInstance: _Webpack
     });
 

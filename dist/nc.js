@@ -21,13 +21,26 @@ const Nucleus_1 = require("./Nucleus");
 const Plugin_1 = require("./Plugin");
 const path = __importStar(require("path"));
 const fs = __importStar(require("fs"));
+const Event_1 = require("./core/util/Event");
+const Cli_1 = require("./core/constant/Cli");
 function start() {
     return __awaiter(this, void 0, void 0, function* () {
         // Start the core api expose it
         yield Nucleus_1.startNucleus(require);
+        // used to access to the EventBus
+        const cmp = yield _nucleus_api.Service.resolve(Plugin_1.BaseComponent);
+        cmp._Receive("CLI.ENV.GET_INFO", (data) => {
+            cmp._Send("CLI.ENV.INFO_GOTTEN", Event_1.buildQueryResult(Cli_1.CLI_IDENTITY, data, {
+                args,
+                nodeExecpath,
+                nucleusExecPath,
+                nucleusExecFolderPath,
+                callerPath,
+                params
+            }));
+        });
         if (params.parameters && "verbose" in params.parameters) {
-            const cmp = yield _nucleus_api.Service.resolve(Plugin_1.BaseComponent);
-            cmp["_EvtBus"] && cmp["_EvtBus"].on("allEvents", (data) => {
+            cmp._EvtBus && cmp._EvtBus.on(Cli_1.CLI_ALL_EVENTS, (data) => {
                 console.log("*************************************************************************************");
                 console.log(data);
                 console.log("*************************************************************************************");
@@ -51,18 +64,6 @@ function start() {
         _nucleus_api._evtBus.emit("CLI.RUNNER.EXECUTE", {
             payload: params
         });
-        // Check for the module.conf.json file
-        //if (fs.existsSync(path.resolve("modules.conf.node.json"))) {
-        // Loads the configuration file
-        //const jsonConf = JSON.parse(fs.readFileSync(path.resolve("modules.conf.node.json"), "utf8"));
-        // Loads each modules
-        //for(let i=0; i<jsonConf.modules.length; i++) {
-        //  await _nucleus_api.Module.loadModule(path.resolve(jsonConf.modules[i].path));
-        // }
-        // } else {
-        // Abord if no configuration file is found
-        //  console.log(`${path.resolve("modules.conf.node.json")} file was not found. Nucleus loading aborted.`)
-        //}
     });
 }
 exports.start = start;

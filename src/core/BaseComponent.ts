@@ -7,8 +7,8 @@ export type TReturnableEvent = {
 
 export type TSendQuery<T extends TReturnableEvent> = {
   sender: {
-    cmpId   : string ;
-    cmpName : string ;
+    serviceId   : string ;
+    serviceName : string ;
   };
   payload: T;
 }
@@ -32,8 +32,8 @@ export class BaseComponent {
 
   private _EvtBus: IEventBus | undefined;
 
-  cmpId   : string = "";
-  cmpName : string = "";
+  serviceId   : string = "";
+  serviceName : string = "";
 
   constructor() {}
 
@@ -64,15 +64,18 @@ export class BaseComponent {
    * @param returnEventName Full name of the event to listen in return
    * @param query The query description
    */
-  protected _SendWithReturn<T extends TReturnableEvent,U extends TReturnableEvent>(eventName: string, returnEventName: string,  query: TSendQuery<U>): Promise<T | undefined> {
-    if (query.payload.guid === null || query.payload.guid === void 0) {
-      throw Error(Errors.TECHNICAL.GUID_IS_MISSING);
-    }
-
+  protected _SendWithReturn<T extends TSendQuery<TReturnableEvent>,U extends TReturnableEvent>(eventName: string, returnEventName: string,  query: TSendQuery<U>): Promise<T> {
     return new Promise( (resolve, reject) => {
+      if (query.payload.guid === null || query.payload.guid === void 0) {
+        reject(Error(Errors.TECHNICAL.GUID_IS_MISSING));
+      }
+
       if (this._EvtBus) {
-        this._EvtBus.on(returnEventName, (data: T) => {
-          if (data.guid === query.payload.guid) {
+        const offEvent = this._EvtBus.on(returnEventName, (data: T) => {
+          console.log("MAYBE WE FOUND IT", data)
+          if (data.payload.guid === query.payload.guid) {
+            console.log("FOUND IT", data)
+            offEvent.off();
             resolve(data);
           }          
         });
@@ -108,12 +111,12 @@ export class BaseComponent {
   }
 
   get identity() : {
-    cmpId: string;
-    cmpName: string;
+    serviceId   : string;
+    serviceName : string;
   } {
     return {
-      cmpId   : this.cmpId,
-      cmpName : this.cmpName
+      serviceId   : this.serviceId,
+      serviceName : this.serviceName
     }
   }
 

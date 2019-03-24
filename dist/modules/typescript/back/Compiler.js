@@ -1,4 +1,10 @@
 "use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
@@ -7,24 +13,26 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var Compiler_1;
+"use strict";
 const Plugin_1 = require("../../../Plugin");
 const Events_1 = require("./Events");
 const ts = __importStar(require("typescript"));
-const path = __importStar(require("path"));
-const fs_1 = require("fs");
 const Text_1 = require("../../../core/util/Text");
-class Compiler extends Plugin_1.BaseComponent {
+const Ioc_1 = require("../../../core/util/Ioc");
+let Compiler = Compiler_1 = class Compiler extends Plugin_1.BaseComponent {
     constructor() {
         super();
-        this.cmpName = "tsc";
-        this.cmpId = "com.nucleus";
+        this.serviceName = "tsc";
+        this.serviceId = "com.nucleus";
+        this.TestProperty = null;
     }
     initialize() {
-        if (Compiler.hasBeenInitialized) {
+        if (Compiler_1.hasBeenInitialized) {
             return;
         }
         else {
-            Compiler.hasBeenInitialized = true;
+            Compiler_1.hasBeenInitialized = true;
             this._Receive(Events_1.Evts.TSC.COMPILER.COMPILE, (data) => {
                 this.compile(data.payload.sources, data.payload.options || {}, [], data);
             });
@@ -45,16 +53,16 @@ class Compiler extends Plugin_1.BaseComponent {
         let program = ts.createProgram(fileNames, options, host);
         program.getCurrentDirectory = null;
         let emitResult = program.emit(undefined, (filePath, fileContent) => {
-            function ensureDirectoryExistence(filePath) {
-                var dirname = path.dirname(filePath);
-                if (fs_1.existsSync(dirname)) {
-                    return true;
-                }
-                ensureDirectoryExistence(dirname);
-                fs_1.mkdirSync(dirname);
+            /*function ensureDirectoryExistence(filePath: string) {
+              var dirname = path.dirname(filePath);
+              if (existsSync(dirname)) {
+                return true;
+              }
+              ensureDirectoryExistence(dirname);
+              mkdirSync(dirname);
             }
             ensureDirectoryExistence(filePath);
-            fs_1.writeFileSync(filePath, fileContent, { encoding: "utf8", flag: "w" });
+            writeFileSync(filePath,fileContent,{encoding:"utf8", flag:"w"});*/
             this._SendSync(Events_1.Evts.TSC.COMPILER.WRITE_FILE, {
                 sender: this.identity,
                 payload: {
@@ -106,7 +114,13 @@ class Compiler extends Plugin_1.BaseComponent {
             }
         });
     }
-}
+};
 Compiler.hasBeenInitialized = false;
+__decorate([
+    Ioc_1.Ioc("ICompiler")
+], Compiler.prototype, "TestProperty", void 0);
+Compiler = Compiler_1 = __decorate([
+    Ioc_1.DI("ICompiler")
+], Compiler);
 exports.Compiler = Compiler;
 //# sourceMappingURL=Compiler.js.map

@@ -14,26 +14,26 @@ const Plugin_1 = require("../../../Plugin");
 const Terminal_1 = require("../../../console/Terminal");
 const Constant_1 = require("../../../console/core/Constant");
 const Build_1 = require("./runner/Build");
+const Cli_1 = require("../../../core/constant/Cli");
 const term = new Terminal_1.Terminal();
 let _packages = {};
 class Cli {
     entryPoint(api) {
         return __awaiter(this, void 0, void 0, function* () {
             const cmp = yield api.Service.resolve(Plugin_1.BaseComponent);
-            cmp["_Receive"](Events_1.Evts.CLI.PACKAGE.REGISTER, (data) => {
+            cmp._Receive(Events_1.Evts.CLI.PACKAGE.REGISTER, (data) => {
                 _packages[data.payload.doc.name || ""] = data.payload;
-                cmp["_Send"](Events_1.Evts.CLI.PACKAGE.REGISTERED, data);
+                cmp._Send(Events_1.Evts.CLI.PACKAGE.REGISTERED, data);
                 console.log(`registering ${data.payload.doc.name}`);
             });
-            cmp["_Receive"](Events_1.Evts.CLI.RUNNER.EXECUTE, (data) => {
-                console.log("Evts.CLI.RUNNER.EXECUTE");
-                processParams(data.payload);
-            });
-            cmp["_SendSync"](Events_1.Evts.CLI.PACKAGE.REGISTER, {
-                sender: cmp.identity,
+            cmp._Receive(Events_1.Evts.CLI.RUNNER.EXECUTE, (data) => __awaiter(this, void 0, void 0, function* () {
+                yield processParams(data.payload);
+            }));
+            cmp._SendSync(Events_1.Evts.CLI.PACKAGE.REGISTER, {
+                sender: Cli_1.CLI_IDENTITY,
                 payload: {
                     doc: Module_1.module,
-                    runner: (params) => {
+                    runner: (function (params) {
                         switch (params.command) {
                             case "build":
                                 let mod = "";
@@ -44,21 +44,21 @@ class Cli {
                                 if ("target" in params.parameters) {
                                     target = params.parameters.target;
                                 }
-                                Build_1.Build.buildmodule(mod, target);
+                                Build_1.Build.buildModule.call(this, mod, target);
                                 break;
                         }
-                    }
+                    }).bind(cmp)
                 }
             });
-            cmp["_SendSync"](Events_1.Evts.CLI.PACKAGE.REGISTER, {
-                sender: cmp.identity,
+            cmp._SendSync(Events_1.Evts.CLI.PACKAGE.REGISTER, {
+                sender: Cli_1.CLI_IDENTITY,
                 payload: {
                     doc: Module_1._package,
-                    runner: (params) => {
+                    runner: (params) => __awaiter(this, void 0, void 0, function* () {
                         if (params.command === "list") {
                             renderPackageList();
                         }
-                    }
+                    })
                 }
             });
         });
@@ -67,110 +67,112 @@ class Cli {
 exports.default = Cli;
 Plugin_1.connect(Cli);
 function processParams(params) {
-    renderHeader();
-    if (params.package === "help") {
-        renderGlobalinformatiom();
-    }
-    else {
-        switch (params.package) {
-            default:
-                if (params.package in _packages) {
-                    const pck = _packages[params.package].doc;
-                    if (params.command === "help") {
-                        renderPackage(pck);
-                    }
-                    else {
-                        const cmd = params.command;
-                        if (params.parameters && "help" in params.parameters) {
-                            if (pck.commands && pck.commands[cmd]) {
-                                renderCommand(pck, pck.commands[cmd]);
-                            }
-                            else {
-                                term
-                                    .red(`Command <${cmd}> not found in package <${pck.name}>`)
-                                    .newLine()
-                                    .write();
-                            }
+    return __awaiter(this, void 0, void 0, function* () {
+        renderHeader();
+        if (params.package === "help") {
+            renderGlobalinformatiom();
+        }
+        else {
+            switch (params.package) {
+                default:
+                    if (params.package in _packages) {
+                        const pck = _packages[params.package].doc;
+                        if (params.command === "help") {
+                            renderPackage(pck);
                         }
                         else {
-                            if (pck.commands && pck.commands[cmd]) {
-                                if (_packages[params.package].runner && typeof _packages[params.package].runner === "function") {
-                                    _packages[params.package].runner(params);
+                            const cmd = params.command;
+                            if (params.parameters && "help" in params.parameters) {
+                                if (pck.commands && pck.commands[cmd]) {
+                                    renderCommand(pck, pck.commands[cmd]);
                                 }
                                 else {
-                                    term.red(`No runner found to execute the following configuration ${JSON.stringify(params, null, 2)}`).newLine().write();
+                                    term
+                                        .red(`Command <${cmd}> not found in package <${pck.name}>`)
+                                        .newLine()
+                                        .write();
                                 }
                             }
                             else {
-                                term
-                                    .red(`Command <${cmd}> not found in package <${pck.name}>`)
-                                    .newLine()
-                                    .newLine()
-                                    .write();
-                                renderGlobalinformatiom();
+                                if (pck.commands && pck.commands[cmd]) {
+                                    if (_packages[params.package].runner && typeof _packages[params.package].runner === "function") {
+                                        _packages[params.package].runner(params);
+                                    }
+                                    else {
+                                        term.red(`No runner found to execute the following configuration ${JSON.stringify(params, null, 2)}`).newLine().write();
+                                    }
+                                }
+                                else {
+                                    term
+                                        .red(`Command <${cmd}> not found in package <${pck.name}>`)
+                                        .newLine()
+                                        .newLine()
+                                        .write();
+                                    renderGlobalinformatiom();
+                                }
                             }
                         }
                     }
-                }
-                else {
-                    term.red(`Package named <${params.package}> was not found.`)
-                        .newLine()
-                        .newLine()
-                        .write();
-                    renderGlobalinformatiom();
+                    else {
+                        term.red(`Package named <${params.package}> was not found.`)
+                            .newLine()
+                            .newLine()
+                            .write();
+                        renderGlobalinformatiom();
+                    }
+                    break;
+                /*
+                case "module":
+                if (params.command === "get") {
+                  if ("help" in params.parameters) {
+                    renderHeader().newLine().write();
+                    const commands = _packages[params.package].doc.commands;
+                    if (commands && params.command in commands) {
+                      renderCommand(commands[params.command]).newLine().write();
+                    }
+                  } else {
+                    if ("catalog" in params.parameters) {
+                      renderHeader().newLine().write();
+                      term.text("Installing modules from catalog ").yellow(params.parameters.catalog).newLine().write();
+                      
+                      (async () => {
+                        term.drawLine("-").newLine().write();
+                        await drawLineDL("com.facebook - React");
+                        term.newLine().write();
+                        term.drawLine("-").newLine().write();
+                        await drawLineDL("com.facebook - React-Dom");
+                        term.newLine().write();
+                        term.drawLine("-").newLine().write();
+                        await drawLineDL("com.nucleus - Websocket");
+                        term.newLine().write();
+                        term.drawLine("-").newLine().write();
+                        await drawLineDL("com.nucleus - Upload");
+                        term.newLine().write();
+                        term.drawLine("-").newLine().write();
+                        await drawLineDL("com.nucleus - Hapi-Nes");
+                        term.newLine().write();
+                        term.drawLine("-").newLine().write();
+                        await drawLineDL("com.nucleus - Hapi");
+                        term.newLine().write();
+                        term.drawLine("-").newLine().write();
+                        await drawLineDL("com.nucleus - Material-UI");
+                        term.newLine().write();
+                        term.drawLine("-").newLine().write();
+                        await drawLineDL("com.nucleus - UI");
+                        term.newLine().write();
+                        term.drawLine("-").newLine().write();
+                        
+                        term.newLine().text("Catalog installed").write();
+                      })()
+          
+                    }
+                  }
                 }
                 break;
-            /*
-            case "module":
-            if (params.command === "get") {
-              if ("help" in params.parameters) {
-                renderHeader().newLine().write();
-                const commands = _packages[params.package].doc.commands;
-                if (commands && params.command in commands) {
-                  renderCommand(commands[params.command]).newLine().write();
-                }
-              } else {
-                if ("catalog" in params.parameters) {
-                  renderHeader().newLine().write();
-                  term.text("Installing modules from catalog ").yellow(params.parameters.catalog).newLine().write();
-                  
-                  (async () => {
-                    term.drawLine("-").newLine().write();
-                    await drawLineDL("com.facebook - React");
-                    term.newLine().write();
-                    term.drawLine("-").newLine().write();
-                    await drawLineDL("com.facebook - React-Dom");
-                    term.newLine().write();
-                    term.drawLine("-").newLine().write();
-                    await drawLineDL("com.nucleus - Websocket");
-                    term.newLine().write();
-                    term.drawLine("-").newLine().write();
-                    await drawLineDL("com.nucleus - Upload");
-                    term.newLine().write();
-                    term.drawLine("-").newLine().write();
-                    await drawLineDL("com.nucleus - Hapi-Nes");
-                    term.newLine().write();
-                    term.drawLine("-").newLine().write();
-                    await drawLineDL("com.nucleus - Hapi");
-                    term.newLine().write();
-                    term.drawLine("-").newLine().write();
-                    await drawLineDL("com.nucleus - Material-UI");
-                    term.newLine().write();
-                    term.drawLine("-").newLine().write();
-                    await drawLineDL("com.nucleus - UI");
-                    term.newLine().write();
-                    term.drawLine("-").newLine().write();
-                    
-                    term.newLine().text("Catalog installed").write();
-                  })()
-      
-                }
-              }
+                */
             }
-            break;
-            */
         }
-    }
+    });
 }
 function renderCommand(pkg, command) {
     term.lightCyan(" Command : ").lightGreen(command.name)

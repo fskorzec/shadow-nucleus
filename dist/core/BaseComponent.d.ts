@@ -1,18 +1,32 @@
+import { IEventBus } from "./IEventBus";
 export declare type TReturnableEvent = {
     guid?: string;
 };
 export declare type TSendQuery<T extends TReturnableEvent> = {
     sender: {
-        cmpId: string;
-        cmpName: string;
+        serviceId: string;
+        serviceName: string;
     };
     payload: T;
 };
+export interface IPrivateBaseComponent {
+    _EvtBus: IEventBus | undefined;
+    getService: <T>(serviceName: string, serviceId: string) => Promise<T>;
+    _Send<T>(eventName: string, query: TSendQuery<T>): void;
+    _SendSync<T>(eventName: string, query: TSendQuery<T>): void;
+    _SendWithReturn<T extends TReturnableEvent, U extends TReturnableEvent>(eventName: string, returnEventName: string, query: TSendQuery<U>): Promise<T | undefined>;
+    _Receive<T>(eventName: string, handler: (data: TSendQuery<T>) => void): {
+        off: () => void;
+    };
+    _ReceiveOnce<T>(eventName: string, handler: (data: TSendQuery<T>) => void): {
+        off: () => void;
+    };
+}
 export declare class BaseComponent {
     private _NC_TYPE_;
     private _EvtBus;
-    cmpId: string;
-    cmpName: string;
+    serviceId: string;
+    serviceName: string;
     constructor();
     protected getService: <T>(serviceName: string, serviceId: string) => Promise<T>;
     /**
@@ -29,7 +43,7 @@ export declare class BaseComponent {
      * @param returnEventName Full name of the event to listen in return
      * @param query The query description
      */
-    protected _SendWithReturn<T extends TReturnableEvent, U extends TReturnableEvent>(eventName: string, returnEventName: string, query: TSendQuery<U>): Promise<T | undefined>;
+    protected _SendWithReturn<T extends TSendQuery<TReturnableEvent>, U extends TReturnableEvent>(eventName: string, returnEventName: string, query: TSendQuery<U>): Promise<T>;
     /**
      * Start listening to a specific event
      * @param eventName Full name of the event
@@ -47,8 +61,8 @@ export declare class BaseComponent {
         off: () => void;
     };
     readonly identity: {
-        cmpId: string;
-        cmpName: string;
+        serviceId: string;
+        serviceName: string;
     };
     protected initialize(): void;
 }

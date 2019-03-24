@@ -1,5 +1,3 @@
-export declare function Ioc(value: {
-    [index: string]: [string, string];
-}): (ctor: Function) => void;
-export declare function DI(target: any, propertyKey: string): void;
+export declare function Ioc(type: string): any;
+export declare function DI(type: string): any;
 //# sourceMappingURL=Ioc.d.ts.map

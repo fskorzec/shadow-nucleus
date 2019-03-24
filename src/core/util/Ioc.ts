@@ -1,9 +1,7 @@
-export function Ioc(value: { [index: string]: [string, string] }) {
-  return function (ctor: Function) {
-    ctor.prototype.__nc__Services = value;
-  };
+export function Ioc(type: string): any {
+  return () => void 0;
 }
 
-export function DI(target: any, propertyKey: string) {
-  console.log(target, propertyKey)
+export function DI(type: string): any {
+  return () => void 0;
 }

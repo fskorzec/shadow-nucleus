@@ -16,14 +16,20 @@ export declare class Service implements IService {
      * @param serviceId The main service Id
      * @param payload The payload
      */
-    registerService(serviceName: string, serviceId: string, payload: RegisterServiceType): Promise<void>;
+    registerService(identity: {
+        serviceName: string;
+        serviceId: string;
+    }, payload: RegisterServiceType): Promise<void>;
     private _getService;
     /**
      * Gets the service instance or Definition
      * @param serviceName The service name
      * @param serviceId The service Id
      */
-    getService<T>(serviceName: string, serviceId: string): Promise<T>;
+    getService<T>(identity: {
+        serviceName: string;
+        serviceId: string;
+    }): Promise<T>;
     /**
      * Activate a service instance from its definition class
      * @param classDefinition The class definition to instanciate

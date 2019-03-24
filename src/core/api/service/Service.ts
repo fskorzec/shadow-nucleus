@@ -65,13 +65,15 @@ export class Service implements IService {
    * @param payload The payload
    */
   public async registerService(
-    serviceName : string , 
-    serviceId   : string , 
+    identity: {
+      serviceName : string ;
+      serviceId   : string ;
+    }, 
     payload     : RegisterServiceType
   ): Promise<void> {
     return new Promise<void>( (r,x) => {
       const evt = this._evtBus.on(Evts.API.SERVICE.SERVICE_REGISTERED, (data: RegisterServiceDataType & RegisterStatusType) => {
-        if (data.serviceName === serviceName && data.serviceId === serviceId) {
+        if (data.serviceName === identity.serviceName && data.serviceId === identity.serviceId) {
           evt.off();
           if (data.success) {
             r();
@@ -82,8 +84,8 @@ export class Service implements IService {
       });
       
       this._evtBus.emitAsync(Acts.API.SERVICE.REGISTER_SERVICE, {
-        serviceName ,
-        serviceId   ,
+        serviceName : identity.serviceName ,
+        serviceId   : identity.serviceId   ,
         payload
       });
     });
@@ -105,10 +107,10 @@ export class Service implements IService {
    * @param serviceName The service name
    * @param serviceId The service Id
    */
-  public async getService<T>(serviceName: string, serviceId: string): Promise<T> {
+  public async getService<T>(identity: {serviceName: string, serviceId: string}): Promise<T> {
     return new Promise<T>( (r,x) => {
       const evt = this._evtBus.on(Evts.API.SERVICE.SERVICE_RETURNED, (data: RegisterServiceDataType & RegisterStatusType) => {
-        if (data.serviceName === serviceName && data.serviceId === serviceId) {
+        if (data.serviceName === identity.serviceName && data.serviceId === identity.serviceId) {
           evt.off();
           if (data.success) {
             r(
@@ -125,8 +127,8 @@ export class Service implements IService {
       });
 
       this._evtBus.emitAsync(Acts.API.SERVICE.GET_SERVICE, {
-        serviceName,
-        serviceId
+        serviceName : identity.serviceName,
+        serviceId   : identity.serviceId
       } as RegisterServiceType);
     });
   }
@@ -139,17 +141,17 @@ export class Service implements IService {
   async resolve<T>(classDefinition: { new(...params: any[]): any }): Promise<T> {
     let services = [] as Array<Object>;
 
-    if ("__nc__Services" in classDefinition.prototype) {
+    /*if ("__nc__Services" in classDefinition.prototype) {
       for(let def of classDefinition.prototype.__nc__Services as Array<[string, string]>) {
         const service = await this.getService(...def);
         services.push(service);
       }
-    }
+    }*/
     
     const res = new classDefinition(...services) as unknown as IPrivateClass;
     if ((res as unknown as BaseComponent)["_NC_TYPE_"]) {
       res._EvtBus = this._evtBus;
-      res.getService = async (serviceName: string, serviceId: string) => await this.getService(serviceName, serviceId);
+      res.getService = async (serviceName: string, serviceId: string) => await this.getService({serviceName, serviceId});
       res.initialize();
     }
 

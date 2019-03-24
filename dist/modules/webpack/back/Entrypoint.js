@@ -14,7 +14,7 @@ class WebpackPackage {
     entryPoint(api) {
         return __awaiter(this, void 0, void 0, function* () {
             const _Webpack = yield api.Service.resolve(Webpack_1.Webpack);
-            yield api.Service.registerService(_Webpack.cmpName, _Webpack.cmpId, {
+            yield api.Service.registerService(_Webpack.identity, {
                 serviceInstance: _Webpack
             });
         });

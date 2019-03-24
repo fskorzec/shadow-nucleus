@@ -9,13 +9,11 @@ import {
 import { CommandArgs } from "../../../console/Args";
 import { ScriptTarget, ModuleKind, JsxEmit } from "typescript";
 
-
-
 export default class CompilerPackage implements IModuleEntryPoint {
-  async entryPoint(api: IApi): Promise<void> {
+   async entryPoint(api: IApi): Promise<void> {
     const _Compiler = await api.Service.resolve<Compiler>(Compiler);
 
-    await api.Service.registerService(_Compiler.cmpName, _Compiler.cmpId, {
+    await api.Service.registerService(_Compiler.identity , {
       serviceInstance: _Compiler
     });
 
@@ -23,7 +21,7 @@ export default class CompilerPackage implements IModuleEntryPoint {
       sender: _Compiler.identity,
       payload: {
         doc: Doc,
-        runner: (params: CommandArgs) => {
+        runner: async (params: CommandArgs) => {
           console.log(`Trying to compile ${params.parameters.src}`);
           _Compiler.compile([params.parameters["src"]], {
             target          : ScriptTarget.ES2015 ,
