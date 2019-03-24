@@ -1,0 +1,59 @@
+Folder structure :
+------------------
+
+++ module-folder
+   |
+   -- Entrypoint.ts(x)
+   |
+   -- nc.json
+   |
+   -+ services
+   |  |
+   |  -- MyService.ts(x)
+   |
+   -+ types
+   |  |
+   |  -- InterfaceXXX.ts
+   |  |
+   |  -- Type.ts
+   |
+   -+ assets
+   |  |
+   |  -- ...
+
+
+***************************************************************************************************
+
+manifest decription
+
+nc.json : 
+---------
+{
+  author ?: {
+    name    ?: string ;
+    email   ?: string ;
+    website ?: string ;
+    github  ?: string ;
+  }
+
+  dependencies: {
+    "websocket" : {
+      front : ["1.0.0"],
+      back  : ["1.0.0", "1.2.6"]
+    }
+  }
+
+  packages : {
+    "nc-logging" : "./src/packages/nc-logging"
+  }
+
+  projects : {
+    frontend : {
+      path: "./projects/frontend"
+    },
+    backend : {
+      path: "./projects/backend"
+    }
+  }
+
+}
