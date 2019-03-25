@@ -26,7 +26,7 @@ Folder structure :
 
 manifest decription
 
-nc.json : 
+nc.json : Root project
 ---------
 {
   author ?: {
@@ -49,11 +49,44 @@ nc.json :
 
   projects : {
     frontend : {
-      path: "./projects/frontend"
+      path: "./projects/frontend" // default file is nc.json
     },
     backend : {
-      path: "./projects/backend"
+      path: "./projects/backend" ;
+      file: "_back.json"         ; // override conf file
     }
   }
 
+}
+
+nc.json : Root packages
+---------
+{
+  name    : string; // nc-logging
+  id      : string; // com.nucleus
+
+  packages : {
+    back: {
+      version    : string          ;
+      root       : "back"          ;
+      entrypoint : "Entrypoint.ts" ;
+      services   : [
+        {
+          type: "ICompiler";
+          aliases:[];
+          dependencies: {
+            "IConfig" : {
+              id   : "com.nucleus",
+              name : "config"
+            }
+          }
+        }
+      ],
+      export: {
+          tree : {
+          "." : "types/"
+        }
+      }
+    }
+  }
 }
