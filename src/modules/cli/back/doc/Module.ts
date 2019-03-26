@@ -49,6 +49,30 @@ export const module = {
         }
       }
     },
+    new: {
+      name:"new",
+      shortDescription:"Create a new module",
+      description: "Create a new module with all necessary code templates",
+      parameters: {
+        name:{
+          name:"name",
+          type:"string",
+          description:"Module name",
+          exemples:["nc-package"]
+        },
+        dest: {
+          name        : "path"                                                                        ,
+          description : `  Destination folder to create files in. By default, '.' is the target folder
+  If running th ecommand from th eroot directory, it will creates packages in ./src/packages` ,
+          required    : false                                                                         ,
+          type        : "string",
+          exemples : [
+            ".",
+            "./destinationFolder"
+          ]
+        }
+      }
+    },
     add: {
       name:"add",
       shortDescription:"Create a new module",

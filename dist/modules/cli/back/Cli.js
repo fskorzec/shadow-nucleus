@@ -15,6 +15,7 @@ const Terminal_1 = require("../../../console/Terminal");
 const Constant_1 = require("../../../console/core/Constant");
 const Build_1 = require("./runner/Build");
 const Cli_1 = require("../../../core/constant/Cli");
+const New_1 = require("./runner/New");
 const term = new Terminal_1.Terminal();
 let _packages = {};
 class Cli {
@@ -36,15 +37,14 @@ class Cli {
                     runner: (function (params) {
                         switch (params.command) {
                             case "build":
-                                let mod = "";
-                                let target = "front";
-                                if ("mod" in params.parameters) {
-                                    mod = params.parameters.mod;
-                                }
-                                if ("target" in params.parameters) {
-                                    target = params.parameters.target;
-                                }
+                                let { mod, target } = params.parameters;
+                                mod = mod || "";
+                                target = (target !== "front" && target !== "back") ? "front" : target;
                                 Build_1.Build.buildModule.call(this, mod, target);
+                                break;
+                            case "new":
+                                let { name, path } = params.parameters;
+                                New_1.New.newModule.call(this, { moduleName: name, modulePath: path });
                                 break;
                         }
                     }).bind(cmp)

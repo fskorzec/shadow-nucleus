@@ -37,9 +37,7 @@ class BaseComponent {
             }
             if (this._EvtBus) {
                 const offEvent = this._EvtBus.on(returnEventName, (data) => {
-                    console.log("MAYBE WE FOUND IT", data);
                     if (data.payload.guid === query.payload.guid) {
-                        console.log("FOUND IT", data);
                         offEvent.off();
                         resolve(data);
                     }

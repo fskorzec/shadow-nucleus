@@ -14,6 +14,7 @@ import { Color16, EStyle, ForeColor, EscColorClosingChar } from "../../../consol
 import { Build } from "./runner/Build";
 import { IPrivateBaseComponent } from "../../../core/BaseComponent";
 import { CLI_IDENTITY } from "../../../core/constant/Cli";
+import { New } from "./runner/New";
 
 const term = new Terminal();
 
@@ -44,18 +45,16 @@ export default class Cli implements IModuleEntryPoint {
         runner: (function (this: BaseComponent ,params: CommandArgs) {
           switch(params.command) {
             case "build":
-            let mod = "";
-            let target: "front" | "back" = "front";
+            let {mod, target} = params.parameters;
 
-            if ("mod" in params.parameters) {
-              mod = params.parameters.mod;  
-            }
+            mod = mod || "";
+            target = (target !== "front" && target !== "back") ? "front" : target;
 
-            if ("target" in params.parameters) {
-              target = params.parameters.target as "front" | "back";
-            }
-
-            Build.buildModule.call(this, mod, target);
+            Build.buildModule.call(this, mod, <"front" | "back">target);
+            break;
+            case "new":
+              let {name, path} = params.parameters;
+              New.newModule.call(this, {moduleName: name, modulePath: path})
             break;
           }
         }).bind(cmp as unknown as BaseComponent)

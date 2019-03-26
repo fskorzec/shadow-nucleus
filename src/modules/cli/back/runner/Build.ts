@@ -43,7 +43,6 @@ export class Build {
         }
       }
     });
-    console.log("AFTER COMPILE");
   } catch(ex) {
     console.log("Error", ex)
   }
