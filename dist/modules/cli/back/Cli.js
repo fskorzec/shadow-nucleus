@@ -25,7 +25,7 @@ class Cli {
             cmp._Receive(Events_1.Evts.CLI.PACKAGE.REGISTER, (data) => {
                 _packages[data.payload.doc.name || ""] = data.payload;
                 cmp._Send(Events_1.Evts.CLI.PACKAGE.REGISTERED, data);
-                console.log(`registering ${data.payload.doc.name}`);
+                //console.log(`registering ${data.payload.doc.name}`)
             });
             cmp._Receive(Events_1.Evts.CLI.RUNNER.EXECUTE, (data) => __awaiter(this, void 0, void 0, function* () {
                 yield processParams(data.payload);

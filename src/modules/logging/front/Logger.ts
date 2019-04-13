@@ -61,6 +61,7 @@ export class Logger extends BaseComponent {
 }
 
 export interface ILogger {
+    identity     : any          ;
     log(...args  : any[]): void ;
     warn(...args : any[]): void ;
     info(...args : any[]): void ;

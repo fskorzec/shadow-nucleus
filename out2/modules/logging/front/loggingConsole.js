@@ -1,4 +1,10 @@
 "use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -8,17 +14,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Logger_1 = require("./Logger");
 const Plugin_1 = require("../../../Plugin");
+const Ioc_1 = require("../../../core/util/Ioc");
 class LogginConsole {
     entryPoint(api) {
         return __awaiter(this, void 0, void 0, function* () {
-            const logger = yield api.Service.resolve(Logger_1.Logger);
-            yield api.Service.registerService(logger.identity, {
-                serviceInstance: logger
+            //const logger = await api.Service.resolve<Logger>(Logger);
+            yield api.Service.registerService(this.logger.identity, {
+                serviceInstance: this.logger
             });
         });
     }
 }
+__decorate([
+    Ioc_1.IocResolve("ILogger")
+], LogginConsole.prototype, "logger", void 0);
 exports.default = LogginConsole;
 Plugin_1.connect(LogginConsole);

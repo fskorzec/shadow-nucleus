@@ -1,14 +1,14 @@
 #!/usr/bin/env node
-import { prepareCliArguments } from "./console/Args"                ;
-import { startNucleus}         from "./Nucleus"                     ;
-import { IApi, BaseComponent } from "./Plugin"                      ;
-import * as path               from "path"                          ;
-import * as fs                 from "fs"                            ;
-import { Api }                 from "./core/api/Api"                ;
-import { buildQueryResult }    from "./core/util/Event"             ;
-import { _package }            from "./modules/cli/back/doc/Module" ;
-import { IPrivateBaseComponent } from "./core/BaseComponent";
-import { CLI_ALL_EVENTS, CLI_IDENTITY } from "./core/constant/Cli";
+import { prepareCliArguments }          from "./console/Args"                ;
+import { startNucleus}                  from "./Nucleus"                     ;
+import { IApi, BaseComponent }          from "./Plugin"                      ;
+import * as path                        from "path"                          ;
+import * as fs                          from "fs"                            ;
+import { Api }                          from "./core/api/Api"                ;
+import { buildQueryResult }             from "./core/util/Event"             ;
+import { _package }                     from "./modules/cli/back/doc/Module" ;
+import { IPrivateBaseComponent }        from "./core/BaseComponent"          ;
+import { CLI_ALL_EVENTS, CLI_IDENTITY } from "./core/constant/Cli"           ;
 
 declare var _nucleus_api            : IApi ; 
 declare var __non_webpack_require__ : any  ; // only use this one if this file is packaged with webpack
@@ -64,7 +64,7 @@ export async function start(){
   });
 }
 
-const args            = process.argv       ;
+const args            =       process.argv ;
 const nodeExecpath    = args.shift() || "" ;
 const nucleusExecPath = args.shift() || "" ;
 

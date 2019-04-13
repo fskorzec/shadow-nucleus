@@ -1,0 +1,12 @@
+{
+  "name" : "nc-logging", 
+  "version": "1.0.0",
+  "id": "com.nucleus",
+  "publish" : {
+    "ILogger.ts":".",
+    "assets/":"./assets/"
+  },
+  "ioc" : {
+    "ILogger": {"name": "logger"}
+  }
+}

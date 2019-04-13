@@ -30,8 +30,6 @@ export default class Cli implements IModuleEntryPoint {
     cmp._Receive<CLI_PACKAGE>(Evts.CLI.PACKAGE.REGISTER, (data) => {
       _packages[data.payload.doc.name || ""] = data.payload;
       cmp._Send(Evts.CLI.PACKAGE.REGISTERED, data);
-      
-      console.log(`registering ${data.payload.doc.name}`)
     });
 
     cmp._Receive<CommandArgs>(Evts.CLI.RUNNER.EXECUTE, async (data) => {

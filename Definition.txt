@@ -26,7 +26,7 @@ Folder structure :
 
 manifest decription
 
-nc.json : Root project
+nc.sln.json : Solution
 ---------
 {
   author ?: {
@@ -43,13 +43,9 @@ nc.json : Root project
     }
   }
 
-  packages : {
-    "nc-logging" : "./src/packages/nc-logging"
-  }
-
   projects : {
     frontend : {
-      path: "./projects/frontend" // default file is nc.json
+      path: "./projects/frontend" // default file is nc.prj.json
     },
     backend : {
       path: "./projects/backend" ;
@@ -59,25 +55,23 @@ nc.json : Root project
 
 }
 
-nc.json : Root packages
+nc.json : Project in ./projects/backend
 ---------
 {
-  name    : string; // nc-logging
   id      : string; // com.nucleus
-
-  packages : {
-    back: {
-      version    : string          ;
-      root       : "back"          ;
-      entrypoint : "Entrypoint.ts" ;
+  modules : {
+    "nc-loggin": {
+      version    : "1.0.0"         ;
+      root       : "nc-loggin"     ;
+      entrypoint : "Entrypoint.ts" ; // Entrypoint.ts
       services   : [
         {
-          type: "ICompiler";
-          aliases:[];
+          type: "ILog";
           dependencies: {
             "IConfig" : {
-              id   : "com.nucleus",
-              name : "config"
+              id      : "com.nucleus" ,
+              name    : "config"      ,
+              version : "1.0.0"       ,
             }
           }
         }
@@ -86,7 +80,38 @@ nc.json : Root packages
           tree : {
           "." : "types/"
         }
+      },
+      assests: {
+        "." : "assets/"
       }
     }
+  },
+  assests: {
+    "." : "assets/"
   }
-}
+  cmd: {
+    "test": "yarn test"
+  }
+}  
+
+
+*******************************
+Compile result | global
+*******************************
+bin module folder 
+json
+++ module-id
+   |
+   -+ module-name
+      |
+      -+ module-version
+         |
+         -+ module-type
+            |
+            -+ json
+
+
+**********************************
+Dist Package | per project
+**********************************
+Contains modules | assets
