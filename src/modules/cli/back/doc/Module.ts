@@ -119,6 +119,10 @@ export const module = {
           ]
         }
       }
+    },
+    init: {
+      description:"init a new project",
+      name:"init"
     }
   }
 } as Partial<Package>;

@@ -15,13 +15,13 @@
   "author": "Skorzec francois <fskorzec@outlook.com>",
   "license": "MIT",
   "dependencies": {
+  },
+  "devDependencies": {
     "@types/webpack": "^4.4.25",
     "sass.js": "^0.10.13",
     "typescript": "^3.3.3333",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3"
-  },
-  "devDependencies": {
+    "webpack-cli": "^3.2.3",
     "@types/node": "^10.12.15"
   },
   "scripts": {

@@ -1,4 +1,5 @@
 /// <reference types="node" />
+import { TerminalStreamWriter } from "../TerminalStreamWriter";
 import { EventEmitter } from "events";
 /**
  * Defines a compatible type with a toString function
@@ -15,6 +16,9 @@ export declare abstract class BaseTerminal extends EventEmitter {
     protected _x: number;
     protected _y: number;
     protected _streamWriterDataEventHandler: (data: Array<string>) => void;
+    protected _WritableStream: (NodeJS.WritableStream & {
+        src: BaseTerminal;
+    }) | TerminalStreamWriter<this>;
     protected _buffer: string;
     protected _color(colorValue: number): this;
     protected _colorExt(colorValue: number): this;
@@ -30,6 +34,8 @@ export declare abstract class BaseTerminal extends EventEmitter {
      */
     reset(): this;
     clearTerminal(): this;
+    getNextinputChoice(choices: Array<string>): Promise<number>;
+    getNextInput(text?: string, isPassword?: boolean): Promise<string>;
     /**
      * Draws a line onto the terminal
      * @method drawLine

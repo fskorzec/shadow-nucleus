@@ -2,6 +2,7 @@ import { Evts }                     from "./Events"                   ;
 import { CommandArgs }              from "../../../console/Args"      ;
 import { Package, Command }         from "../../../console/TPackages" ;
 import { module, AppDoc, _package } from "././doc/Module"             ;
+import * as fs from "fs";
 
 import { 
   IModuleEntryPoint , 
@@ -12,9 +13,14 @@ import {
 import { Terminal } from "../../../console/Terminal";
 import { Color16, EStyle, ForeColor, EscColorClosingChar } from "../../../console/core/Constant";
 import { Build } from "./runner/Build";
-import { IPrivateBaseComponent } from "../../../core/BaseComponent";
+import { IPrivateBaseComponent, TSendQuery } from "../../../core/BaseComponent";
 import { CLI_IDENTITY } from "../../../core/constant/Cli";
 import { New } from "./runner/New";
+import { buildQueryResult } from "../../../core/util/Event";
+import { Guid } from "../../../shared/text/Guid";
+
+import * as IO from "../../../utils/IO";
+import { fstat } from "fs";
 
 const term = new Terminal();
 
@@ -40,8 +46,41 @@ export default class Cli implements IModuleEntryPoint {
       sender: CLI_IDENTITY,
       payload: {
         doc: module,
-        runner: (function (this: BaseComponent ,params: CommandArgs) {
+        runner: (async function (this: BaseComponent ,params: CommandArgs) {
           switch(params.command) {
+            case "init":
+              console.log("Initialize a new project");
+              const res = await cmp._SendWithReturn<any, any>("CLI.ENV.GET_INFO", "CLI.ENV.INFO_GOTTEN", {
+                sender: this.identity,
+                payload: {
+                  guid: Guid.getGuid()
+                }
+              });
+              IO.mkDirSync(`${res.payload.callerPath}/nc-repo`);
+              IO.mkDirSync(`${res.payload.callerPath}/nc-bin`);
+              IO.mkDirSync(`${res.payload.callerPath}/nc-dist`);
+              term.write();
+              /*const slnName = await term.getNextInput("Solution name : ");
+              const version = await term.getNextInput("Version (1.0.0): ");
+
+              const password =  await term.getNextInput("password: ", true);*/
+
+              const choice = await term.getNextinputChoice([
+                "Choice 1",
+                "Choice 2",
+                "Choice 3",
+              ]);
+
+             /* fs.writeFileSync(`${res.payload.callerPath}/nc.sln.json`, `
+{
+  "name": "${slnName.trim()}",
+  "version": "${version.trim()}"
+}
+`, "utf8");*/
+              term.newLine().write("Done !");
+              
+              
+              return;
             case "build":
             let {mod, target} = params.parameters;
 

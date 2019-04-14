@@ -33,6 +33,7 @@ export abstract class BaseTerminal extends EventEmitter {
   protected _x: number = 0;
   protected _y: number = 0;
   protected _streamWriterDataEventHandler: (data: Array<string>) => void;
+  protected _WritableStream!:  NodeJS.WritableStream & { src: BaseTerminal } | TerminalStreamWriter<this>;
 
   protected _buffer: string = "";
   protected _color(colorValue: number): this {
@@ -85,6 +86,55 @@ export abstract class BaseTerminal extends EventEmitter {
   clearTerminal(): this {
     process.stdout.write(`${EscOpeningChar}2J`);
     return this;
+  }
+
+  async getNextinputChoice(choices: Array<string>) : Promise<number> {
+    this.listenInputs(true);
+    return new Promise<number>( (r,x) => {
+      process.stdin.on('keypress', (str, key) => {
+        console.log(str, key)
+      })
+      
+      this.onWrite = (data) => {
+        console.log(data, data.length, data[0].length)
+        data.forEach(strData => {
+          switch(strData.charCodeAt(0)) {
+            case 13:
+              this.stopListen();
+              this.newLine().write();
+              r(0);
+              break;
+              default:
+                this.write(strData.charCodeAt(0)).write(" ");
+                break;
+              }
+              
+        })
+
+      }
+    });
+  }
+
+  async getNextInput(text?: string, isPassword: boolean = false) {
+    if (text) this.write(text);
+    return new Promise<string>( (r,x) => {
+      try {
+        let res = "";
+        this.onWrite = (data) => {
+          const strData = data.join();
+          res += strData;
+          this.write(isPassword ? "*" : strData);
+          if (strData.charCodeAt(0) === 13) {
+            this.stopListen();
+            this.newLine().write();
+            r(res);
+          }
+        }
+        this.listenInputs(true);
+      } catch (ex) {
+        x(ex);
+      }
+    });
   }
 
   /**
@@ -227,7 +277,7 @@ export abstract class BaseTerminal extends EventEmitter {
       process.stdin["setRawMode"](false);
     }
     process.stdin.removeAllListeners();
-    process.stdin.unpipe();
+    process.stdin.unpipe(this._WritableStream);
   }
 
   /**
@@ -238,17 +288,18 @@ export abstract class BaseTerminal extends EventEmitter {
    * @param {boolean} rawMode If true the Terminal will listen Key data, otherwise string data
    */
   listenInputs(rawMode: boolean = false, streamWriter?: NodeJS.WritableStream & { src: BaseTerminal }): void {
-    let stream = streamWriter ? streamWriter : new TerminalStreamWriter(this);
+    this._WritableStream = streamWriter ? streamWriter : new TerminalStreamWriter(this);
 
-    stream.on("write", (data: Array<string>) => {
+    this._WritableStream.on("write", (data: Array<string>) => {
       this.emit("write", data);
     });
 
-    stream.on("pipe", (src: NodeJS.ReadableStream) => {
-      stream.src = src;
-      (src as any)["setRawMode"](rawMode);
+    this._WritableStream.on("pipe", (src: NodeJS.ReadableStream) => {
+      this._WritableStream.src = src;
+      (src as any)["setRawMode"](rawMode)
     });
 
-    process.stdin.pipe(stream);
+    process.stdin.pipe(this._WritableStream);
+    process.stdin.setRawMode && process.stdin.setRawMode(rawMode);
   }
 }

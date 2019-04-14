@@ -7,6 +7,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const Events_1 = require("./Events");
 const Module_1 = require("././doc/Module");
@@ -16,6 +23,8 @@ const Constant_1 = require("../../../console/core/Constant");
 const Build_1 = require("./runner/Build");
 const Cli_1 = require("../../../core/constant/Cli");
 const New_1 = require("./runner/New");
+const Guid_1 = require("../../../shared/text/Guid");
+const IO = __importStar(require("../../../utils/IO"));
 const term = new Terminal_1.Terminal();
 let _packages = {};
 class Cli {
@@ -25,7 +34,6 @@ class Cli {
             cmp._Receive(Events_1.Evts.CLI.PACKAGE.REGISTER, (data) => {
                 _packages[data.payload.doc.name || ""] = data.payload;
                 cmp._Send(Events_1.Evts.CLI.PACKAGE.REGISTERED, data);
-                //console.log(`registering ${data.payload.doc.name}`)
             });
             cmp._Receive(Events_1.Evts.CLI.RUNNER.EXECUTE, (data) => __awaiter(this, void 0, void 0, function* () {
                 yield processParams(data.payload);
@@ -35,18 +43,49 @@ class Cli {
                 payload: {
                     doc: Module_1.module,
                     runner: (function (params) {
-                        switch (params.command) {
-                            case "build":
-                                let { mod, target } = params.parameters;
-                                mod = mod || "";
-                                target = (target !== "front" && target !== "back") ? "front" : target;
-                                Build_1.Build.buildModule.call(this, mod, target);
-                                break;
-                            case "new":
-                                let { name, path } = params.parameters;
-                                New_1.New.newModule.call(this, { moduleName: name, modulePath: path });
-                                break;
-                        }
+                        return __awaiter(this, void 0, void 0, function* () {
+                            switch (params.command) {
+                                case "init":
+                                    console.log("Initialize a new project");
+                                    const res = yield cmp._SendWithReturn("CLI.ENV.GET_INFO", "CLI.ENV.INFO_GOTTEN", {
+                                        sender: this.identity,
+                                        payload: {
+                                            guid: Guid_1.Guid.getGuid()
+                                        }
+                                    });
+                                    IO.mkDirSync(`${res.payload.callerPath}/nc-repo`);
+                                    IO.mkDirSync(`${res.payload.callerPath}/nc-bin`);
+                                    IO.mkDirSync(`${res.payload.callerPath}/nc-dist`);
+                                    term.write();
+                                    /*const slnName = await term.getNextInput("Solution name : ");
+                                    const version = await term.getNextInput("Version (1.0.0): ");
+                      
+                                    const password =  await term.getNextInput("password: ", true);*/
+                                    const choice = yield term.getNextinputChoice([
+                                        "Choice 1",
+                                        "Choice 2",
+                                        "Choice 3",
+                                    ]);
+                                    /* fs.writeFileSync(`${res.payload.callerPath}/nc.sln.json`, `
+                       {
+                         "name": "${slnName.trim()}",
+                         "version": "${version.trim()}"
+                       }
+                       `, "utf8");*/
+                                    term.newLine().write("Done !");
+                                    return;
+                                case "build":
+                                    let { mod, target } = params.parameters;
+                                    mod = mod || "";
+                                    target = (target !== "front" && target !== "back") ? "front" : target;
+                                    Build_1.Build.buildModule.call(this, mod, target);
+                                    break;
+                                case "new":
+                                    let { name, path } = params.parameters;
+                                    New_1.New.newModule.call(this, { moduleName: name, modulePath: path });
+                                    break;
+                            }
+                        });
                     }).bind(cmp)
                 }
             });

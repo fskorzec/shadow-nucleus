@@ -1,8 +1,8 @@
-import { IEventBus } from "../../IEventBus" ;
-import { isNode }    from "../../util/Env"  ;
-import { Acts, Evts }      from "./Events"        ;
-import { IModule }   from "./IModule"       ;
-import { IApi }      from "../../../Plugin" ;
+import { IEventBus }  from "../../IEventBus" ;
+import { isNode }     from "../../util/Env"  ;
+import { Acts, Evts } from "./Events"        ;
+import { IModule }    from "./IModule"       ;
+import { IApi }       from "../../../Plugin" ;
 
 export class Module implements IModule {
   private _evtBus    : IEventBus                  ;

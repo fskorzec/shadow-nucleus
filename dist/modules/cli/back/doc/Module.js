@@ -119,6 +119,10 @@ exports.module = {
                     ]
                 }
             }
+        },
+        init: {
+            description: "init a new project",
+            name: "init"
         }
     }
 };
