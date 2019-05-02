@@ -34,8 +34,6 @@ export declare abstract class BaseTerminal extends EventEmitter {
      */
     reset(): this;
     clearTerminal(): this;
-    getNextinputChoice(choices: Array<string>): Promise<number>;
-    getNextInput(text?: string, isPassword?: boolean): Promise<string>;
     /**
      * Draws a line onto the terminal
      * @method drawLine
@@ -43,7 +41,7 @@ export declare abstract class BaseTerminal extends EventEmitter {
      */
     drawLine(char?: string): this;
     to(row: number, col: number): this;
-    toptBy(by: number): this;
+    topBy(by: number): this;
     bottomBy(by: number): this;
     rightBy(by: number): this;
     leftBy(by: number): this;

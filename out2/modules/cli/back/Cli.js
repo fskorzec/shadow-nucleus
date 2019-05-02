@@ -72,44 +72,7 @@ class Cli {
                          "version": "${version.trim()}"
                        }
                        `, "utf8");*/
-                                    term.newLine().write(`You chose ${choice + 1}`);
-                                    const choice2 = yield term.getNextinputChoice([
-                                        "Choice 1",
-                                        "Choice 2",
-                                        "Choice 3",
-                                        "Choice 4",
-                                        "Choice 5",
-                                    ]);
-                                    term.newLine().write(`You chose ${choice2 + 1}`).newLine().write();
-                                    term.text("Installing modules from catalog ").yellow(params.parameters.catalog).newLine().write();
-                                    (() => __awaiter(this, void 0, void 0, function* () {
-                                        term.drawLine("-").newLine().write();
-                                        yield drawLineDL("com.facebook - React");
-                                        term.newLine().write();
-                                        term.drawLine("-").newLine().write();
-                                        yield drawLineDL("com.facebook - React-Dom");
-                                        term.newLine().write();
-                                        term.drawLine("-").newLine().write();
-                                        yield drawLineDL("com.nucleus - Websocket");
-                                        term.newLine().write();
-                                        term.drawLine("-").newLine().write();
-                                        yield drawLineDL("com.nucleus - Upload");
-                                        term.newLine().write();
-                                        term.drawLine("-").newLine().write();
-                                        yield drawLineDL("com.nucleus - Hapi-Nes");
-                                        term.newLine().write();
-                                        term.drawLine("-").newLine().write();
-                                        yield drawLineDL("com.nucleus - Hapi");
-                                        term.newLine().write();
-                                        term.drawLine("-").newLine().write();
-                                        yield drawLineDL("com.nucleus - Material-UI");
-                                        term.newLine().write();
-                                        term.drawLine("-").newLine().write();
-                                        yield drawLineDL("com.nucleus - UI");
-                                        term.newLine().write();
-                                        term.drawLine("-").newLine().write();
-                                        term.newLine().text("Catalog installed").write();
-                                    }))();
+                                    term.newLine().write("Done !");
                                     return;
                                 case "build":
                                     let { mod, target } = params.parameters;
@@ -470,4 +433,3 @@ function renderGlobalinformatiom() {
         .newLine()
         .write();
 }
-//# sourceMappingURL=Cli.js.map

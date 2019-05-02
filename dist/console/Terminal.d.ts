@@ -37,5 +37,7 @@ export declare class Terminal extends BaseTerminal implements IColor16Terminal<T
     drawColoredText(text: string, foreColor?: number, backColor?: number, style?: EStyle): this;
     getAndClearBuffer(): string;
     constructor();
+    getNextinputChoice(choices: Array<string>): Promise<number>;
+    getNextInput(text?: string, isPassword?: boolean): Promise<string>;
 }
 //# sourceMappingURL=Terminal.d.ts.map

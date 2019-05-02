@@ -104,4 +104,92 @@ export class Terminal extends BaseTerminal implements IColor16Terminal<Terminal>
       }
     }
   }
+
+  
+  async getNextinputChoice(choices: Array<string>) : Promise<number> {
+    this.listenInputs(true);
+    return new Promise<number>( (r,x) => {
+
+      this.newLine();
+      this.write();
+      this.saveCursorPosition().write();
+
+      let idx = 0;
+
+      choices.forEach( (choice, index) => {
+        if (index === idx) {
+          this.green(`[${index+1}] ${choice}`).newLine().write();        
+       } else {
+         this.white(` ${index+1}  ${choice}`).newLine().write();        
+       }
+      });
+
+      
+      this.onWrite = (data) => {
+        //console.log(data, data.length, data[0].length)
+        data.forEach(strData => {
+          switch(strData.charCodeAt(0)) {
+            case 13:
+              this.stopListen();
+              this.newLine().write();
+              r(idx);
+              break;
+              default:
+                //this.write(strData.charCodeAt(0)).write(" ");
+                break;
+              }
+              
+        })
+
+        const UP = "\u001b[A";
+        const DN = "\u001b[B";
+        const RT = "\u001b[D";
+        const LT = "\u001b[C";
+        const str = data[0];
+
+        if (str === UP || str === DN || str === LT ||str === RT) {
+          switch(str) {
+            case UP: idx--;break;
+            case DN: idx++;break;
+          }
+
+          idx < 0 ? (idx = 0) : void 0;
+          idx >= choices.length ? (idx = choices.length -1) : void 0;
+
+          //this.restoreCursorPosition().write();
+          this.topBy(choices.length).write();
+          choices.forEach( (choice, index) => {
+            if (index === idx) {
+               this.green(`[${index+1}] ${choice}`).newLine().write();        
+            } else {
+              this.white(` ${index+1}  ${choice}`).newLine().write();
+            }
+          });
+        }
+
+      }
+    });
+  }
+
+  async getNextInput(text?: string, isPassword: boolean = false) {
+    if (text) this.write(text);
+    return new Promise<string>( (r,x) => {
+      try {
+        let res = "";
+        this.onWrite = (data) => {
+          const strData = data.join();
+          res += strData;
+          this.write(isPassword ? "*" : strData);
+          if (strData.charCodeAt(0) === 13) {
+            this.stopListen();
+            this.newLine().write();
+            r(res);
+          }
+        }
+        this.listenInputs(true);
+      } catch (ex) {
+        x(ex);
+      }
+    });
+  }
 }

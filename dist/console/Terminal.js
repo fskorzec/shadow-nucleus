@@ -1,4 +1,12 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const BaseTerminal_1 = require("./core/BaseTerminal");
 const Constant_1 = require("./core/Constant");
@@ -76,6 +84,92 @@ class Terminal extends BaseTerminal_1.BaseTerminal {
         const res = this._buffer;
         this.clearBuffer();
         return res;
+    }
+    getNextinputChoice(choices) {
+        return __awaiter(this, void 0, void 0, function* () {
+            this.listenInputs(true);
+            return new Promise((r, x) => {
+                this.newLine();
+                this.write();
+                this.saveCursorPosition().write();
+                let idx = 0;
+                choices.forEach((choice, index) => {
+                    if (index === idx) {
+                        this.green(`[${index + 1}] ${choice}`).newLine().write();
+                    }
+                    else {
+                        this.white(` ${index + 1}  ${choice}`).newLine().write();
+                    }
+                });
+                this.onWrite = (data) => {
+                    //console.log(data, data.length, data[0].length)
+                    data.forEach(strData => {
+                        switch (strData.charCodeAt(0)) {
+                            case 13:
+                                this.stopListen();
+                                this.newLine().write();
+                                r(idx);
+                                break;
+                            default:
+                                //this.write(strData.charCodeAt(0)).write(" ");
+                                break;
+                        }
+                    });
+                    const UP = "\u001b[A";
+                    const DN = "\u001b[B";
+                    const RT = "\u001b[D";
+                    const LT = "\u001b[C";
+                    const str = data[0];
+                    if (str === UP || str === DN || str === LT || str === RT) {
+                        switch (str) {
+                            case UP:
+                                idx--;
+                                break;
+                            case DN:
+                                idx++;
+                                break;
+                        }
+                        idx < 0 ? (idx = 0) : void 0;
+                        idx >= choices.length ? (idx = choices.length - 1) : void 0;
+                        //this.restoreCursorPosition().write();
+                        this.topBy(choices.length).write();
+                        choices.forEach((choice, index) => {
+                            if (index === idx) {
+                                this.green(`[${index + 1}] ${choice}`).newLine().write();
+                            }
+                            else {
+                                this.white(` ${index + 1}  ${choice}`).newLine().write();
+                            }
+                        });
+                    }
+                };
+            });
+        });
+    }
+    getNextInput(text, isPassword = false) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (text)
+                this.write(text);
+            return new Promise((r, x) => {
+                try {
+                    let res = "";
+                    this.onWrite = (data) => {
+                        const strData = data.join();
+                        res += strData;
+                        this.write(isPassword ? "*" : strData);
+                        if (strData.charCodeAt(0) === 13) {
+                            this.stopListen();
+                            this.newLine().write();
+                            r(res);
+                        }
+                    };
+                    this.listenInputs(true);
+                }
+                catch (ex) {
+                    x(ex);
+                }
+            });
+        });
     }
 }
 exports.Terminal = Terminal;

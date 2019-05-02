@@ -88,55 +88,6 @@ export abstract class BaseTerminal extends EventEmitter {
     return this;
   }
 
-  async getNextinputChoice(choices: Array<string>) : Promise<number> {
-    this.listenInputs(true);
-    return new Promise<number>( (r,x) => {
-      process.stdin.on('keypress', (str, key) => {
-        console.log(str, key)
-      })
-      
-      this.onWrite = (data) => {
-        console.log(data, data.length, data[0].length)
-        data.forEach(strData => {
-          switch(strData.charCodeAt(0)) {
-            case 13:
-              this.stopListen();
-              this.newLine().write();
-              r(0);
-              break;
-              default:
-                this.write(strData.charCodeAt(0)).write(" ");
-                break;
-              }
-              
-        })
-
-      }
-    });
-  }
-
-  async getNextInput(text?: string, isPassword: boolean = false) {
-    if (text) this.write(text);
-    return new Promise<string>( (r,x) => {
-      try {
-        let res = "";
-        this.onWrite = (data) => {
-          const strData = data.join();
-          res += strData;
-          this.write(isPassword ? "*" : strData);
-          if (strData.charCodeAt(0) === 13) {
-            this.stopListen();
-            this.newLine().write();
-            r(res);
-          }
-        }
-        this.listenInputs(true);
-      } catch (ex) {
-        x(ex);
-      }
-    });
-  }
-
   /**
    * Draws a line onto the terminal
    * @method drawLine
@@ -168,7 +119,7 @@ export abstract class BaseTerminal extends EventEmitter {
     return this;
   }
 
-  toptBy(by: number) {
+  topBy(by: number) {
     this._buffer += `${"\x1B["}${by}${"A"}`;
     return this;
   }
