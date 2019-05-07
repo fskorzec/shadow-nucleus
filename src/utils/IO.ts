@@ -10,19 +10,8 @@ function existsSync(path: string) {
 }
 
 function mkDirSync(source: string) {
-  var sourceTab = source.replace(/\\\\/g, "/").split("/");
-  sourceTab.reduce( (previous, current) => {
-    let path = `${previous}`;
-    previous && (current = `${previous}/${current}`);
-    !fs.existsSync(path) && fs.mkdirSync(path);
-    path = `${current}`;
-    !fs.existsSync(path) && fs.mkdirSync(path);
-    return current;
-  });
-
-  if (sourceTab.length === 1) {
-    !fs.existsSync(source) && fs.mkdirSync(source);
-  }
+  console.log("IO : ", source)
+  fs.mkdirSync(source, {recursive: true});
 }
 
 function renameSync(source: string, dest: string) {

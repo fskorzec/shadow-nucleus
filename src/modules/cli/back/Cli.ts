@@ -56,9 +56,10 @@ export default class Cli implements IModuleEntryPoint {
                   guid: Guid.getGuid()
                 }
               });
-              IO.mkDirSync(`${res.payload.callerPath}/nc-repo`);
-              IO.mkDirSync(`${res.payload.callerPath}/nc-bin`);
-              IO.mkDirSync(`${res.payload.callerPath}/nc-dist`);
+              var startSlash = process.platform === "win32" ? "" : "/";
+              IO.mkDirSync(`${startSlash}${res.payload.callerPath}/nc-repo`);
+              IO.mkDirSync(`${startSlash}${res.payload.callerPath}/nc-bin`);
+              IO.mkDirSync(`${startSlash}${res.payload.callerPath}/nc-dist`);
               term.write();
               /*const slnName = await term.getNextInput("Solution name : ");
               const version = await term.getNextInput("Version (1.0.0): ");

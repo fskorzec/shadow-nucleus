@@ -70,9 +70,39 @@ exports.start = start;
 const args = process.argv;
 const nodeExecpath = args.shift() || "";
 const nucleusExecPath = args.shift() || "";
-const nucleusExecFolderPath = path.dirname(path.dirname(nucleusExecPath) + "../");
+let nucleusExecFolderPath = path.dirname(path.dirname(nucleusExecPath) + "../");
 const callerPath = `${path.resolve(".")}`;
+let ncPath = fs.existsSync(nucleusExecFolderPath + "/dist/_packages/modules");
+if (!ncPath) {
+    ncPath = fs.existsSync(nucleusExecFolderPath + "/shadow-nucleus" + "/dist/_packages/modules");
+    if (ncPath) {
+        nucleusExecFolderPath += "/shadow-nucleus";
+    }
+}
+if (!ncPath) {
+    ncPath = fs.existsSync(nucleusExecFolderPath + "/node_modules/shadow-nucleus" + "/dist/_packages/modules");
+    if (ncPath) {
+        nucleusExecFolderPath += "/node_modules/shadow-nucleus";
+    }
+}
+if (!ncPath) {
+    ncPath = fs.existsSync(nucleusExecFolderPath + "/lib/node_modules/shadow-nucleus" + "/dist/_packages/modules");
+    if (ncPath) {
+        nucleusExecFolderPath += "/lib/node_modules/shadow-nucleus";
+    }
+}
+if (!ncPath) {
+    nucleusExecFolderPath = "--";
+}
 const params = Args_1.prepareCliArguments(...args);
+if ("verbose" in params.parameters) {
+    console.log({
+        nodeExecpath,
+        nucleusExecPath,
+        nucleusExecFolderPath,
+        callerPath
+    });
+}
 (() => __awaiter(this, void 0, void 0, function* () {
     yield start();
 }))();
