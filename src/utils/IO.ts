@@ -10,7 +10,6 @@ function existsSync(path: string) {
 }
 
 function mkDirSync(source: string) {
-  console.log("IO : ", source)
   fs.mkdirSync(source, {recursive: true});
 }
 

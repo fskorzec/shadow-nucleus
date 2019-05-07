@@ -8,7 +8,7 @@ export type TReturnableEvent = {
 export type TSendQuery<T extends TReturnableEvent> = {
   sender: {
     serviceId   : string ;
-    serviceName : string ;
+    serviceName : string 
   };
   payload: T;
 }

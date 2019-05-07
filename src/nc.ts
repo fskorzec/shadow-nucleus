@@ -100,7 +100,7 @@ if (!ncPath) {
 
 const params = prepareCliArguments(...args);
 
-if ("verbose" in params.parameters) {
+if (params.parameters && "verbose" in params.parameters) {
   console.log({
     nodeExecpath,
     nucleusExecPath,
