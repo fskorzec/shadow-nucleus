@@ -18,7 +18,6 @@ function existsSync(path) {
 }
 exports.existsSync = existsSync;
 function mkDirSync(source) {
-    console.log("IO : ", source);
     fs.mkdirSync(source, { recursive: true });
 }
 exports.mkDirSync = mkDirSync;
