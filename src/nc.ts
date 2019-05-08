@@ -100,7 +100,7 @@ if (!ncPath) {
 
 const params = prepareCliArguments(...args);
 
-if (params.parameters && "verbose" in params.parameters) {
+if (params.parameters && "show_env" in params.parameters) {
   console.log({
     nodeExecpath,
     nucleusExecPath,
