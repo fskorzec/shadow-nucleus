@@ -36,8 +36,9 @@ export class Compiler extends BaseComponent {
 
 
   compile(fileNames: string[], options: ts.CompilerOptions , moduleSearchLocations: Array<string>, data?: TCompileQuery): void {
+    console.log("Received something to compile", fileNames);
     (ts as any).getDefaultLibFilePath = (options: any) => {
-      return "/lib";
+      return "/home/git/shadow-nucleus/node_modules/typescript/lib";
     };
 
     let host = ts.createCompilerHost({});
@@ -45,11 +46,13 @@ export class Compiler extends BaseComponent {
 
 
     host.getDefaultLibLocation = (...args: any[]) => {
-      return "/lib/";
+      console.log("/lib/")
+      return "/home/git/shadow-nucleus/node_modules/typescript/lib/";
     }
 
     host.getDefaultLibFileName = (...args: any[]) => {
-      return "/lib/lib.es6.d.ts";
+      console.log("/lib/lib.es6.d.ts");
+      return "/home/git/shadow-nucleus/node_modules/typescript/lib/lib.es6.d.ts";
     }
 
     options.noEmitOnError = true;
@@ -68,7 +71,7 @@ export class Compiler extends BaseComponent {
       }
       ensureDirectoryExistence(filePath);
       writeFileSync(filePath,fileContent,{encoding:"utf8", flag:"w"});*/
-
+      console.log("File", filePath)
       this._SendSync<TCompilerWriteFileArg>(Evts.TSC.COMPILER.WRITE_FILE, {
         sender: this.identity,
         payload: {
@@ -85,6 +88,8 @@ export class Compiler extends BaseComponent {
       //.concat(emitResult.diagnostics);
   
     allDiagnostics.forEach(diagnostic => {
+      console.log("ERROR", diagnostic.messageText)
+
       if (diagnostic.file) {
         let { line, character } = diagnostic.file.getLineAndCharacterOfPosition(
           diagnostic.start!
@@ -93,7 +98,7 @@ export class Compiler extends BaseComponent {
           diagnostic.messageText,
           "\n"  
         );
-        this._SendSync<TDiagnosticArg>(Evts.TSC.DIAGNOSTIC.ERROR, {
+        /*this._SendSync<TDiagnosticArg>(Evts.TSC.DIAGNOSTIC.ERROR, {
           sender: this.identity,
           payload: {
             guid            : (data && data.payload.guid) || "CLI"                                     ,
@@ -103,9 +108,9 @@ export class Compiler extends BaseComponent {
             position        : [line + 1, character + 1]                                                ,
             innerDiagnostic : JSONstringify(diagnostic)
           }
-        })
+        })*/
       } else {
-        this._SendSync<TDiagnosticArg>(Evts.TSC.DIAGNOSTIC.ERROR, {
+        /*this._SendSync<TDiagnosticArg>(Evts.TSC.DIAGNOSTIC.ERROR, {
           sender: this.identity,
           payload: {
             guid            : (data && data.payload.guid) || "CLI" ,
@@ -115,12 +120,13 @@ export class Compiler extends BaseComponent {
             position        : [-1,-1]                              ,
             innerDiagnostic : JSONstringify(diagnostic)
           }
-        })
+        })*/
       }
     });
   
     let exitCode = emitResult.emitSkipped ? 1 : 0;
     
+    console.log("Exiting", exitCode)
     this._SendSync<TCompilerResultQueryArg>(Evts.TSC.COMPILER.COMPILED, {
       sender: this.identity,
       payload: {
