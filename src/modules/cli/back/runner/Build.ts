@@ -33,9 +33,9 @@ export class Build {
         guid: compileStepGuid,
         sources: [modulePath],
         options: {
-          target                 : 2     ,
-          module                 : 1     ,
-          jsx                    : 2     ,
+          target                 : 2     , // es6 
+          module                 : 1     , // CommonJs
+          jsx                    : 2     , // React
           strict                 : false ,
           esModuleInterop        : true  ,
           experimentalDecorators : true  ,

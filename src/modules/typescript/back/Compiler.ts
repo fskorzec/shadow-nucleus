@@ -38,7 +38,7 @@ export class Compiler extends BaseComponent {
   compile(fileNames: string[], options: ts.CompilerOptions , moduleSearchLocations: Array<string>, data?: TCompileQuery): void {
     console.log("Received something to compile", fileNames);
     (ts as any).getDefaultLibFilePath = (options: any) => {
-      return "/home/git/shadow-nucleus/node_modules/typescript/lib";
+      return "node_modules/typescript/lib";
     };
 
     let host = ts.createCompilerHost({});
@@ -47,12 +47,12 @@ export class Compiler extends BaseComponent {
 
     host.getDefaultLibLocation = (...args: any[]) => {
       console.log("/lib/")
-      return "/home/git/shadow-nucleus/node_modules/typescript/lib/";
+      return "node_modules/typescript/lib/";
     }
 
     host.getDefaultLibFileName = (...args: any[]) => {
       console.log("/lib/lib.es6.d.ts");
-      return "/home/git/shadow-nucleus/node_modules/typescript/lib/lib.es6.d.ts";
+      return "node_modules/typescript/lib/lib.es6.d.ts";
     }
 
     options.noEmitOnError = true;
