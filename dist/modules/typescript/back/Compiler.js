@@ -18,7 +18,6 @@ var Compiler_1;
 const Plugin_1 = require("../../../Plugin");
 const Events_1 = require("./Events");
 const ts = __importStar(require("typescript"));
-const Text_1 = require("../../../core/util/Text");
 const Ioc_1 = require("../../../core/util/Ioc");
 let Compiler = Compiler_1 = class Compiler extends Plugin_1.BaseComponent {
     constructor() {
@@ -38,15 +37,18 @@ let Compiler = Compiler_1 = class Compiler extends Plugin_1.BaseComponent {
         }
     }
     compile(fileNames, options, moduleSearchLocations, data) {
+        console.log("Received something to compile", fileNames);
         ts.getDefaultLibFilePath = (options) => {
-            return "/lib";
+            return "node_modules/typescript/lib";
         };
         let host = ts.createCompilerHost({});
         host.getDefaultLibLocation = (...args) => {
-            return "/lib/";
+            console.log("/lib/");
+            return "node_modules/typescript/lib/";
         };
         host.getDefaultLibFileName = (...args) => {
-            return "/lib/lib.es6.d.ts";
+            console.log("/lib/lib.es6.d.ts");
+            return "node_modules/typescript/lib/lib.es6.d.ts";
         };
         options.noEmitOnError = true;
         let program = ts.createProgram(fileNames, options, host);
@@ -62,6 +64,7 @@ let Compiler = Compiler_1 = class Compiler extends Plugin_1.BaseComponent {
             }
             ensureDirectoryExistence(filePath);
             writeFileSync(filePath,fileContent,{encoding:"utf8", flag:"w"});*/
+            console.log("File", filePath);
             this._SendSync(Events_1.Evts.TSC.COMPILER.WRITE_FILE, {
                 sender: this.identity,
                 payload: {
@@ -75,36 +78,38 @@ let Compiler = Compiler_1 = class Compiler extends Plugin_1.BaseComponent {
         //.getPreEmitDiagnostics(program)
         //.concat(emitResult.diagnostics);
         allDiagnostics.forEach(diagnostic => {
+            console.log("ERROR", diagnostic.messageText);
             if (diagnostic.file) {
                 let { line, character } = diagnostic.file.getLineAndCharacterOfPosition(diagnostic.start);
                 let message = ts.flattenDiagnosticMessageText(diagnostic.messageText, "\n");
-                this._SendSync(Events_1.Evts.TSC.DIAGNOSTIC.ERROR, {
-                    sender: this.identity,
-                    payload: {
-                        guid: (data && data.payload.guid) || "CLI",
-                        fileName: diagnostic.file.fileName,
-                        message: message,
-                        fullMessage: `${diagnostic.file.fileName} (${line + 1},${character + 1}): ${message}`,
-                        position: [line + 1, character + 1],
-                        innerDiagnostic: Text_1.JSONstringify(diagnostic)
-                    }
-                });
+                /*this._SendSync<TDiagnosticArg>(Evts.TSC.DIAGNOSTIC.ERROR, {
+                  sender: this.identity,
+                  payload: {
+                    guid            : (data && data.payload.guid) || "CLI"                                     ,
+                    fileName        : diagnostic.file.fileName                                                 ,
+                    message         : message                                                                  ,
+                    fullMessage     : `${diagnostic.file.fileName} (${line + 1},${character + 1}): ${message}` ,
+                    position        : [line + 1, character + 1]                                                ,
+                    innerDiagnostic : JSONstringify(diagnostic)
+                  }
+                })*/
             }
             else {
-                this._SendSync(Events_1.Evts.TSC.DIAGNOSTIC.ERROR, {
-                    sender: this.identity,
-                    payload: {
-                        guid: (data && data.payload.guid) || "CLI",
-                        fileName: "",
-                        message: "",
-                        fullMessage: `${diagnostic.messageText}`,
-                        position: [-1, -1],
-                        innerDiagnostic: Text_1.JSONstringify(diagnostic)
-                    }
-                });
+                /*this._SendSync<TDiagnosticArg>(Evts.TSC.DIAGNOSTIC.ERROR, {
+                  sender: this.identity,
+                  payload: {
+                    guid            : (data && data.payload.guid) || "CLI" ,
+                    fileName        : ""                                   ,
+                    message         : ""                                   ,
+                    fullMessage     : `${diagnostic.messageText}`          ,
+                    position        : [-1,-1]                              ,
+                    innerDiagnostic : JSONstringify(diagnostic)
+                  }
+                })*/
             }
         });
         let exitCode = emitResult.emitSkipped ? 1 : 0;
+        console.log("Exiting", exitCode);
         this._SendSync(Events_1.Evts.TSC.COMPILER.COMPILED, {
             sender: this.identity,
             payload: {

@@ -95,7 +95,7 @@ if (!ncPath) {
     nucleusExecFolderPath = "--";
 }
 const params = Args_1.prepareCliArguments(...args);
-if (params.parameters && "verbose" in params.parameters) {
+if (params.parameters && "show_env" in params.parameters) {
     console.log({
         nodeExecpath,
         nucleusExecPath,

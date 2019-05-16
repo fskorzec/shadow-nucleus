@@ -19,7 +19,7 @@ Folder structure :
    |
    -+ assets
    |  |
-   |  -- ...
+   |  -- ...2
 
 
 ***************************************************************************************************
@@ -33,8 +33,10 @@ nc.sln.json : Solution
     name    ?: string ;
     email   ?: string ;
     website ?: string ;
-    github  ?: string ;
+    github  ?: string ;  
   }
+
+  id: "com.nucleus"
 
   dependencies: {
     "websocket" : {
@@ -115,3 +117,65 @@ json
 Dist Package | per project
 **********************************
 Contains modules | assets
+
+Types de projets : 
+- Repository : Contains one or more plugins, for cli / back / front target that will be push into a repository
+- Frontend   : Contains one or more local plugins that represent a web application with assets
+- Backend    : Contains one or more local plugins that rpresent a backend application with assets
+- Cli        : Contains oen or more cli based plugin that target a standalone CLI app based on the core nuc-cli
+
+Commands : 
+nuc sln create : 
+> Solution Name ?
+> Solution ID ?
+> 
+> Create a project ?
+  > [1] Cli project
+  > [2] Backend project
+  > [3] Frontend project
+  > [4] Repository project
+
+OR 
+
+> Create a project based on a catalog ?
+  > [1] Yes
+  > [2] No
+
+  > Catalog Name ?
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nuc prj create ... 
+> Project name ?
+> Project version ?
+> Project ID ? (default sln ID)
+
+> Project target ?
+  > [1] Repository : Contains one or more plugins, for 
+                     cli / back / front target that will be push into a repository
+
+  > [2] Frontend   : Contains one or more local plugins 
+                     that represent a web application with assets
+
+  > [3] Backend    : Contains one or more local plugins
+                     that rpresent a backend application with assets
+                     
+  > [4] Cli        : Contains oen or more cli based plugin
+                     that target a standalone CLI app based on the core nuc-cli
+
+nuc prj create catalog=XXXX
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+nuc package create
+> Package name ?
+> Package ID ? (Default parent ID)
+> Version ? 
+> Package target ? 
+  > Cli / Frontend / Backend
+
+nuc package update version to=1.0.1 for=nc-loggin target=front
+nuc service create for=nc-logging target=front
+> Service name ?
+
+nuc build package name=nc-logging [target=front]
+nuc build project=frontend
+nuc build sln
