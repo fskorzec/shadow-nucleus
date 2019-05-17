@@ -17,7 +17,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const Events_1 = require("./Events");
 const Module_1 = require("././doc/Module");
-const Plugin_1 = require("../../../Plugin");
 const Terminal_1 = require("../../../console/Terminal");
 const Constant_1 = require("../../../console/core/Constant");
 const Build_1 = require("./runner/Build");
@@ -25,6 +24,7 @@ const Cli_1 = require("../../../core/constant/Cli");
 const New_1 = require("./runner/New");
 const Guid_1 = require("../../../shared/text/Guid");
 const IO = __importStar(require("../../../utils/IO"));
+const Plugin_1 = require("../../../Plugin");
 const term = new Terminal_1.Terminal();
 let _packages = {};
 class Cli {
@@ -57,14 +57,15 @@ class Cli {
                                     IO.mkDirSync(`${res.payload.callerPath}/nc-bin`);
                                     IO.mkDirSync(`${res.payload.callerPath}/nc-dist`);
                                     term.write();
-                                    /*const slnName = await term.getNextInput("Solution name : ");
-                                    const version = await term.getNextInput("Version (1.0.0): ");
-                      
-                                    const password =  await term.getNextInput("password: ", true);*/
+                                    const slnName = yield term.getNextInput("Solution name : ");
+                                    const version = yield term.getNextInput("Version (1.0.0): ");
+                                    /*const password =  await term.getNextInput("password: ", true);*/
+                                    term.text("What kind of project do you want to create ?");
                                     const choice = yield term.getNextinputChoice([
-                                        "Choice 1",
-                                        "Choice 2",
-                                        "Choice 3",
+                                        "Repository",
+                                        "Backend",
+                                        "Frontend",
+                                        "Cli"
                                     ]);
                                     /* fs.writeFileSync(`${res.payload.callerPath}/nc.sln.json`, `
                        {

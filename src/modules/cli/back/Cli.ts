@@ -1,8 +1,15 @@
-import { Evts }                     from "./Events"                   ;
-import { CommandArgs }              from "../../../console/Args"      ;
-import { Package, Command }         from "../../../console/TPackages" ;
-import { module, AppDoc, _package } from "././doc/Module"             ;
-import * as fs from "fs";
+import { Evts }                       from "./Events"                       ;
+import { CommandArgs }                from "../../../console/Args"          ;
+import { Package, Command }           from "../../../console/TPackages"     ;
+import { module, AppDoc, _package }   from "././doc/Module"                 ;
+import { Terminal }                   from "../../../console/Terminal"      ;
+import { Color16, EStyle, ForeColor } from "../../../console/core/Constant" ;
+import { Build }                      from "./runner/Build"                 ;
+import { IPrivateBaseComponent }      from "../../../core/BaseComponent"    ;
+import { CLI_IDENTITY }               from "../../../core/constant/Cli"     ;
+import { New }                        from "./runner/New"                   ;
+import { Guid }                       from "../../../shared/text/Guid"      ;
+import * as IO                        from "../../../utils/IO"              ;
 
 import { 
   IModuleEntryPoint , 
@@ -10,17 +17,6 @@ import {
   connect           ,
   BaseComponent
 } from "../../../Plugin";
-import { Terminal } from "../../../console/Terminal";
-import { Color16, EStyle, ForeColor, EscColorClosingChar } from "../../../console/core/Constant";
-import { Build } from "./runner/Build";
-import { IPrivateBaseComponent, TSendQuery } from "../../../core/BaseComponent";
-import { CLI_IDENTITY } from "../../../core/constant/Cli";
-import { New } from "./runner/New";
-import { buildQueryResult } from "../../../core/util/Event";
-import { Guid } from "../../../shared/text/Guid";
-
-import * as IO from "../../../utils/IO";
-import { fstat } from "fs";
 
 const term = new Terminal();
 
@@ -61,15 +57,17 @@ export default class Cli implements IModuleEntryPoint {
               IO.mkDirSync(`${res.payload.callerPath}/nc-bin`);
               IO.mkDirSync(`${res.payload.callerPath}/nc-dist`);
               term.write();
-              /*const slnName = await term.getNextInput("Solution name : ");
+              const slnName = await term.getNextInput("Solution name : ");
               const version = await term.getNextInput("Version (1.0.0): ");
 
-              const password =  await term.getNextInput("password: ", true);*/
+              /*const password =  await term.getNextInput("password: ", true);*/
 
+              term.text("What kind of project do you want to create ?")
               const choice = await term.getNextinputChoice([
-                "Choice 1",
-                "Choice 2",
-                "Choice 3",
+                "Repository" ,
+                "Backend"    ,
+                "Frontend"   ,
+                "Cli"
               ]);
 
              /* fs.writeFileSync(`${res.payload.callerPath}/nc.sln.json`, `

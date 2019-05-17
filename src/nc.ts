@@ -95,16 +95,16 @@ if (!ncPath) {
 }
 
 if (!ncPath) {
-  nucleusExecFolderPath = "--"
+  nucleusExecFolderPath = "--"; 
 }
 
 const params = prepareCliArguments(...args);
 
 if (params.parameters && "show_env" in params.parameters) {
   console.log({
-    nodeExecpath,
-    nucleusExecPath,
-    nucleusExecFolderPath,
+    nodeExecpath          ,
+    nucleusExecPath       ,
+    nucleusExecFolderPath ,
     callerPath
   })
 }
