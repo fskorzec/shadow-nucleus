@@ -12,9 +12,9 @@ export class Api implements IApi{
   _require : any       ;
 
   constructor(evtBus: IEventBus) {
-    this._evtBus  = evtBus              ;
-    this._service = new Service(evtBus) ;
-    this._module  = new Module(evtBus, this)  ;
+    this._evtBus  = evtBus                   ;
+    this._service = new Service(evtBus)      ;
+    this._module  = new Module(evtBus, this) ;
   }
 
   set require(req: any) {

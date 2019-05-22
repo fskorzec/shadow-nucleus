@@ -5,7 +5,7 @@ import * as path from "path";
 import { writeFileSync, existsSync, mkdirSync } from "fs";
 import { TSendQuery } from "../../../core/BaseComponent";
 import { compileFunction } from "vm";
-import { JSONstringify } from "../../../core/util/Text";
+import { JsonStringify } from "../../../core/util/Text";
 import { IocInject } from "../../../core/util/Ioc";
 
 declare var Services: any;
