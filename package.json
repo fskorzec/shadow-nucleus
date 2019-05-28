@@ -2,11 +2,7 @@
   "name": "shadow-nucleus",
   "version": "1.0.0",
   "bin": {
-    "nuc": "./out/nc.js",
-    "nc-setup": "./dist/Cli.js",
-    "nc-module": "./dist/CliEntryPoint.js",
-    "nc-service": "./dist/CliService.js",
-    "nc-build": "./dist/CliBuild.js"
+    "nuc": "./out/Nuc.js"
   },
   "main": "./dist/Plugin.js",
   "types": "./dist/Plugin.d.ts",
