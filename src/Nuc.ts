@@ -15,7 +15,7 @@ declare var __non_webpack_require__ : any  ; // only use this one if this file i
 
 export async function start(){
   // Start the core api expose it
-  await startNucleus(require);
+  await startNucleus(require); // <-- Use the __non_webpack_require__ here if needed
   
   // used to access to the EventBus
   const cmp = await _nucleus_api.Service.resolve<IPrivateBaseComponent>(BaseComponent);

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function JSONstringify(target, indentSpace = 2) {
+function JsonStringify(target, indentSpace = 2) {
     var cache = [];
     const res = JSON.stringify(target, function (key, value) {
         if (cache === null)
@@ -21,5 +21,5 @@ function JSONstringify(target, indentSpace = 2) {
     cache = null;
     return res;
 }
-exports.JSONstringify = JSONstringify;
+exports.JsonStringify = JsonStringify;
 //# sourceMappingURL=Text.js.map

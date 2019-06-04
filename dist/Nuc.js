@@ -106,4 +106,4 @@ if (params.parameters && "show_env" in params.parameters) {
 (() => __awaiter(this, void 0, void 0, function* () {
     yield start();
 }))();
-//# sourceMappingURL=nc.js.map
+//# sourceMappingURL=Nuc.js.map

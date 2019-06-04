@@ -1,2 +1,2 @@
-export declare function JSONstringify(target: unknown, indentSpace?: number): string;
+export declare function JsonStringify(target: unknown, indentSpace?: number): string;
 //# sourceMappingURL=Text.d.ts.map
