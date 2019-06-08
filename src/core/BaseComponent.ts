@@ -1,5 +1,5 @@
-import { Errors }   from "./constant/Error"         ;
-import { IEventBus } from "./IEventBus";
+import { Errors }    from "./constant/Error" ;
+import { IEventBus } from "./IEventBus"      ;
 
 export type TReturnableEvent = {
   guid?: string;
@@ -8,7 +8,7 @@ export type TReturnableEvent = {
 export type TSendQuery<T extends TReturnableEvent> = {
   sender: {
     serviceId   : string ;
-    serviceName : string 
+    serviceName : string ;
   };
   payload: T;
 }

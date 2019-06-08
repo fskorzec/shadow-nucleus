@@ -1,7 +1,7 @@
-import { BaseComponent } from "../../../Plugin";
-import _Webpack from "webpack";
-import { Evts, TSendPackQueryArgs } from "./Events";
-import { IocInject } from "../../../core/util/Ioc";
+import { BaseComponent }            from "../../../Plugin"        ;
+import _Webpack                     from "webpack"                ;
+import { Evts, TSendPackQueryArgs } from "./Events"               ;
+import { IocInject }                from "../../../core/util/Ioc" ;
 
 declare var Services: any;
 

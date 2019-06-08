@@ -1,10 +1,10 @@
-import { startNucleus} from "../Nucleus"  ;
-import { IApi }        from "../Plugin" ;
-import * as path       from "path"      ;
-import * as fs         from "fs"        ;
+import { startNucleus} from "../Nucleus" ;
+import { IApi }        from "../Plugin"  ;
+import * as path       from "path"       ;
+import * as fs         from "fs"         ;
 
-declare var _nucleus_api: IApi;
-declare var __non_webpack_require__: any;
+declare var _nucleus_api            : IApi ;
+declare var __non_webpack_require__ : any  ;
 
 export async function start(){
   // Start the core api expose it

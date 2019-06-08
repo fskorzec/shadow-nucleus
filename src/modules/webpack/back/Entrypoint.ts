@@ -1,9 +1,9 @@
 import { Webpack } from "./Webpack";
 
 import { 
-  IModuleEntryPoint, 
-  IApi, 
-  connect 
+  IModuleEntryPoint ,
+  IApi              ,
+  connect  
 } from "../../../Plugin";
 
 export default class WebpackPackage implements IModuleEntryPoint {

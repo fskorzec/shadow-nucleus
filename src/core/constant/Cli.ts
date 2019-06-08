@@ -15,8 +15,8 @@ export type TEnvInfo = {
 };
 
 export type CommandArgs = {
-  package: string ;
-  command: string ;
+  package : string ;
+  command : string ;
   parameters: {
       [name: string]: string;
   }
